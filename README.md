@@ -1,5 +1,5 @@
-# T-C-PP_gen_pjt73
-Project Goal
+# Project Team 73
+##Project Goal
 Make easy T&C and privacy policy generator accessible to users
 Project Objective
 Add at least five new features to the pre-existing features within the next three weeks to enable at least 80% increase user satisfaction, improve business processes and reduce overall company/individual expenses.
