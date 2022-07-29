@@ -19,6 +19,11 @@ T&C and privacy policy generator is a platform that allows users to easily gener
 The goal of this project is to make easy T&C and privacy policy generator accessible to users ant to help users to generate either T&C or Privacy Policy easily on any format without any form of payment attached to the service.
 
 # Technologies used 
-. figma/figjam (Design)
+- figma/figjam (Design)
+- HTML/CSS/JavaScript (Frontend)
+- Django (Backend)
+- MySQL (Database)
+- Bootstrap (Frontend Library)
+-
 
 
