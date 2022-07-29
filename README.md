@@ -43,9 +43,9 @@ The goal of this project is to make easy T&C and privacy policy generator access
 - Phones
 - Tablets
 - Computers
-- Accessories
 
-# Usage 
+
+# User Flow 
 - Visit the Website (Hosted link here)
 - Browse through
 - Sign Up
