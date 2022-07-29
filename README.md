@@ -78,7 +78,7 @@ Eze Michael
 
 Unique-Gift Amah     	
 - Email - uniquegift4amah2016@gmail.com
-- GitHub - https://github.com/
+- GitHub - https://github.com/Unique-Gift
 - Stack - Product Design
 
 Mong Samuel Onwu	  	
