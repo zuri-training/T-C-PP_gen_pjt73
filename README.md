@@ -166,10 +166,6 @@ Olorunsola Taiwo Joshua
 - GitHub - https://github.com/Oboc
 - Stack - Fullstack
 
-Uzochikwai Nwadub Alexandra  
-- Email -alexandranwaduba@gmail.com
-- GitHub - https://github.com/
-- Stack - Fullstack
 
 # Acknowledgment
 This project was inspired by Zuri
