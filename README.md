@@ -54,7 +54,7 @@ The goal of this project is to make easy T&C and privacy policy generator access
 - Customize your profile
 - Generate terms and conditions
 - Generate Privacy policy
-- Proceed to download
+- Proceed to download 
 
 # Project Status 
 Project is: in progress
