@@ -4,12 +4,12 @@ The goal of this project is to create a platform that allows users to generate t
 check  out the full details of the project https://docs.google.com/document/d/1mrrL7DMUgK_YUIF1nZMxtSsAxN-qaaHn1L9blHwyq50/edit?usp=drivesdk
 
 # Table of contents 
-1 General information 
-2 Technologies used
-3 Features 
-4 product specification 
-5 Usage 
-6 Project status 
-7 Collaborations
-8 Contributions 
-9 Acknowledgment 
+1. General information 
+2. Technologies used
+3. Features 
+4. product specification 
+5. Usage 
+6. Project status 
+7. Collaborations
+8. Contributions 
+9. Acknowledgment 
