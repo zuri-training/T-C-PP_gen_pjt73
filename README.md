@@ -13,3 +13,11 @@ check  out the full details of the project https://docs.google.com/document/d/1m
 7. Collaborations
 8. Contributions 
 9. Acknowledgment 
+# General information 
+T&C and privacy policy generator is a platform that allows users to easily generate terms and conditions and privacy policy without having to hire a lawyer or subscribe to a Compliance generator website.
+
+The goal of this project is to make easy T&C and privacy policy generator accessible to users ant to help users to generate either T&C or Privacy Policy easily on any format without any form of payment attached to the service.
+
+
+
+
