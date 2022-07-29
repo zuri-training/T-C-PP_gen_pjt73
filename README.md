@@ -11,7 +11,7 @@ check  out the full details of the project https://docs.google.com/document/d/1m
 5. Usage 
 6. Project status 
 7. Collaborations
-8. Contributions 
+8. Contributors 
 9. Acknowledgment 
 # General information 
 T&C and privacy policy generator is a platform that allows users to easily generate terms and conditions and privacy policy without having to hire a lawyer or subscribe to a Compliance generator website.
@@ -24,6 +24,153 @@ The goal of this project is to make easy T&C and privacy policy generator access
 - Django (Backend)
 - MySQL (Database)
 - Bootstrap (Frontend Library)
--
 
+# Features
+ User: Unauthenticated
+- Visit the platform to view basic information about it
+- View and Interact with the documentation
+- Register to view more details
+- No access to use until registered
 
+ User: Authenticated
+- Full access to the platform
+- Allow users enter basic information
+- Generate selected files with the right data and information
+- Allow export, download, share and website embed
+- Allow user save data and come back to download
+
+# Product Specification
+- Phones
+- Tablets
+- Computers
+- Accessories
+
+# Usage 
+- Visit the Website (Hosted link here)
+- Browse through
+- Sign Up
+- Verify your Email
+- Sign In
+- Customize your profile
+- Generate terms and conditions
+- Generate Privacy policy
+- Proceed to download
+
+# Project Status 
+Project is: in progress
+
+# Collaborations
+# Contributors
+Oladapo Itunuoluwa	
+- Email - runcaus16@gmail.com
+- GitHub - https://github.com/ditoruncaus
+- Stack -  Product Design
+
+Ekundayo Opeyemi	
+- Email - Opeyemimessi@gmail.com
+- GitHub - https://github.com/OpeyemiE
+- Stack -  Product Design
+
+Eze Michael	
+- Email - ezemickey09@gmail.com
+- GitHub - https://github.com/Michael-Kings
+- Stack - Product Design
+
+Unique-Gift Amah     	
+- Email - uniquegift4amah2016@gmail.com
+- GitHub - https://github.com/
+- Stack - Product Design
+
+Mong Samuel Onwu	  	
+- Email - info.samuelonwu@icloud.com
+- GitHub - https://github.com/kingoftwins
+- Stack - Product Design
+
+Angela Abasiama Okon
+- Email - adiahaokon9@gmail.com
+- GitHub - https://github.com/Adiaha-okon
+- Stack - Product Design
+
+Annette shadeya	
+- Email - adiahaokon9@gmail.com
+- GitHub - https://github.com/AnnieUXUI
+- Stack - Product Design
+
+Dorcas Owolabi
+- Email - owolabidorcas40@gmail.com
+- GitHub - https://github.com/Dorcaslas22
+- Stack - Product Design
+
+Esther Adekunle 
+- Email - estheradeks360@gmail.com
+- GitHub - https://github.com/estheradeks
+- Stack - Product Design
+
+Joe Judith	 
+- Email - joejudithc@gmail.com
+- GitHub - https://github.com/Chi-joe
+- Stack - Product Design
+
+Ogechi Marry Eze 
+- Email - ezeogechi57@gmail.com
+- GitHub - https://github.com/Ogeeze
+- Stack - Product Design
+
+Onyenama Victor
+- Email - onyenamavic@gmail.com
+- GitHub - https://github.com/sventreprise14
+- Stack - Product Design
+
+Kolapo Goodness
+- Email -goodnesskolapo@gmail.com
+- GitHub - https://github.com/Goodness5
+- Stack - Fullstack
+
+Ayodele Kadiri
+- Email -ayodelekadiri.ak@gmail.com
+- GitHub - https://github.com/Grttechie
+- Stack - Fullstack
+
+ Mariam Smith
+- Email -mariams58@yahoo.com
+- GitHub - https://github.com/mariams58 
+- Stack - Fullstack
+
+Abdullah
+- Email -olam4461@gmail.com
+- GitHub - https://github.com/Cruxcodes
+- Stack - Fullstack
+
+Favour
+- Email -divinephavor@gmail.com
+- GitHub - https://github.com/Phav4
+- Stack - Fullstack
+
+Adnan Ahmad
+- Email -ahmadadnan2235@gmail.com
+- GitHub - https://github.com/deekay25
+- Stack - Fullstack
+
+Ogbe Jude
+- Email -ogbejude24@gmail.com
+- GitHub - https://github.com/ogbe
+- Stack - Fullstack
+
+Nenne A
+- Email -nne.akuma@gmail.com
+- GitHub - https://github.com/NneneA
+- Stack - Frontend
+
+Olorunsola Taiwo Joshua 
+- Email -scholeraw001@gmail.com
+- GitHub - https://github.com/Oboc
+- Stack - Fullstack
+
+Uzochikwai Nwadub Alexandra  
+- Email -alexandranwaduba@gmail.com
+- GitHub - https://github.com/
+- Stack - Fullstack
+
+# Acknowledgment
+This project was inspired by Zuri
+Our sincere gratitude God Almighty, and to Zuri & Ingressive4Good for this wonderful opportunity to explore tech in a dynamic way.
