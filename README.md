@@ -92,7 +92,7 @@ Angela Abasiama Okon
 - Stack - Product Design
 
 Annette shadeya	
-- Email - adiahaokon9@gmail.com
+- Email - ashadeya@gmail.com
 - GitHub - https://github.com/AnnieUXUI
 - Stack - Product Design
 
