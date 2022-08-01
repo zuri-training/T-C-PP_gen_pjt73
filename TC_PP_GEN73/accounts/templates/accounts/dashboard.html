@@ -1,1 +1,10 @@
+{% extends 'blog/base.html' %}
+
 <!--Your HTML code here-->
+
+
+<!--DTL(Django Template Language)-->
+{% block content %}
+ <h2>Hi {{user.username|capfirst}}</h2>
+
+{% endblock %}

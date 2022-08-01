@@ -146,3 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #for crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#redirect to the dashboard page after login
+LOGIN_REDIRECT_URL = 'dashboard'
+
+LOGIN_URL = 'login'

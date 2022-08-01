@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 # Create your views here.
@@ -17,3 +18,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/register_page.html',{'form':form})
+
+@login_required #users can't have access to this view unless they log in
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
