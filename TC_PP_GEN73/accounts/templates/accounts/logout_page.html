@@ -1,1 +1,18 @@
 <!--Your HTML code here-->
+
+
+
+<!--DTL(Django Template Language)-->
+{% extends 'blog/base.html'%}
+{% block content%}
+<section>
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <h2>You have been logged out</h2>
+            <small>Log in Again <a href="{%url 'login'%}">Sign In</a></small>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

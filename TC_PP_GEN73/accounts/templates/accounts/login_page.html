@@ -1,1 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
 <!--Your HTML code here-->
+
+
+<!--Making use of DTL(Django Template Language)-->
+{% block content%}
+<section>
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" value="Login">
+                </form>
+                <small>Need An Account? <a href="{%url 'register'%}">Sign Up Now!</a></small>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
