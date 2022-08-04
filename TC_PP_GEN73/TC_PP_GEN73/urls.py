@@ -22,6 +22,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
     path('tc_gen/', include('tc_gen.urls')),
+    path('social_auth/', include('social_django.urls'), name='social'),
 
     #password reset url
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name = 'accounts/password_reset.html'),

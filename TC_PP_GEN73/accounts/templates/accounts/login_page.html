@@ -13,6 +13,8 @@
                     {% csrf_token %}
                     {{form|crispy}}
                     <input type="submit" value="Login">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+                    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
                 </form>
                 <a href="{% url 'password_reset' %}">forgot password?</a><br>
                 <small>Need An Account? <a href="{%url 'register'%}">Sign Up Now!</a></small>
