@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     #3rd party apps
     'crispy_forms',
+    'social_django',
 
     #registering apps
     'accounts.apps.AccountsConfig',
@@ -94,6 +95,9 @@ DATABASES = {
     }
 }
 
+#django-social-auth for db(PostgreSQL)
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -112,6 +116,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#social_django custom settings
+AUTHENTICATION_BACKENDS = (
+    #'social_core.backends.open_id.OpenIdAuth',
+    #'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+    #'social_core.backends.yahoo.YahooOpenId',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # Internationalization
@@ -165,3 +181,10 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_USER')
 
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+
+#social authentication ids and passwords
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
+
+SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')
