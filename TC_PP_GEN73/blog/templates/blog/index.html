@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,18 +22,16 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="{% static 'blog/css/index.css' %}" />
   </head>
   <body>
-    <!-- Navigation  -->
+    
+    <!-- This is the Navigation section -->
     <nav
-      class="navbar navbar-expand-md navbar-light top-nav fixed-top"
-      style="background-color: transparent"
+      class="navbar navbar-expand-md  top-nav fixed-top"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><span>Terms</span>Hub</a
-        >
+        <a class="navbar-brand" href="#"><span>Terms</span>Hub</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -50,16 +49,16 @@
               <a class="nav-link" href="#">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./dashboard.html">Dashboard</a>
+              <a class="nav-link" href="#">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="#reviews">Reviews</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact us</a>
             </li>
             <li class="nav-item login">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="./signin.html">Login</a>
             </li>
           </ul>
         </div>
@@ -93,7 +92,7 @@
           </div>
           <div class="col-10 col-sm-8 col-lg-5.4 col-md-6 headerimg">
             <img
-              src="./img/second.png"
+              src="{% static 'blog/img/second.png' %}"
               class="d-block mx-lg-auto img-fluid headerImg"
               alt="Bootstrap Themes"
               width="700"
@@ -109,35 +108,34 @@
     <!-- Section of how it works -->
     <section class="how-it-works">
       <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 howhead">How It Works</h2>
+        <h4 class="pb-2 howhead">How It Works</h4>
         <p class="pb-2 howtext">
           Generate T&C and Privacy Policy in 4 simple steps
         </p>
         <div class="row">
           <div class="col-lg-3 col-md-6">
-            <img src="./img/User.png" alt="" />
-            <h2 class="fw-normal">Sign Up</h2>
+            <img src="{% static 'blog/img/User.png' %}" alt="" />
+            <h4 class="fw-bold">Sign Up</h4>
             <p>Sign up to have full access to our services</p>
           </div>
           <div class="col-lg-3 col-md-6">
-            <img src="./img/Platforma.png" alt="" />
-            <h2 class="fw-normal">Heading</h2>
+            <img src="{% static 'blog/img/Platforma.png' %}" alt="" />
+            <h4 class="fw-bold">Select Platform</h4>
             <p>
-              Another exciting bit of representative placeholder content. This
-              time, we've moved on to the second column.
+              Choose a platform to use the T&C and privacy policy
             </p>
           </div>
           <div class="col-lg-3 col-md-6">
-            <img src="./img/Questioniare.png" alt="" />
-            <h2 class="fw-normal">Fill Out Questionaire</h2>
+            <img src="{% static 'blog/img/Questioniare.png' %}" alt="" />
+            <h4 class="fw-bold">Fill Out Questionaire</h4>
             <p>
               Fill the questionaire to enable us personalise your compliance
             </p>
           </div>
           <div class="col-lg-3 col-md-6">
-            <img src="./img/Generate.png" alt="" />
+            <img src="{% static 'blog/img/Generate.png' %}" alt="" />
 
-            <h2 class="fw-normal">Generate</h2>
+            <h4 class="fw-bold">Generate</h4>
             <p>
               Generate your personalised compliance and download it in any
               format
@@ -146,7 +144,7 @@
         </div>
 
         <p class="pb-2 howtext">
-          <a href="#">Get Started</a>
+          <a href="./signin.html">Get Started</a>
         </p>
       </div>
     </section>
@@ -166,7 +164,7 @@
         >
           <div class="col d-flex align-items-center benefit">
             <div class="benefiticon">
-              <img src="./icons/light-bulb.svg" alt="" />
+              <img src="{% static 'blog/icons/light-bulb.svg' %}" alt="" />
             </div>
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Complaince Monitoring</h4>
@@ -178,7 +176,7 @@
           </div>
           <div class="col d-flex align-items-center benefit">
             <div class="benefiticon">
-              <img src="./icons/phone.svg" alt="" />
+              <img src="{% static 'blog/icons/phone.svg' %}" alt="" />
             </div>
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Contact a Lawyer</h4>
@@ -190,7 +188,7 @@
           </div>
           <div class="col d-flex align-items-center benefit">
             <div class="benefiticon">
-              <img src="./icons/cloud-download.svg" alt="" />
+              <img src="{% static 'blog/icons/cloud-download.svg' %}" alt="" />
             </div>
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Download Policy</h4>
@@ -202,7 +200,7 @@
           </div>
           <div class="col d-flex align-items-center benefit">
             <div class="benefiticon">
-              <img src="./icons/pencil-alt.svg" alt="" />
+              <img src="{% static 'blog/icons/pencil-alt.svg' %}" alt="" />
             </div>
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Manual Customization</h4>
@@ -214,14 +212,15 @@
           </div>
 
           <p class="pb-2 howtext">
-            <a href="#">Get Started</a>
+            <a href="./signin.html">Get Started</a>
           </p>
         </div>
       </div>
     </section>
     <!-- End of benefits -->
 
-    <section class="customer">
+    <!-- This is the review section -->
+    <section class="customer" id="reviews">
       <div class="container px-2 py-5" id="icon-grid">
         <h2 class="pb-2 howhead">Customer Reviews</h2>
         <p class="pb-2 howtext">Here are what our customers say about us</p>
@@ -233,7 +232,7 @@
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Jane Arthur</h4>
               <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="./icons/star.svg" alt="" />
+              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
             </div>
           </div>
           <div class="col d-flex align-items-center">
@@ -241,7 +240,7 @@
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Jane Arthur</h4>
               <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="./icons/star.svg" alt="" />
+              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
             </div>
           </div>
           <div class="col d-flex align-items-center">
@@ -249,13 +248,15 @@
             <div class="benefitsText">
               <h4 class="fw-bold mb-3">Jane Arthur</h4>
               <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="./icons/star.svg" alt="" />
+              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- End of review section -->
 
+    <!-- This is the footer -->
     <footer class="footer">
       <div class="container">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-0">
@@ -264,7 +265,7 @@
               href="/"
               class="d-flex align-items-center mb-3 link-dark text-decoration-none"
             >
-              <img src="./icons/TermsHub.svg" alt="" />
+              <img src="{% static 'blog/icons/TermsHub.svg' %}" alt="" />
             </a>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
@@ -305,6 +306,7 @@
         </footer>
       </div>
     </footer>
+    <!-- End of footer -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -326,9 +328,12 @@
           document.querySelector(".navbar-brand span").classList.add("white");
         } else {
           document.querySelector("nav").classList.remove("topnav");
-          document.querySelector(".navbar-brand span").classList.remove("white");
+          document
+            .querySelector(".navbar-brand span")
+            .classList.remove("white");
         }
       }
+
     </script>
   </body>
 </html>
