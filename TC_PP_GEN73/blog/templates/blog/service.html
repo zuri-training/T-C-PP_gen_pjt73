@@ -1,0 +1,66 @@
+{% extends 'blog/nav.html' %} {%load static %} {%block link %}
+<link rel="stylesheet" href="{% static 'blog/css/service.css' %}" />
+{% endblock %} {% block content %}
+<div class="container px-2 py-5" id="icon-grid">
+  <h2 class="pb-2">Our services</h2>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col mb-4">
+      <div class="card rounded-3 shadow-sm">
+        <div class="card-header py-5 px-5">
+          <img src="{% static 'blog/img/service1.png' %}" alt="" />
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">Terms and conditions</h1>
+          <p class="text">
+            Generate 3 free Terms and Conditions, 1 free Privacy Policy
+            ,Download to your prefered format and receive updates on your terms
+            and conditions.
+          </p>
+          <p class="pb-2 howtext">
+            <a href="./signin.html">Get Started</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card rounded-3 shadow-sm">
+        <div class="card-header py-5 px-5">
+          <img src="{% static 'blog/img/service2.png' %}" alt="" />
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">
+            Customize your Terms and Condition
+          </h1>
+          <p class="text">
+            10-25 mins clarity session with a legal practitioner to protect your
+            business.
+          </p>
+          <p class="pb-2 howtext">
+            <a href="./signin.html">Get Started</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card rounded-3 shadow-sm">
+        <div class="card-header py-5 px-5">
+          <img src="{% static 'blog/img/service1.png' %}" alt="" />
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">
+            Access the best attorney for your business
+          </h1>
+          <p class="text">
+            10-25 mins clarity session with a legal practitioner to protect your
+            business.
+          </p>
+          <p class="pb-2 howtext">
+            <a href="./signin.html">Get Started</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
