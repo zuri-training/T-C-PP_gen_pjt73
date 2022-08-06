@@ -1,6 +1,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
+}
+
 .navbar-brand {
   color: black;
   font-size: 32px;
@@ -41,7 +48,7 @@ nav ul li a {
   transition: 0.5s;
   width: fit-content;
   margin: 0px auto;
-  color: rgba(66, 65, 65, 0.815) !important;
+  color: #898989d0 !important;
 }
 nav ul li a::before {
   content: "";
@@ -62,10 +69,10 @@ nav ul li a:hover::before {
   padding-right: 20px;
   background-image: linear-gradient(
     45deg,
-    hsla(0, 0%, 100%, 0.8),
-    hsla(0, 0%, 100%, 0.8),
-    hsla(0, 0%, 100%, 0.8),
-    hsla(0, 0%, 100%, 0.8),
+    #0a59f89a,
+    #0a59f89a,
+    #0a59f89a,
+    #0a59f89a,
     rgb(53, 53, 53),
     black
   );
