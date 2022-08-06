@@ -1,247 +1,186 @@
-{% extends 'blog/nav.html' %}
+{% extends 'blog/nav.html' %} 
+{%load static %} 
+{% load custom_tags %} 
 
-{%load static %}
 {% block content%}
-    <!-- Header section -->
-    <section class="header">
-      <div class="container col-xxl-12 col--md-12 px-4 py-5">
-        <div class="row flex-lg align-items-center g-5 py-5">
-          <div class="col-lg-5.4 col-md-6">
-            <h1 class="display-5 fw-bold lh-1">
-              Compliance <span style="color: #0a59f8">Platform</span> For Start
-              up
-            </h1>
-            <p class="lead">
-              Are you in need of customer compliance but don’t have time to
-              generate on for your business? Termhub provides a solution to
-              allow you generate your terms and conditions in just four simple
-              steps
-            </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <a href="#"
-                class="btn btn-primary btn-lg px-4 me-md-2 headerbutton"
-              >
-                Get Started
-            </a>
-            </div>
-          </div>
-          <div class="col-10 col-sm-8 col-lg-5.4 col-md-6 headerimg">
-            <img
-              src="{% static 'blog/img/second.png' %}"
-              class="d-block mx-lg-auto img-fluid headerImg"
-              alt="Bootstrap Themes"
-              width="700"
-              height="500"
-              loading="lazy"
-            />
-          </div>
+<!-- Header section -->
+<section class="header">
+  <div class="container col-xxl-12 col--md-12 px-4 py-5">
+    <div class="row flex-lg align-items-center g-5 py-5">
+      <div class="col-lg-5.4 col-md-6">
+        <h1 class="display-5 fw-bold lh-1">
+          Compliance <span style="color: #0a59f8">Platform</span> For Start up
+        </h1>
+        <p class="lead">
+          Are you in need of customer compliance but don’t have time to generate
+          on for your business? Termhub provides a solution to allow you
+          generate your terms and conditions in just four simple steps
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="#" class="btn btn-primary btn-lg px-4 me-md-2 headerbutton">
+            Get Started
+          </a>
         </div>
       </div>
-    </section>
-    <!-- End of header section -->
+      <div class="col-10 col-sm-8 col-lg-5.4 col-md-6 headerimg">
+        <img
+          src="{% static 'blog/img/second.png' %}"
+          class="d-block mx-lg-auto img-fluid headerImg"
+          alt="Bootstrap Themes"
+          width="700"
+          height="500"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of header section -->
 
-    <!-- Section of how it works -->
-    <section class="how-it-works">
-      <div class="container px-4 py-5" id="featured-3">
-        <h4 class="pb-2 howhead">How It Works</h4>
-        <p class="pb-2 howtext">
-          Generate T&C and Privacy Policy in 4 simple steps
-        </p>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <img src="{% static 'blog/img/User.png' %}" alt="" />
-            <h4 class="fw-bold">Sign Up</h4>
-            <p>Sign up to have full access to our services</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="{% static 'blog/img/Platforma.png' %}" alt="" />
-            <h4 class="fw-bold">Select Platform</h4>
-            <p>
-              Choose a platform to use the T&C and privacy policy
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="{% static 'blog/img/Questioniare.png' %}" alt="" />
-            <h4 class="fw-bold">Fill Out Questionaire</h4>
-            <p>
-              Fill the questionaire to enable us personalise your compliance
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="{% static 'blog/img/Generate.png' %}" alt="" />
+<!-- Section of how it works -->
+<section class="how-it-works">
+  <div class="container px-4 py-5" id="featured-3">
+    <h4 class="pb-2 howhead">How It Works</h4>
+    <p class="pb-2 howtext">
+      Generate T&C and Privacy Policy in 4 simple steps
+    </p>
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <img src="{% static 'blog/img/User.png' %}" alt="" />
+        <h4 class="fw-bold">Sign Up</h4>
+        <p>Sign up to have full access to our services</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="{% static 'blog/img/Platforma.png' %}" alt="" />
+        <h4 class="fw-bold">Select Platform</h4>
+        <p>Choose a platform to use the T&C and privacy policy</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="{% static 'blog/img/Questioniare.png' %}" alt="" />
+        <h4 class="fw-bold">Fill Out Questionaire</h4>
+        <p>Fill the questionaire to enable us personalise your compliance</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="{% static 'blog/img/Generate.png' %}" alt="" />
 
-            <h4 class="fw-bold">Generate</h4>
-            <p>
-              Generate your personalised compliance and download it in any
-              format
-            </p>
-          </div>
-        </div>
-
-        <p class="pb-2 howtext">
-          <a href="./signin.html">Get Started</a>
+        <h4 class="fw-bold">Generate</h4>
+        <p>
+          Generate your personalised compliance and download it in any format
         </p>
       </div>
-    </section>
-    <!-- End of how it works -->
+    </div>
 
-    <!-- Section benefits -->
-    <section class="benefits">
-      <div class="container px-2 py-5" id="icon-grid">
-        <h2 class="pb-2 howhead">
-          Benfits of Generating company compliance with us
-        </h2>
-        <p class="pb-2 howtext">
-          Using our platform gives you access to variety of features such as;
-        </p>
-        <div
-          class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-5 py-5"
-        >
-          <div class="col d-flex align-items-center benefit">
-            <div class="benefiticon">
-              <img src="{% static 'blog/icons/light-bulb.svg' %}" alt="" />
-            </div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Complaince Monitoring</h4>
-              <p>
-                TermsHub monitors the legal compliances around the world and
-                keeps your policies updated with the new regulations
-              </p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-center benefit">
-            <div class="benefiticon">
-              <img src="{% static 'blog/icons/phone.svg' %}" alt="" />
-            </div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Contact a Lawyer</h4>
-              <p>
-                Incase of arising issue from a customer, TermsHub provides a
-                legal practioneer that will represent your company .
-              </p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-center benefit">
-            <div class="benefiticon">
-              <img src="{% static 'blog/icons/cloud-download.svg' %}" alt="" />
-            </div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Download Policy</h4>
-              <p>
-                Effectively download, share and embed your generated policy in
-                any format of your choose e.g PDF, DOC, HTML etc.
-              </p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-center benefit">
-            <div class="benefiticon">
-              <img src="{% static 'blog/icons/pencil-alt.svg' %}" alt="" />
-            </div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Manual Customization</h4>
-              <p>
-                we allow you to edit your policy to suit your audience and you
-                can always come back later to complete your policy generation
-              </p>
-            </div>
-          </div>
+    <p class="pb-2 howtext">
+      <a href="./signin.html">Get Started</a>
+    </p>
+  </div>
+</section>
+<!-- End of how it works -->
 
-          <p class="pb-2 howtext">
-            <a href="./signin.html">Get Started</a>
+<!-- Section benefits -->
+<section class="benefits">
+  <div class="container px-2 py-5" id="icon-grid">
+    <h2 class="pb-2 howhead">
+      Benfits of Generating company compliance with us
+    </h2>
+    <p class="pb-2 howtext">
+      Using our platform gives you access to variety of features such as;
+    </p>
+    <div
+      class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-5 py-5"
+    >
+      <div class="col d-flex align-items-center benefit">
+        <div class="benefiticon">
+          <img src="{% static 'blog/icons/light-bulb.svg' %}" alt="" />
+        </div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Complaince Monitoring</h4>
+          <p>
+            TermsHub monitors the legal compliances around the world and keeps
+            your policies updated with the new regulations
           </p>
         </div>
       </div>
-    </section>
-    <!-- End of benefits -->
-
-    <!-- This is the review section -->
-    <section class="customer" id="reviews">
-      <div class="container px-2 py-5" id="icon-grid">
-        <h2 class="pb-2 howhead">Customer Reviews</h2>
-        <p class="pb-2 howtext">Here are what our customers say about us</p>
-        <div
-          class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-2 py-5 testimonial"
-        >
-          <div class="col d-flex align-items-center">
-            <div class="benefiticon"></div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Jane Arthur</h4>
-              <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col d-flex align-items-center">
-            <div class="benefiticon"></div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Jane Arthur</h4>
-              <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col d-flex align-items-center">
-            <div class="benefiticon"></div>
-            <div class="benefitsText">
-              <h4 class="fw-bold mb-3">Jane Arthur</h4>
-              <p>Mauris enim felis in nec turpis suscipit dolor.</p>
-              <img src="{% static 'blog/icons/star.svg' %}" alt="" />
-            </div>
-          </div>
+      <div class="col d-flex align-items-center benefit">
+        <div class="benefiticon">
+          <img src="{% static 'blog/icons/phone.svg' %}" alt="" />
+        </div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Contact a Lawyer</h4>
+          <p>
+            Incase of arising issue from a customer, TermsHub provides a legal
+            practioneer that will represent your company .
+          </p>
         </div>
       </div>
-    </section>
-    <!-- End of review section -->
-
-    <!-- This is the footer -->
-    <footer class="footer">
-      <div class="container">
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-0">
-          <div class="col mb-4">
-            <a
-              href="/"
-              class="d-flex align-items-center mb-3 link-dark text-decoration-none"
-            >
-              <img src="{% static 'blog/icons/TermsHub.svg' %}" alt="" />
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-              lobortis massa massa cursus. Porta velit eget feugiat malesuada
-              cras pretium. Metus integer mi egestas morbi porta.
-            </p>
-          </div>
-
-          <div class="col mb-2"></div>
-
-          <div class="col mb-3">
-            <ul class="nav flex-column footerul">
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">Service</a>
-              </li>
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">About Us</a>
-              </li>
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col mb-2">
-            <ul class="nav flex-column footerul">
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">Resources</a>
-              </li>
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">Blog</a>
-              </li>
-              <li class="nav-item mb-4">
-                <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-              </li>
-            </ul>
-          </div>
-        </footer>
+      <div class="col d-flex align-items-center benefit">
+        <div class="benefiticon">
+          <img src="{% static 'blog/icons/cloud-download.svg' %}" alt="" />
+        </div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Download Policy</h4>
+          <p>
+            Effectively download, share and embed your generated policy in any
+            format of your choose e.g PDF, DOC, HTML etc.
+          </p>
+        </div>
       </div>
-    </footer>
-    <!-- End of footer -->
-    {% endblock %}
-  </body>
-</html>
+      <div class="col d-flex align-items-center benefit">
+        <div class="benefiticon">
+          <img src="{% static 'blog/icons/pencil-alt.svg' %}" alt="" />
+        </div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Manual Customization</h4>
+          <p>
+            we allow you to edit your policy to suit your audience and you can
+            always come back later to complete your policy generation
+          </p>
+        </div>
+      </div>
+
+      <p class="pb-2 howtext">
+        <a href="./signin.html">Get Started</a>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End of benefits -->
+
+<!-- This is the review section -->
+<section class="customer" id="reviews">
+  <div class="container px-2 py-5" id="icon-grid">
+    <h2 class="pb-2 howhead">Customer Reviews</h2>
+    <p class="pb-2 howtext">Here are what our customers say about us</p>
+    <div
+      class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-2 py-5 testimonial"
+    >
+      <div class="col d-flex align-items-center">
+        <div class="benefiticon"></div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Jane Arthur</h4>
+          <p>Mauris enim felis in nec turpis suscipit dolor.</p>
+          <img src="{% static 'blog/icons/star.svg' %}" alt="" />
+        </div>
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="benefiticon"></div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Jane Arthur</h4>
+          <p>Mauris enim felis in nec turpis suscipit dolor.</p>
+          <img src="{% static 'blog/icons/star.svg' %}" alt="" />
+        </div>
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="benefiticon"></div>
+        <div class="benefitsText">
+          <h4 class="fw-bold mb-3">Jane Arthur</h4>
+          <p>Mauris enim felis in nec turpis suscipit dolor.</p>
+          <img src="{% static 'blog/icons/star.svg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of review section -->
+
+{% endblock %}
