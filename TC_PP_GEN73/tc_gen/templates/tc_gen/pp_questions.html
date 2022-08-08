@@ -1,1 +1,495 @@
-<!--Your HTML code here-->
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .info-div {
+    padding: 20px;
+  }
+
+  .ml {
+    margin-left: 10px;
+  }
+
+  .inner-info-div {
+    padding: 20px;
+    background-color: #a6e5b8;
+    border-radius: 8px;
+    margin-bottom: 5%;
+  }
+
+  .inner-info-div label,
+  input,
+  small {
+    margin: 15px 5px;
+  }
+
+  .inner-info-div input {
+    box-shadow: 3px 5px 5px rgb(172, 171, 171);
+  }
+
+  h6 {
+    margin-top: 3%;
+  }
+
+  .form-div div {
+    margin: 2% 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .inner-info-div {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .inner-info-div {
+      width: 30%;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+  <h2>Enter Details To Generate Terms and Conditions</h2>
+
+  <div class="arrows">
+    <div class="arrow1">
+      <p>
+        Select Form
+        <img src="{% static 'blog/img/Icon.png' %}" alt="" />
+      </p>
+    </div>
+    <div class="arrow3">
+      <p>
+        Business Information
+        <img src="{% static 'blog/img/Icon.png' %}" alt="" />
+      </p>
+    </div>
+    <div class="arrow5">
+      <p>
+        Additional information
+        <img src="{% static 'blog/img/Icon.png' %}" alt="" />
+      </p>
+    </div>
+    <div class="arrow7">
+      <p>Choose Download <br />Format And <br />Generate</p>
+    </div>
+  </div>
+
+  <div class="business">
+    <form action="#" class="mainform">
+      <div class="firstPage">
+        <h2>About Your Business</h2>
+        <p>Answer some questions about your website or app.</p>
+        <div class="webSection">
+          <div class="inner-section-div">
+            <label for="website"> <h6>Website URL</h6> </label><br />
+            <input
+              type="text"
+              name="website"
+              placeholder="Your Website Url"
+            /><br />
+            <label for="webname"> Website Name </label><br />
+            <input type="text" name="webname" placeholder="Your Website Name" />
+          </div>
+        </div>
+
+        <div class="appSection">
+          <div class="inner-section-div">
+            <label for="appname"> <h6>App Name</h6> </label><br />
+            <input
+              type="text"
+              name="appname"
+              placeholder="Your App Name"
+            /><br />
+          </div>
+          <label for="location"><h6>Location ( State or Country)</h6> </label
+          ><br />
+          <input
+            type="text"
+            class="location"
+            name="location"
+            placeholder="Lagos Nigeria."
+          /><br />
+          <label for="date"> <h6>Terms and Condition Effective Date</h6></label
+          ><br />
+          <input type="date" name="date" id="" /><br />
+          <h6>
+            This refers to the exact date and time your T&C will officially
+            become active
+          </h6>
+        </div>
+        <div class="buttons">
+          <a class="btn btn-primary next" id="firstSecdone"> Next </a>
+        </div>
+      </div>
+
+      <div class="secondPage">
+        <div class="additional">
+          <div class="info-div">
+            <div class="">
+              <div class="mb-3">
+                <h2 class="mb-4">Additional Information</h2>
+                <p>Anwser some additional questions about your business</p>
+              </div>
+
+              <!--Q1-->
+              <h6>Can users create accounts?</h6>
+
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio11"
+                    name="optradio1"
+                    value="option11"
+                  />Yes, users can create accounts
+                  <label class="form-check-label" for="radio11"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio12"
+                    name="optradio1"
+                    value="option12"
+                  />No
+                  <label class="form-check-label" for="radio12"></label>
+                </div>
+              </div>
+
+              <!--Q2-->
+              <h6>Can users create or upload content (e.g text images)?</h6>
+
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio21"
+                    name="optradio2"
+                    value="option21"
+                  />Yes, users can create or upload
+                  <label class="form-check-label" for="radio21"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio22"
+                    name="optradio2"
+                    value="option22"
+                  />No
+                  <label class="form-check-label" for="radio22"></label>
+                </div>
+              </div>
+
+              <!--Q3-->
+              <h6>
+                Is your website/app available to users under the age of 13?
+              </h6>
+
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio31"
+                    name="optradio3"
+                    value="option31"
+                  />
+                  Yes, our website/app is available to users under the age 13
+                  <label class="form-check-label" for="radio31"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio32"
+                    name="optradio3"
+                    value="option32"
+                  />No
+                  <label class="form-check-label" for="radio32"></label>
+                </div>
+              </div>
+
+              <!--Q4-->
+              <h6>Does your website/app show ads?</h6>
+
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio41"
+                    name="optradio4"
+                    value="option41"
+                  />
+                  Our website/app shows ads
+                  <label class="form-check-label" for="radio41"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio42"
+                    name="optradio4"
+                    value="option42"
+                  />No
+                  <label class="form-check-label" for="radio42"></label>
+                </div>
+              </div>
+
+              <!--Q5-->
+              <h6>
+                Do you want to make it clear that your own content & trademarks
+                are your exclusive property?
+              </h6>
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio51"
+                    name="optradio5"
+                    value="option51"
+                  />
+                  Yes, our content (logo, visual design, trademarks e.t.c) is an
+                  exclusive property
+                  <label class="form-check-label" for="radio51"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio52"
+                    name="optradio5"
+                    value="option52"
+                  />No
+                  <label class="form-check-label" for="radio52"></label>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="secondPrev prev"> Previous </a>
+              <a class="btn btn-primary next" id="secondSecdone"> Next </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="thirdPage">
+        <div class="additional">
+          <div class="info-div">
+            <div class="">
+              <div class="mb-3">
+                <h2 class="mb-4">Additional Information</h2>
+                <p>Anwser some additional questions about your business</p>
+              </div>
+
+              <h6>Choose other ways users can sign in on your website/app</h6>
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="check1"
+                    name="option1"
+                    value="Facebook"
+                  />
+                  <label class="form-check-label">Facebook Login</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="check2"
+                    name="option2"
+                    value="Twitter"
+                  />
+                  <label class="form-check-label" for="check2"
+                    >Twitter Login</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="check3"
+                    name="option3"
+                    value="Google"
+                  />
+                  <label class="form-check-label" for="check3"
+                    >Google Login</label
+                  >
+                </div>
+              </div>
+
+              <!--Q7-->
+              <h6>Can users buy goods (products, items)?</h6>
+              <div class="form-div">
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio71"
+                    name="optradio7"
+                    value="option71"
+                  />
+                  Yes, users buys goods, items, or services(with a one-time
+                  payments only)
+                  <label class="form-check-label" for="radio71"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio72"
+                    name="optradio7"
+                    value="option72"
+                  />No
+                  <label class="form-check-label" for="radio72"></label>
+                </div>
+              </div>
+
+              <!--Question 8-->
+              <div class="mb-5">
+                <h6 class="">
+                  How can a user contact you if there is any need for questions
+                  regarding your Terms & Conditions?
+                </h6>
+                <p>Click on any preferable choice you want</p>
+
+                <!--green email form-->
+                <input
+                  class="mb-2"
+                  type="checkbox"
+                  name="q6"
+                  id="email"
+                /><label class="text-muted">By email</label><br />
+
+                <div class="inner-info-div">
+                  <label for="email">What's the email?</label><br />
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="email@mycompany.com"
+                    name="email"
+                  />
+                  <small class="text-muted">e.g email@mycompany.com</small
+                  ><br />
+                </div>
+
+                <!--green website/app form-->
+                <input
+                  class="mb-2"
+                  type="checkbox"
+                  name="q6"
+                  id="website"
+                /><label for="website" class="text-muted"
+                  >By visiting a page on our website/app </label
+                ><br />
+
+                <div class="inner-info-div">
+                  <label>What's the link?</label><br />
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="email"
+                    placeholder="https://www.mycompany.ng/contact"
+                    name="email"
+                  />
+                  <small class="text-muted"
+                    >e.g https://www.mycompany.ng/contact</small
+                  ><br />
+                </div>
+
+                <!--green  form-->
+                <input class="mb-2" type="checkbox" name="q6" /><label
+                  class="text-muted"
+                  >By Phone number</label
+                ><br />
+
+                <div class="inner-info-div">
+                  <label for="tel">What's the phone number?</label><br />
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="tel"
+                    placeholder="+234-917-8437-385"
+                    name="phone"
+                  />
+                  <small class="text-muted">e.g +234-917-8437-385</small><br />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="thirdPrev prev">Previous</button>
+            <button type="submit" class="btn btn-primary next">Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- sssssssssssssssssssss -->
+  </div>
+</main>
+{%endblock%} {%block script %}
+<script>
+  let selected = "";
+  let app = document.querySelector(".appSection");
+  let form = document.querySelector(".mainform");
+  let web = document.querySelector(".webSection");
+  let firstSection = document.querySelector(".firstPage");
+  let secondSection = document.querySelector(".secondPage");
+  let thirdSection = document.querySelector(".thirdPage");
+
+  let firstButton = document.getElementById("firstSecdone");
+  let secondButton = document.getElementById("secondSecdone");
+
+  let firstPrev = document.querySelector(".firstPrev");
+  let secondPrev = document.querySelector(".secondPrev");
+  let thirdPrev = document.querySelector(".thirdPrev");
+
+  let info = localStorage.getItem("selected");
+  let change = document.getElementsByClassName("name");
+
+  if (info == "web") {
+    app.style.display = "none";
+    web.style.display = "block";
+  } else if (info == "app") {
+    web.style.display = "none";
+    app.style.display = "block";
+  }
+
+  // for the next button
+
+  firstButton.addEventListener("click", () => {
+    firstSection.style.display = "none";
+    secondSection.style.display = "block";
+  });
+
+  secondButton.addEventListener("click", () => {
+    secondSection.style.display = "none";
+    thirdSection.style.display = "block";
+  });
+
+  // for the next button
+  thirdPrev.addEventListener("click", () => {
+    thirdSection.style.display = "none";
+    secondSection.style.display = "block";
+  });
+
+  secondPrev.addEventListener("click", () => {
+    secondSection.style.display = "none";
+    firstSection.style.display = "block";
+  });
+</script>
+
+{% endblock%}
