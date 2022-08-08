@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %} {% load static %}
+<!--Your HTML code here-->
+
+<!--DTL(Django Template Language)-->
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 profilebody">
+  <div class="profile">
+    <div class="topProfile">
+      <img src="{% static 'blog/img/infoPic.png' %}" alt="" />
+      <p>Edit Profile</p>
+      <p class="name">BRENDAN KUMAR</p>
+      <p class="mail">brendankumar@gmail.com</p>
+    </div>
+
+    <div class="info">
+      <p class="infoCont">Business Name</p>
+      <p class="infoCont">UserName</p>
+      <p class="infoCont">Contact</p>
+      <p class="infoCont">Location</p>
+      <p class="update"><a href="#">UPDATE PROFILE</a></p>
+    </div>
+  </div>
+</main>
+{% endblock %}
