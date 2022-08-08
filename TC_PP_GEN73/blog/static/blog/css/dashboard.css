@@ -89,7 +89,7 @@ nav {
   justify-content: space-between;
   box-sizing: border-box;
   position: relative;
-  border-right: 2px solid black;
+box-shadow: 2px 0px 10px #a3b1cd !important;
 }
 
 nav ul {
@@ -97,7 +97,7 @@ nav ul {
   height: 80%;
 }
 .nav-link {
-  color: white;
+  color: rgb(64, 64, 64);
 }
 .nav-link:hover {
   color: #000;
@@ -162,7 +162,8 @@ nav ul li a:hover::before {
   text-decoration: none;
   color: white;
   position: absolute;
-  right: 0%;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 5%;
   display: inline-block;
   transition: 0.4s;
@@ -180,13 +181,8 @@ nav ul li a:hover::before {
 }
 
 .logout:hover {
-  transform: translateY(-1px);
   color: #000;
   text-shadow: 1px 1px 10px #787d77;
-}
-
-.logout:hover {
-  transform: translateY(-1px);
 }
 
 .generate {
@@ -674,4 +670,9 @@ h1>a:hover{
 
 .accordion-body {
   background: #0a59f8ad;
+}
+
+
+.active{
+  color: white;
 }

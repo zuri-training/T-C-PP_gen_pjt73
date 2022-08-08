@@ -57,18 +57,9 @@
               <li class="user">
                 <img src="{% static 'blog/img/customer.png' %}" alt="" />
               </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}"> Dashboard </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}"> Contact a lawyer </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'history' %}"> History </a>
-              </li>
+              {% block links %}
+                
+              {% endblock %}
             </ul>
           </div>
           <a href="#" class="logout">Logout</a>
