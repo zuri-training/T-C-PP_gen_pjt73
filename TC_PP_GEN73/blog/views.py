@@ -8,3 +8,5 @@ def homepage(request):
 def service(request):
     return render(request, 'blog/service.html')
 
+def contact(request):
+    return render(request, 'blog/contact_us.html')

@@ -5,11 +5,9 @@ body {
 }
 
 #icon-grid{
-    padding-top: 6rem !important;
+    padding-top: 12vh;
 }
-
 #icon-grid .row{
-    margin-top: 30px;
     height: 100%;
     position: relative;
 }
@@ -23,7 +21,7 @@ body {
     justify-content: space-between;
 }
 
-#icon-grid .card-body .text{
+#icon-grid .card-body p{
     font-size: 16px;
     color: #191C1F99;
     text-align: start;
@@ -34,7 +32,7 @@ body {
 }
 
 #icon-grid .card-header{
-    background-color: white !important;
+    background-color: white;
 }
 
 #icon-grid .card-header img{
