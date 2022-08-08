@@ -19,7 +19,7 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'accounts/register_page.html',{'form':form})
 
-# @login_required #users can't have access to this view unless they log in
+@login_required #users can't have access to this view unless they log in
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
 
