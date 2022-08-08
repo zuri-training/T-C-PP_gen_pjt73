@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+#imports for cloudinary usage - mariam
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import pdfkit
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,6 +51,8 @@ INSTALLED_APPS = [
     #3rd party apps
     'crispy_forms',
     'social_django',
+    'cloudinary',
+    'pdfkit',
 
     #registering apps
     'accounts.apps.AccountsConfig',
@@ -69,7 +76,7 @@ ROOT_URLCONF = 'TC_PP_GEN73.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -178,13 +185,20 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 #accessing environment variables
-EMAIL_HOST_USER = config('EMAIL_USER')
+#EMAIL_HOST_USER = config('EMAIL_USER')
 
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+#EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 
 #social authentication ids and passwords
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
+#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
 
-SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
-SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')
+#SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
+#SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')
+
+#adding config settings for cloudinar-mariam
+cloudinary.config(
+    cloud_name = "zuri-team73",
+    api_key = "599458431389538",
+    api_secret = "AJY2ZkIK02M_Ax5JjtN92YMnVbA"
+)
