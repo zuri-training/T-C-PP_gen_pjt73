@@ -44,3 +44,14 @@ def tc_download(request):
 
     return response
 
+
+def tc_gen(request):
+    return render(request, 'tc_gen/tandc.html')
+
+
+def tc_gen2(request):
+    return render(request, 'tc_gen/tandc2.html')
+
+def questions(request):
+    return render(request, 'tc_gen/pp_questions.html')
+

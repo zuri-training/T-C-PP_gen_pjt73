@@ -1,0 +1,298 @@
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
+}
+
+.t_c_Container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tandc > div ul {
+  list-style-type: none;
+}
+
+.tandc > div {
+  margin: 20px 0px;
+}
+
+.tandc {
+  height: fit-content;
+  background: #edf0f3;
+  padding: 10vh 2vh;
+  box-sizing: border-box;
+}
+.tcCont {
+  padding: 8vh 10px;
+  height: 45%;
+  text-align: center;
+}
+.tcCont img {
+  margin: auto;
+  height: 80%;
+  width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  .tcCont img {
+    display: none;
+  }
+  .tcCont {
+    height: 40%;
+    padding: 20px 10px;
+  }
+}
+.tandc h5 {
+  font-size: 24px;
+  color: #484747;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 900px) {
+  .tandc > div {
+    width: 40%;
+    margin: 0px auto;
+  }
+}
+.tandc ul {
+  width: 90%;
+}
+@media screen and (min-width: 1100px) {
+  .tandc ul {
+    width: 70%;
+  }
+}
+.tandc p,
+.tandc li {
+  color: #484747;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+
+/* For the second terms and conditions page */
+.tandc2 {
+  padding: 5vh;
+}
+@media screen and (max-width: 470px) {
+  .tandc2 {
+    padding: 5vh 1vh;
+  }
+}
+.tandc2 > h2 {
+  font-weight: 400;
+  margin: 4vh 0px;
+  text-align: center;
+}
+.where h2 {
+  font-weight: 400;
+  margin: 2vh 0px;
+}
+.where p {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 400;
+}
+.select div {
+  margin: 5vh 0px;
+}
+.select p {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 5px;
+}
+.select img {
+  margin-bottom: 1vh;
+}
+.select div > div {
+  border: 1px solid #333333;
+  text-align: center;
+  transition: 0.5s;
+  padding: 8vh;
+  margin: 3vh;
+  margin-left: 0px;
+}
+.select div > div:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .select div > div {
+    width: 40%;
+  }
+
+  .where h2 {
+    font-size: 42px;
+    width: 50%;
+  }
+  .tandc2 > h2 {
+    font-size: 42px;
+  }
+}
+
+.selected {
+  background: #5481d9;
+  transition: 0.5s;
+}
+
+.arrows {
+  display: flex;
+  padding-top: 1rem;
+  width: fit-content;
+  margin: auto;
+}
+.arrows > div {
+  flex: 1;
+}
+
+.arrows img {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+}
+
+.arrows p {
+  position: relative;
+  margin: 0px 5px;
+}
+@media screen and (max-width: 520px) {
+  .arrows p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .arrows img {
+    width: 0.5rem;
+    height: 0.5rem;
+    right: 0%;
+  }
+  .arrows p {
+    position: relative;
+    margin: 0px 2px;
+  }
+}
+
+.selected {
+  background: #5481d9;
+  transition: 0.5s;
+}
+
+.mainform {
+  overflow: hidden;
+  height: fit-content;
+  position: relative;
+}
+
+.mainform .firstPage {
+  display: block;
+}
+.buttons {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.buttons .next {
+  padding: 16px 32px;
+  margin-right: 10px;
+  opacity: 0.8;
+  background: #0a59f8;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  z-index: 3000;
+}
+.buttons a:focus,
+.buttons a:active,
+.buttons a:hover {
+  color: white;
+  cursor: pointer;
+}
+.secondPage {
+  display: none;
+  height: 100%;
+  top: 0%;
+}
+
+.thirdPage {
+  display: none;
+  height: 100%;
+  top: 0%;
+}
+
+.mainform ::placeholder{
+    color: #191C1F4D;
+}
+.appSection input{
+    outline: none;
+    width: 90%;
+    border: 1px solid #191C1F;
+    padding: 15px 87px 15px 10px;
+  margin-bottom: 5%;
+    border-radius: 8px;
+}
+.appSection .location{
+    background-image: url(../icons/map.svg);
+    background-repeat: no-repeat;
+    padding-left: 60px;
+    background-position: 2% 50%;
+}
+.inner-section-div {
+  padding: 60px 30px;
+  background-color: #FCF9F9;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 8px;
+  margin-bottom: 5%;
+}
+
+.inner-section-div input{
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: none;
+    outline: none;
+    padding: 20px ;
+    width: 100%;
+    margin: 15px 0px;
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .inner-section-div {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .inner-section-div {
+    width: 30%;
+  }
+}
+
+.buttons .prev{
+      padding: 16px 32px;
+  margin-right: 10px;
+  opacity: 0.8;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  z-index: 3000;
+    color: #5481d9;
+    background: white;
+    border: 2px solid #0a59f8;
+}
+
+.buttons .prev:focus,
+.buttons .prev:active,
+.buttons .prev:hover {
+  color: black;
+  cursor: pointer;
+}

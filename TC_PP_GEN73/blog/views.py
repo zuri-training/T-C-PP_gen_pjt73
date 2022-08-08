@@ -5,3 +5,6 @@ from django.views.generic import TemplateView
 def homepage(request):
     return render(request, 'blog/index.html')
 
+def service(request):
+    return render(request, 'blog/service.html')
+

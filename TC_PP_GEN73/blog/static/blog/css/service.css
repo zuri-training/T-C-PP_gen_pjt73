@@ -1,0 +1,54 @@
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
+}
+
+#icon-grid{
+    padding-top: 6rem !important;
+}
+
+#icon-grid .row{
+    margin-top: 30px;
+    height: 100%;
+    position: relative;
+}
+#icon-grid .card-title{
+    font-size: 22px;
+    margin: 20px 0px;
+}
+#icon-grid .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#icon-grid .card-body .text{
+    font-size: 16px;
+    color: #191C1F99;
+    text-align: start;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: auto;
+    margin: 10px 0px;
+}
+
+#icon-grid .card-header{
+    background-color: white !important;
+}
+
+#icon-grid .card-header img{
+    width: 100%;
+    height: 100%;
+}
+
+#icon-grid .card-body a{
+    margin: 10px 0px;
+}
+
+#icon-grid .col{
+    position: relative;
+    display: flex;
+    height: 100% !important;
+}
+
