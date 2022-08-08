@@ -89,7 +89,7 @@ nav {
   justify-content: space-between;
   box-sizing: border-box;
   position: relative;
-box-shadow: 2px 0px 10px #a3b1cd !important;
+  box-shadow: 2px 0px 10px #a3b1cd !important;
 }
 
 nav ul {
@@ -265,8 +265,8 @@ nav ul li a:hover::before {
     #0a59f8,
     #0a59f8,
     #0a59f8,
-    rgb(53, 53, 53),
-    black
+    rgb(10, 115, 10),
+    rgb(10, 115, 10)
   );
   background-size: 200%;
   background-position: 0% 0%;
@@ -361,17 +361,17 @@ nav ul li a:hover::before {
   width: 20%;
 }
 .recentImg img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
 
 /* This is for the history page */
 
-h1>a{
+h1 > a {
   text-decoration: none;
   color: black;
 }
-h1>a:hover{
+h1 > a:hover {
   color: black;
 }
 .historyBody .content {
@@ -534,11 +534,11 @@ h1>a:hover{
   margin-top: 20px;
 }
 
-.contact form{
+.contact form {
   display: block;
   margin: 10px 0px;
 }
-.contactbutton{
+.contactbutton {
   position: relative;
   text-decoration: none;
   box-sizing: border-box;
@@ -564,7 +564,6 @@ h1>a:hover{
   transition: 0.5s;
   overflow: hidden;
 }
-
 
 .contactbutton::before {
   content: "";
@@ -672,7 +671,6 @@ h1>a:hover{
   background: #0a59f8ad;
 }
 
-
-.active{
+.active {
   color: white;
 }

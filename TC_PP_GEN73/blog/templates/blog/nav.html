@@ -1,5 +1,5 @@
-{% load static%}
-{% load custom_tags %} 
+{% load static%} 
+{% load custom_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,59 +27,19 @@
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
     </style>
 
-
     <link rel="stylesheet" href="{% static 'blog/css/index.css' %}" />
-    {% block link%}
-    
-    {% endblock %}
+    {% block link%} {% endblock %}
   </head>
   <body>
-    
     <!-- This is the Navigation section -->
-    <nav
-      class="navbar navbar-expand-md  top-nav fixed-top"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{%url 'index' %}"><span>Terms</span>Hub</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse navinfo" id="navbarCollapse">
-          <ul class="navbar-nav navbar-right">
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'service' %}">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% anchor 'index' 'reviews' %}">Reviews</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact us</a>
-            </li>
-            <li class="nav-item login">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    {% block links%}
+
+    {% endblock%}
     <!-- End of navigation  -->
 
-    {% block content%}
+    {% block content%} {% endblock %}
 
-    {% endblock %}
-
-        <!-- This is the footer -->
+    <!-- This is the footer -->
     <footer class="footer">
       <div class="container">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-0">
@@ -136,26 +96,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      window.onscroll = function () {
-        myFunction();
-      };
+    {% block script %}
 
-      function myFunction() {
-        if (
-          document.body.scrollTop > 50 ||
-          document.documentElement.scrollTop > 50
-        ) {
-          document.querySelector("nav").classList.add("topnav");
-          document.querySelector(".navbar-brand span").classList.add("white");
-        } else {
-          document.querySelector("nav").classList.remove("topnav");
-          document
-            .querySelector(".navbar-brand span")
-            .classList.remove("white");
-        }
-      }
-
-    </script>
+    {% endblock %}
   </body>
 </html>

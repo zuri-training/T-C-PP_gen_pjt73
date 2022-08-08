@@ -1,7 +1,41 @@
-{% extends 'blog/nav.html' %} 
-{%load static %} 
-{% load custom_tags %} 
-
+{% extends 'blog/nav.html' %} {%load static %} {% load custom_tags %} \
+{% block links%}
+<nav class="navbar navbar-expand-md top-nav fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="{%url 'index' %}"><span>Terms</span>Hub</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navinfo" id="navbarCollapse">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'service' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% anchor 'index' 'reviews' %}">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+        </li>
+      </ul>
+      <p class="login">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </p>
+    </div>
+  </div>
+</nav>
+{% endblock%} 
 {% block content%}
 <!-- Header section -->
 <section class="header">
@@ -17,7 +51,10 @@
           generate your terms and conditions in just four simple steps
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg px-4 me-md-2 headerbutton">
+          <a
+            href="{% url 'dashboard' %}"
+            class="btn btn-primary btn-lg px-4 me-md-2 headerbutton"
+          >
             Get Started
           </a>
         </div>
@@ -51,7 +88,7 @@
         <p>Sign up to have full access to our services</p>
       </div>
       <div class="col-lg-3 col-md-6">
-        <img src="{% static 'blog/img/Platforma.png' %}" alt="" />
+        <img src="{% static 'blog/img/Generate.png' %}" alt="" />
         <h4 class="fw-bold">Select Platform</h4>
         <p>Choose a platform to use the T&C and privacy policy</p>
       </div>
@@ -183,4 +220,24 @@
 </section>
 <!-- End of review section -->
 
+{% endblock %} {% block script %}
+
+<script>
+  window.onscroll = function () {
+    myFunction();
+  };
+
+  function myFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      document.querySelector("nav").classList.add("topnav");
+      document.querySelector(".navbar-brand span").classList.add("white");
+    } else {
+      document.querySelector("nav").classList.remove("topnav");
+      document.querySelector(".navbar-brand span").classList.remove("white");
+    }
+  }
+</script>
 {% endblock %}
