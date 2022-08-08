@@ -6,6 +6,7 @@ body {
 
 #icon-grid{
     padding-top: 12vh;
+    overflow: hidden;
 }
 #icon-grid .row{
     height: 100%;
@@ -27,8 +28,7 @@ body {
     text-align: start;
     box-sizing: border-box;
     padding: 10px;
-    margin: auto;
-    margin: 10px 0px;
+    margin: 10px auto;
 }
 
 #icon-grid .card-header{
