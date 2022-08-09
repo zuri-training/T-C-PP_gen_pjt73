@@ -1,0 +1,28 @@
+.svg-content{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.text{
+    padding-top: 15%;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #8F8888;
+
+}
+.btn{
+    color: #FFFFFF;
+    font: Roboto;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17.5px;
+}
+
+.middle{
+    align-content: center;
+}
