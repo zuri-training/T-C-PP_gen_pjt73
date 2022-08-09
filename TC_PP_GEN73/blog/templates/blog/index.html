@@ -1,4 +1,4 @@
-{% extends 'blog/nav.html' %} {%load static %} {% load custom_tags %} \
+{% extends 'blog/nav.html' %} {%load static %} {% load custom_tags %}
 {% block links%}
 <nav class="navbar navbar-expand-md top-nav fixed-top">
   <div class="container">
@@ -20,7 +20,7 @@
           <a class="nav-link" href="{%url 'service' %}">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About us</a>
+          <a class="nav-link" href="{% url 'about' %}">About us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% anchor 'index' 'reviews' %}">Reviews</a>

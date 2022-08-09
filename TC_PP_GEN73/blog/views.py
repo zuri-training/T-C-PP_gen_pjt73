@@ -10,3 +10,6 @@ def service(request):
 
 def contact(request):
     return render(request, 'blog/contact_us.html')
+
+def about(request):
+    return render(request, 'blog/about.html')
