@@ -58,7 +58,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="{% url 'contact' %}"> Contact a lawyer </a>
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
@@ -68,7 +68,7 @@
 </li>
 {% endblock %} {% block content %}
 <main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
-  <h2>Enter Details To Generate Terms and Conditions</h2>
+  <h2>Enter Details To Generate Terms and Conditions or Privacy Policy</h2>
 
   <div class="arrows">
     <div class="arrow1">
@@ -129,7 +129,7 @@
             name="location"
             placeholder="Lagos Nigeria."
           /><br />
-          <label for="date"> <h6>Terms and Condition Effective Date</h6></label
+          <label for="date"> <h6> Effective Date</h6></label
           ><br />
           <input type="date" name="date" id="" /><br />
           <h6>
@@ -446,7 +446,14 @@
           </div>
           <div class="buttons">
             <button class="thirdPrev prev">Previous</button>
-            <button type="submit" class="btn btn-primary next">Next</button>
+            <a class="btn btn-primary next" href="{%url 'tc_gen:done' %}">
+              <input
+                type="submit"
+                value=""
+                style="border: none; width: 0px; height: 0px; margin: 0px"
+              />
+              Done
+            </a>
           </div>
         </div>
       </div>

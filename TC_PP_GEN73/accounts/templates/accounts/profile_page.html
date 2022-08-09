@@ -1,20 +1,24 @@
 {% extends 'blog/base.html' %} {% load static %}
 <!--Your HTML code here-->
 
-   {% block links%}
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}"> Dashboard </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url 'profile' %}"> Business Profile </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'history' %}"> History </a>
-              </li>
-              {% endblock %}
+{% block links%}
+<li class="nav-item">
+  <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}">
+    Contact a lawyer
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %}
 
 <!--DTL(Django Template Language)-->
 {% block content %}
@@ -28,10 +32,41 @@
     </div>
 
     <div class="info">
-      <p class="infoCont">Business Name</p>
-      <p class="infoCont">UserName</p>
-      <p class="infoCont">Contact</p>
-      <p class="infoCont">Location</p>
+      <!-- <p class="infoCont">Business Name</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Business Name"
+        id="business"
+      />
+      <!-- <p class="infoCont">UserName</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Username"
+        id="business"
+      />
+
+      <!-- <p class="infoCont">Contact</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Contact"
+        id="business"
+      />
+
+      <!-- <p class="infoCont">Location</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Location"
+        id="business"
+      />
+
       <p class="update"><a href="#">UPDATE PROFILE</a></p>
     </div>
   </div>
