@@ -1,5 +1,4 @@
-{% load static%} 
-{% load custom_tags %}
+{% load static%} {% load custom_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +31,7 @@
   </head>
   <body>
     <!-- This is the Navigation section -->
-    {% block links%}
-
-    {% endblock%}
+    {% block links%} {% endblock%}
     <!-- End of navigation  -->
 
     {% block content%} {% endblock %}
@@ -51,9 +48,8 @@
               <img src="{% static 'blog/icons/TermsHub.svg' %}" alt="" />
             </a>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-              lobortis massa massa cursus. Porta velit eget feugiat malesuada
-              cras pretium. Metus integer mi egestas morbi porta.
+              We create customized Privacy Policies and Terms & Conditions in a
+              matter of seconds to keep your business safe from any legal issue.
             </p>
           </div>
 
@@ -96,8 +92,6 @@
       crossorigin="anonymous"
     ></script>
 
-    {% block script %}
-
-    {% endblock %}
+    {% block script %} {% endblock %}
   </body>
 </html>
