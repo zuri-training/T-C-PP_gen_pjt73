@@ -55,3 +55,18 @@ def tc_gen2(request):
 def questions(request):
     return render(request, 'tc_gen/pp_questions.html')
 
+def privacy(request):
+    return render(request, 'tc_gen/privacy.html')
+
+def privacy2(request):
+    return render(request, 'tc_gen/privacy1.html')
+
+
+def done(request):
+    return render(request, 'tc_gen/done.html')
+
+def format(request):
+    return render(request, 'tc_gen/download_format.html')
+
+def complete(request):
+    return render(request, 'tc_gen/after_download.html')

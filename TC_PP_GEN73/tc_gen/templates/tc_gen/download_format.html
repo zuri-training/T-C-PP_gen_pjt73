@@ -1,58 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+    <link rel="stylesheet" href="{% static 'tc_gen/style.css">
+<style>
+              .button {
+        /* Primary */
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download format</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- BOOTSTRAP with CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        background: #0a59f8;
+        border-radius: 8px;
+        color: white;
 
-</head>
+        /* Inside auto layout */
 
-<body class="d-flex flex-nowrap">
-    <nav class="d-flex flex-column flex-shrink-0 p-3 text-bg-primary" style="width: 250px; height: 100vh;">
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+                width: fit-content;
+        /*for links*/
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 10px auto;
+        display: block;
+      }
+      main{
+        position: relative;
+      }
+      main > div{
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
 
-        <h1 class="fs-2 align-content-center">Terms<span id="logo-hub" class="text-black">Hub</span></h1>
-
-        <a href="#" class="d-flex align-self-center">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        </a>
-        <ul class="nav nav-pills flex-column mb-auto align-content-center">
-            <li class="nav-item">
-                <a href="#" class="nav-link active " aria-current="page">
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    Business Profile
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    Contact a Lawyer
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    Blog
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    History
-                </a>
-            </li>
-        </ul>
-    </nav>
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} 
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
 
     <div class="d-flex flex-column flex-shrink-0">
         <div> 
-            <h2 class="text-center">ENTER DETAILS TO GENERATE TERMS AND CONDITIONS</h2>
+            <h2 class="text-center">ENTER DETAILS TO GENERATE FILE</h2>
         </div>
 
         <div class="d-flex flex-column flex-shrink-0">
@@ -69,12 +71,20 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="email">2. Enter your email address to recieve terms and conditions</label>
+            <label for="email">2. Enter your email address to recieve your file</label>
             <input type="email" class="form-control" name="email" id="email">
           </div>
+
+           <a class="btn btn-primary button" href="{% url 'tc_gen:complete' %}">
+                        <input type="submit" value="" style="border: none;width:0px;height:0px;margin:0px;">
+                        Done
+                      </a>
         </form>
     </div>
-    
-</body>
+</main>
 
-</html>
+{% endblock %}
+
+
+
+

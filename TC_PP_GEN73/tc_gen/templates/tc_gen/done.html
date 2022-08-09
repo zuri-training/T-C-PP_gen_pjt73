@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %} {% load static %} {% block link %}
 <link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+     <script src="https://kit.fontawesome.com/567f8be212.js" crossorigin="anonymous"></script>
 <style>
   .preview {
     background-color: #a6e5b8;
@@ -105,7 +106,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="{% url 'contact' %}"> Contact a lawyer </a>
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
@@ -113,12 +114,13 @@
 <li class="nav-item">
   <a class="nav-link" href="{% url 'history' %}"> History </a>
 </li>
-{% endblock %} {% block content %}
+{% endblock %} 
+{% block content %}
 <main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
   <div>
     <div style="text-align: center">
       <h3 class="mb-6">Your document is ready</h3>
-      <img class="mt-2 img-preview" src="./img/preview.png" /><br />
+      <img class="mt-2 img-preview" src="{% static 'blog/img/Frame 17.png' %}" /><br />
       <div class="inner-option">
         <p style="font-weight: bold" class="mt-5">
           In what language would you like to download your file?
@@ -133,7 +135,7 @@
         </select>
 
         <!--The download link-->
-        <a class="button" href="#">Download</a>
+        <a class="button" href="{%url 'tc_gen:format' %}">Download</a>
 
         <!--Share, Export, and Download-->
         <div class="other-buttons" style="margin-bottom: 20%">
@@ -156,4 +158,5 @@
     </div>
   </div>
 </main>
-{%endblock%}
+
+{% endblock %}

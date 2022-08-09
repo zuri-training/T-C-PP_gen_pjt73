@@ -5,11 +5,13 @@ body {
 }
 
 #icon-grid{
-    padding-top: 6rem !important;
+    padding-top:13vh  !important;
+    overflow: hidden;
 }
-
+.pb-2{
+    text-align: center;
+}
 #icon-grid .row{
-    margin-top: 30px;
     height: 100%;
     position: relative;
 }
@@ -23,18 +25,17 @@ body {
     justify-content: space-between;
 }
 
-#icon-grid .card-body .text{
+#icon-grid .card-body p{
     font-size: 16px;
     color: #191C1F99;
     text-align: start;
     box-sizing: border-box;
     padding: 10px;
-    margin: auto;
-    margin: 10px 0px;
+    margin: 10px auto;
 }
 
 #icon-grid .card-header{
-    background-color: white !important;
+    background-color: white;
 }
 
 #icon-grid .card-header img{
