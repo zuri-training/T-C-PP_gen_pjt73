@@ -33,4 +33,21 @@ class Reviews(models.Model):
     ratings = models.IntegerField(choices=RATING_CHOICES, default=1)
     
 
-    
+ #models for tc-gen questions
+class Company(models.Model):
+    company_name = models.CharField(max_length=50)
+    company_website_name = models.CharField(max_length=50)
+    company_website_url = models.CharField(max_length=100)
+    country = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
+    company_email_address = models.EmailField(max_length=50)
+
+    def __str__(self):
+        return self.company_name
+
+class Template(models.Model):
+    company = models.ForeignKey(Company, on_delete = models.PROTECT)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.company.company_name   
