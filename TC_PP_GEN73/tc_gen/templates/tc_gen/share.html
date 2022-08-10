@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load social_share %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share</title>
+  </head>
+  <body>
+    <div class="container">
+        {% comment %} Main Native share button {% endcomment %}
+      <button>share</button>
+    </div>
+    <div class="overlay"></div>
+    <div class="share">
+        {% comment %} incase the native share button dont work {% endcomment %}
+      <h2>Share now</h2>
+      <ul display="grid" list-style:"none">
+          {% comment %} Copy link to clipboard {% endcomment %}
+        <li>{% copy_to_clipboard object_or_url "Copy to clipboard!" %}</li>
+        {% comment %} Facebook link share {% endcomment %}
+        <li>{% post_to_facebook object_or_url "Post to Facebook!" %}</li>
+        {% comment %} send link as email {% endcomment %}
+        <li>{% send_email object_or_url "Share via email" %}</li>
+        {% comment %} share link to linkedin {% endcomment %}
+        <li>{% post_to_linkedin object_or_url %}</li>
+        {% comment %} share link to WhatsApp {% endcomment %}
+        <li>{% post_to_whatsapp object_or_url "Share via WhatsApp" %}</li>
+        {% comment %} share link to Twitter {% endcomment %}
+        <li>{% post_to_twitter "Post to Twitter" %}</li>
+      </ul>
+    </div>
+    <style>
+      body {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .container {
+        width: 80%;
+        margin: 4em auto;
+      }
+      .container button {
+        border: none;
+        outline: none;
+        padding: 1em 1.5em;
+        font-size: 1rem;
+        margin-top: 2em;
+        cursor: pointer;
+        background: rgb(158, 0, 250);
+        color: white;
+        font-weight: bold;
+        will-change: background;
+        transition: background 1s;
+      }
+      .container button:hover {
+        background: rgb(229, 0, 250);
+      }
+      .overlay {
+        opacity: 1;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(0, 0, 0, 0.5);
+      }
+      .share,
+      .overlay {
+        display: none;
+      }
+      .share-share {
+        display: block;
+      }
+      .share {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 30%;
+        margin: auto;
+        width: 50%;
+        z-index: 1;
+        padding: 1em;
+        background: white;
+      }
+      .share h2 {
+        margin: 0;
+      }
+      .share button {
+        border: none;
+        padding: 0.8em 1.2em;
+        margin-top: 3em;
+        width: 32%;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      const shareButton = document.querySelector("button");
+      const overlay = document.querySelector(".overlay");
+      const shareModel = document.querySelector(".share");
+
+      const title = window.document.title;
+      const url = window.document.location.href;
+
+      shareButton.addEventListener("click", () => {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: "${title}",
+              url: "${url}",
+            })
+            .then(() => {
+              console.log("Thanks for Sharing!");
+            })
+            .catch(console.error);
+        } else {
+          overlay.classList.add("show-share");
+          shareModel.classList.add("show-share");
+        }
+      });
+
+      overlay.addEventListener("click", () => {
+        overlay.classList.remove("show-share");
+        shareModel.classList.remove("show-share");
+      });
+    </script>
+  </body>
+</html>
