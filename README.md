@@ -1,7 +1,7 @@
 # Project Team 73
 ## Project overview 
 The goal of this project is to create a platform that allows users to generate terms & conditions and privacy policy. One of the challenges faced by some business owners is the high cost of generating T&C and Privacy Policy on the already existing platforms which we seek to bring solutions to by allowing users generate these documents on our platform freely.
-check  out the full details of the project https://docs.google.com/document/d/1mrrL7DMUgK_YUIF1nZMxtSsAxN-qaaHn1L9blHwyq50/edit?usp=drivesdk
+check  out the full details of the https://docs.google.com/document/d/1JoQPQRLd9Z4EcgrNVl9H-xcC_72tss-sRC2IzgHwn7o/edit
 
 # Table of contents 
 1. General information 
