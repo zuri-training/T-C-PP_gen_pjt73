@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    background-image: url(./original/union.png), url(./original/Vec.png);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 10%;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.email{
+ display: flex;
+ justify-content: center;
+
+}
+.email1{
+    padding-top: 5rem;
+    
+}
+.emailb{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 5%;
+    padding-bottom: 1rem;
+}
+.emailc{
+    text-align: center;
+    font-size: 22px;
+    background: url(./original/frame_436.png)
+    center right no-repeat,url(./original/frame_436.png) center left no-repeat;
+    background-size: 1rem;
+   
+}
+.emaild button{
+ width: 400px;
+ height: 30px;
+ background-color: blue;
+ color: white;
+ border: none;
+ border-radius: 5px;
+}
+.emaild{
+    text-align: center;
+    padding-top: 1rem;
+   
+}
+
+@media screen and (max-width:300px) {
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.emaild button{
+    width: 200px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+   }
+}
+
+@media screen and (max-width:600px) {
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .emaild button{
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+       }
+    }
+
+   
+
+    
+        
+        @media screen and (max-width:768px) {
+            body{
+                height: 100vh;
+                width: 100vw;
+            }
+            
+            .emaild button{
+                width: 200px;
+                height: 30px;
+                background-color: blue;
+                color: white;
+                border: none;
+                border-radius: 5px;
+               }
+            }

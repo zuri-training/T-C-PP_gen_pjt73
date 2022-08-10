@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.head{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.head img{
+    width: 10rem;
+}
+body{
+   
+    background-color: white;
+}
+
+
+
+
+.headb{
+    text-align: center;
+    padding: 1rem;
+}
+.headc{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.headc1{
+    padding-left: 1rem;
+}
+
+.forgot3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    }
+
+    .forgot3b input{
+        width: 400px;
+        height: 30px;
+        margin-bottom: 20px;
+        border: 1px solid rgb(90, 89, 89) ;
+        
+        background-color: white;
+        background-image: url(./original/head.png);
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        padding: 10px 10px 10px 30px;
+        background-position: 2px center;
+        border-radius: 5px;
+        
+     }
+     
+     
+
+
+
+    .password{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .password2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./original/oju.svg);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+        border: 1px solid rgb(90, 89, 89) ;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+
+    .pass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+    }
+    
+    .pass2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./original/oju.svg);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+        border: 1px solid rgb(90, 89, 89) ;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+.btn{
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 2rem;
+}
+.btn button{
+    width: 400px;
+    height: 30px;
+    background-color: blue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width:600px) {
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.forgot3b input{
+    width: 200px;
+    height: 30px;
+}
+.password2 input{
+width: 200px;
+height: 30px;
+
+}
+.pass2 input{
+    width: 200px;
+    height: 30px;
+}
+
+.btn button{
+    width: 200px;
+    height: 30px;
+}
+
+}
+
+
+
+
+@media screen and (max-width:768px) {
+
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .forgot3b input{
+        width: 200px;
+        height: 30px;
+    }
+    .password2 input{
+    width: 200px;
+    height: 30px;
+    
+    }
+    .pass2 input{
+        width: 200px;
+        height: 30px;
+    }
+    
+    .btn button{
+        width: 200px;
+        height: 30px;
+    }
+    
+    }
+    
+    
+    
+

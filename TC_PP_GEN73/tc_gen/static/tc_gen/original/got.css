@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.head img{
+    width: 10rem;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
+
+
+
+.headb{
+    text-align: center;
+    padding: 1rem;
+}
+.headc{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.forgot3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    }
+
+    .forgot3b input{
+        width: 400px;
+        height: 30px;
+        
+        border: 1px solid black;
+        background-image: url(./lil.png);
+        background-repeat: no-repeat;
+        background-size: 1rem ;
+        background-image: 16px center;
+        box-sizing: border-box;
+        padding:  10px 10px 10px 30px;
+     
+       
+    }
+
+
+
+
+
+    .password{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    .password2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+
+    .pass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+    }
+    
+    .pass2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+.butt{
+    text-align: center;
+    padding: 0.5rem;
+}
+.butt button{
+    width: 400px;
+    height: 30px;
+    background-color: blue;
+    border: none;
+    color: white;
+}
+
+
+
+
+
+@media screen and (max-width:600px) {
+    .forgot3b input{
+        width: 200px;
+        height: 30px;
+        
+        border: 1px solid black;
+        background-image: url(./lil.png);
+        background-repeat: no-repeat;
+        background-size: 1rem ;
+        background-image: 16px center;
+        box-sizing: border-box;
+        padding:  10px 10px 10px 30px;
+     
+       
+    }
+
+    .password2 input{
+        width: 200px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .pass2 input{
+        width: 200px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .butt button{
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        border: none;
+        color: white;
+    }
+
+    
+}
+@media screen and (max-width:768px) {
+
+    .forgot3b input{
+        width: 400px;
+        height: 30px;
+        
+        border: 1px solid black;
+        background-image: url(./lil.png);
+        background-repeat: no-repeat;
+        background-size: 1rem ;
+        background-image: 16px center;
+        box-sizing: border-box;
+        padding:  10px 10px 10px 30px;
+     
+       
+    }
+
+    .password2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .pass2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .butt button{
+        width: 400px;
+        height: 30px;
+        background-color: blue;
+        border: none;
+        color: white;
+    }
+
+    
+
+
+
+
+
+}@media screen and (max-width:1200px) {
+
+    .forgot3b input{
+        width: 400px;
+        height: 30px;
+        
+        border: 1px solid black;
+        background-image: url(./lil.png);
+        background-repeat: no-repeat;
+        background-size: 1rem ;
+        background-image: 16px center;
+        box-sizing: border-box;
+        padding:  10px 10px 10px 30px;
+     
+       
+    }
+
+    .password2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .pass2 input{
+        width: 400px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./eye.svg);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: 1px solid;
+    }
+
+    .butt button{
+        width: 400px;
+        height: 30px;
+        background-color: blue;
+        border: none;
+        color: white;
+    }
+
+    
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
