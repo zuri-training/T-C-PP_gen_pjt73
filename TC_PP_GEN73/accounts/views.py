@@ -23,6 +23,7 @@ def register(request):
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
 
+@login_required
 def profile(request):
     return render(request, 'accounts/profile_page.html')
 
