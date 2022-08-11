@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  font-family: "Roboto";
+}
+nav {
+  width: 100%;
+  margin: 10px 40px 10px 20px;
+  background-color: #0a59f8;
+  color: #ffffff;
+  display: flex;
+  padding: 30px;
+  margin: 0;
+}
+.navh1 {
+  font-weight: lighter;
+  margin-left: 60px;
+}
+.hub {
+  color: #000;
+}
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #ffffff;
+}
+.link:hover {
+  color: #000;
+}
+.login {
+  background-color: rgba(255, 255, 255, 1);
+  color: #0a59f8;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 200ms ease-in-out;
+}
+.nav-div {
+  text-align: right;
+  margin-left: 680px;
+  font-size: 18px;
+}
+.info-flow {
+  margin-top: 30px;
+  margin-left: 85px;
+  font-size: 16px;
+}
+.flow,
+add-biz {
+  padding: 15px;
+}
+.flow-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #5a5757;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: "Roboto";
+}
+.add-biz {
+  color: #0a59f8;
+}
+.heading {
+  display: flex;
+}
+h3 {
+  padding: 5px;
+  margin-top: 70px;
+  margin-left: 75px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33.7539px;
+  line-height: 42px;
+  color: #15161c;
+}
+.type {
+  margin-top: 72px;
+  margin-left: 400px;
+  padding: 6px;
+}
+.biz {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22.7715px;
+  line-height: 28px;
+  letter-spacing: 0.0025em;
+  color: #15161c;
+  padding-bottom: 10px;
+}
+.indiv-label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.0787px;
+  line-height: 21px;
+  color: #15161c;
+  padding-left: 2px;
+}
+.bizlabel {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.0787px;
+  line-height: 21px;
+  color: #15161c;
+  padding-left: 2px;
+}
+input#individual {
+  height: 16px;
+  width: 16px;
+}
+input#business {
+  height: 16px;
+  width: 16px;
+}
+#website {
+  margin-top: 60px;
+  margin-left: 75px;
+}
+input#website {
+  height: 24px;
+  width: 24px;
+}
+.websitelabel {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+}
+form {
+  background: rgba(166, 229, 184, 1);
+  color: #000;
+  width: 456px;
+  height: 244px;
+  padding: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 25px;
+  margin: 20px;
+  border-radius: 5px;
+  margin-left: 75px;
+}
+.astericks {
+  color: rgba(210, 81, 81, 1);
+}
+.url {
+  margin: 20px 5px;
+  padding-top: 10px;
+}
+.site {
+  margin-top: 10px;
+  margin-left: 5px;
+  padding-top: 10px;
+}
+input.url {
+  height: 40px;
+  width: 340px;
+  margin: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-image: url(icon.png);
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: center;
+}
+input.site {
+  height: 40px;
+  width: 340px;
+  margin: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-image: url(icon-man.png);
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: center;
+}
+::placeholder {
+  padding-left: 25px;
+  padding-bottom: 5px;
+}
+.applabel {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+}
+input#app {
+  height: 24px;
+  width: 24px;
+  border: 2px solid #847d7d;
+  background-color: rgba(132, 125, 125, 1);
+}
+#app {
+  margin-top: 60px;
+  margin-left: 75px;
+}
+.countryheading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 60px;
+  margin-left: 75px;
+}
+input.country {
+  height: 40px;
+  width: 137px;
+  margin-left: 75px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 6px;
+  background-image: url(icon-man.png);
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: center;
+}
+input.date {
+  height: 40px;
+  width: 140px;
+  margin-left: 700px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 6px;
+  padding: 12px;
+}
+.continue {
+  background-color: rgba(10, 89, 248, 1);
+  color: #ffffff;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 90%;
+  margin-left: 700px;
+  margin-bottom: 350px;
+}
+.continue:hover {
+  background-color: rgba(166, 229, 184, 1);
+  border: none;
+  color: rgba(21, 22, 28, 1);
+  transition: all 200ms ease-in-out;
+}
+.arrow-icon {
+  width: 19px;
+  height: 12px;
+  padding-top: 2px;
+}
+
+.container {
+  width: 100%;
+  /* margin: 10px 40px 10px 20px; */
+  display: flex;
+  /* margin: 0; */
+}
+.policy {
+  /* text-align: right; */
+  /* margin-left: 300px; */
+  margin-top: 60px;
+  /* font-size: 18px; */
+}
+.policy-date {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  /* margin-top: 60px; */
+  margin-left: 700px;
+  margin-bottom: 18px;
+}
+.policy-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* width: 345px; */
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 700px;
+  margin-bottom: 15px;
+}
+.footer {
+  /* position: relative; */
+  /* text-align: center; */
+  color: black;
+  background-image: url(vector2-footer.png);
+  top: 250px;
+  /* background-size: auto; */
+}
+.footer-container {
+  display: flex;
+}
+
+.footer-heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 40px;
+  text-align: left;
+  margin-left: 75px;
+  margin-bottom: 20px;
+}
+.footer-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  width: 380px;
+  letter-spacing: 0.0025em;
+  margin-left: 75px;
+  /* position: absolute; */
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  padding: 0;
+  color: #000;
+  margin: 0;
+}
+.footerlink1 {
+  margin: 100px 0 0 100px;
+  padding: 0;
+  font-style: light;
+  line-height: 40px;
+  letter-spacing: 0.0025em;
+  font-weight: 400;
+  font-size: 24px;
+}
+.footerlink2 {
+  margin: 100px 0 0 250px;
+  padding: 0;
+  font-style: light;
+  line-height: 40px;
+  letter-spacing: 0.0025em;
+  font-weight: 400;
+  font-size: 24px;
+}
