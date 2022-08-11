@@ -1,5 +1,3 @@
-from lib2to3.pgen2.token import COMMENT
-from tokenize import Comment
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.template.loader import get_template
@@ -50,7 +48,7 @@ def termsform(request):
         
 
         # Redirect to another page after saving the model
-        return redirect('/tc_gen/addinfo')
+        return redirect('/tc_gen/done.html')
 
 
     # Else initialize an empty form
@@ -60,11 +58,11 @@ def termsform(request):
         'website_form': website_form
     }
     # Render the results to a HTML page
-    return render(request, 'tc_gen/tc_options.html', context)
+    return render(request, 'tc_gen/pp_questions.html', context)
 
-#Function for additional info view
-def addinfo(request):
-    return render(request, 'tc_gen/preview')
+#Function for additional info vie
+def done(request):
+    return render(request, 'tc_gen/done.html')
 
 
 # Function to generate terms and conditions
@@ -107,9 +105,9 @@ def view_saved_terms(request, slug):
     return generate_terms(request)
 
 # Function to downoad A generated terms and conditions as PDF
-def download_pdf(request, company_name,pk):
+def download_pdf(request, company_name):
     # Get a company by its name
-    selected_company = Company.objects.filter(company_name=company_name, pk=pk).values()
+    selected_company = Company.objects.filter(company_name=company_name).values()
     selected_company.save()
     #selected_company = get_object_or_404(Company, company_name=company_name)
 
@@ -165,10 +163,17 @@ def download_pdf(request, company_name,pk):
     # Generate a PDF from the final_string variable
     pdf = pdfkit.from_string(final_string,  options=options, configuration= config)
     # Save the generated PDF to the filename and download it
-    response = HttpResponse(pdf,content_type='application/pdf')
-    response['Content-Disposition'] = 'filename='f'{filename}.pdf'
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename= 'f"{filename}.pdf"
 
     return response
+
+#creating views for download format
+def format(request):
+    return render(request, 'tc_gen/download_format.html')
+
+def download_page(request):
+    return render(request, 'tc_gen/download page.html')
 
 #creating the view for the terms and conditions preview
 def tc_preview(request):
@@ -209,5 +214,5 @@ def tc_download(request):
 
     return response
 
-
-
+def complete(request):
+    return render(request, 'tc_gen/after_download.html')

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
     'tc_gen.apps.TcGenConfig',
+    'pp_gen.apps.PpGenConfig',
 
 ]
 

@@ -1,15 +1,31 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
-{% load static %} 
+{% load static %}
 {% block link %}
-<link rel="stylesheet" href="{%static 'tc_gen/tandc.css' %}" />
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+{% endblock %} 
+{% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
 {% endblock %}
 {% block content %}
-<main class="col-md-9 ms-sm-auto col-lg-10 t_c_Container">
-    <div class="tcCont">
-        <form action="{% url 'tc_gen:' %}" method="post" class="form-control">
+<main  class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+    <div class="row gx-4 justify-content-center align-content-center">
+        <form action="{% url 'tc_gen:addinfo' %}" method="post" class="form-control">
         {% csrf_token %}
-        {{ website_form.as_p | crispy }}
+        {{ website_form.as_p }}
         <button type="submit">Generate Terms and Conditions</button>
         </form>
     </div>

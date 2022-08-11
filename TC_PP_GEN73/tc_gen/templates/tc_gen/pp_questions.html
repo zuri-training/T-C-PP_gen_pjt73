@@ -102,13 +102,18 @@
         <div class="webSection">
           <div class="inner-section-div">
             <label for="website"> <h6>Website URL</h6> </label><br />
+            <!--
             <input required
               type="text"
               name="website"
               placeholder="Your Website Url"
-            /><br />
+            />  -->
+            {{ website_form.company_website_url }}
+            <br />
             <label for="webname"> Website Name </label><br />
-            <input required type="text" name="webname"  placeholder="Your Website Name" />
+            <!--
+            <input required type="text" name="webname"  placeholder="Your Website Name" />  -->
+            {{ website_form.company_website_name }}
           </div>
         </div>
 
@@ -390,13 +395,15 @@
 
                 <div class="inner-info-div">
                   <label for="email">What's the email?</label><br />
-                  <input 
+
+                  {{ website_form.company_email_address }}
+                 <!-- <input 
                     type="email"
                     class="form-control"
                     id="email"
                     placeholder="email@mycompany.com"
                     name="email"
-                  />
+                  />-->
                   <small class="text-muted">e.g email@mycompany.com</small
                   ><br />
                 </div>
