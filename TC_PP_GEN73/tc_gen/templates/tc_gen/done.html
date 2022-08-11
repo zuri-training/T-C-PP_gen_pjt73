@@ -1,0 +1,162 @@
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+     <script src="https://kit.fontawesome.com/567f8be212.js" crossorigin="anonymous"></script>
+<style>
+  .preview {
+    background-color: #a6e5b8;
+
+    /* H2 */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 52px;
+    /* identical to box height, or 124% */
+
+    color: #333333;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .img-preview {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .button-div {
+    text-align: center;
+    margin-top: 4%;
+  }
+
+  .button {
+    /* Primary */
+
+    background: #0a59f8;
+    border-radius: 8px;
+    color: white;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    /*for links*/
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 10px 7px;
+    display: block;
+  }
+
+  .inner-option {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .inner-option .button-div {
+    max-width: max-content;
+  }
+
+  .other-buttons div {
+    padding: 10px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .img-preview {
+      width: 50%;
+    }
+
+    .inner-option {
+      width: 50%;
+      display: inline-block;
+    }
+
+    .inner-option p select {
+      width: 30%;
+    }
+
+    .button-div {
+      width: 100%;
+      display: inline-block;
+    }
+
+    .other-buttons {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .inner-option {
+      width: 30%;
+    }
+  }
+</style>
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} 
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+  <div>
+    <div style="text-align: center">
+      <h3 class="mb-6">Your document is ready</h3>
+      <img class="mt-2 img-preview" src="{% static 'blog/img/Frame 17.png' %}" /><br />
+      <div class="inner-option">
+        <p style="font-weight: bold" class="mt-5">
+          In what language would you like to download your file?
+        </p>
+
+        <!--Language select button-->
+        <select class="form-select mb-5" aria-label="Disabled select example">
+          <option selected>English (United States)</option>
+          <option value="French">French</option>
+          <option value="Dutch">Dutch</option>
+          <option value="Italian">Italian</option>
+        </select>
+
+        <!--The download link-->
+        <a class="button" href="{%url 'tc_gen:format' %}">Download</a>
+
+        <!--Share, Export, and Download-->
+        <div class="other-buttons" style="margin-bottom: 20%">
+          <div class="text-muted">
+            <i class="fa-solid fa-share-nodes"></i>
+            <a href="#">Share</a>
+          </div>
+
+          <div class="text-muted">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            <a href="#">Export</a>
+          </div>
+
+          <div class="text-muted">
+            <i class="fa-solid fa-code"></i>
+            <a href="#">Embed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
