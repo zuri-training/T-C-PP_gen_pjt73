@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    background-color: white;
+    background-image: url(./img/union.png), url(./img/Vec.png);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.email{
+ display: flex;
+ justify-content: center;
+
+}
+.email1{
+    padding-top: 5rem;
+    
+}
+.emailb{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 30px;
+    padding-bottom: 1rem;
+}
+.emailc{
+    text-align: center;
+    font-size: 22px;
+
+}
+.img{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    /* border-radius: 50%; */
+    background: url(./img/frame_436.png)
+    center right no-repeat;
+    background-size: 1rem;
+}
+.img2{
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: url(./img/frame_436.png)
+    center right no-repeat;
+    background-size: 1rem;
+}
+.emaild a{
+ width: 400px;
+ height: 30px;
+ padding: 10px 30px;
+ text-decoration: none;
+ background-color: blue;
+ color: white;
+ border: none;
+ border-radius: 5px;
+}
+.emaild{
+    text-align: center;
+    padding-top: 1rem;
+   
+}
+
+@media screen and (max-width:600px) {
+    .parent{
+        background: rgb(239, 234, 234);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
+        background-image: url(./img/union.png), url(./img/Vec.png);
+        background-position: left bottom, right top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 20%;
+    }
+
+    .emaild a{
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+       }
+
+}
+
+
+
+@media screen and (max-width:768px) {
+    .parent{
+        background: rgb(239, 234, 234);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
+        background-image: url(./img/union.png), url(./img/Vec.png);
+        background-position: left bottom, right top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 20%;
+    }
+    
+    .emaild a{
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+       }
+
+}
