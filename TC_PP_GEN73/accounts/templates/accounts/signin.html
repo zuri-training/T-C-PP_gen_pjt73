@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign_in</title>
+    <link rel="stylesheet" href="{% static 'accounts/signin.css' %}" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div id="head">
+        <img src="{% static 'accounts/img/headerimg.png' %}" class="headerimg" alt="" width="100%" />
+      </div>
+
+      <div class="img">
+        <img src="{% static 'accounts/img/Signin.png' %}" alt="image" class="imgs" width="100%" />
+      </div>
+
+      <div class="form">
+        <div class="txt1">
+          <h2>
+            <a href="{%url 'index' %}"><span style="color: #0a59f8">Terms</span>Hub</a>
+          </h2>
+          <p style="font-size: x-large">Welcome back!</p>
+        </div>
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                <strong>{{message}}</strong>
+            </div>
+          {% endfor %}
+        {% endif %}
+        <form name="login-form" action="#" method="post">
+          <div class="login">
+            <div class="label"><label for="email">Email address </label></div>
+            {% csrf_token %}
+            <input
+              type="email"
+              name="email"
+              class="in"
+              id="mail"
+              required
+              placeholder="michaeljoe@gmail.com" {%if form.is_bound %} value="{{form.email.value}}" {% endif %}
+            /><br /><br />
+
+            <div class="label"><label for="password">Password</label></div>
+            <input
+              type="password"
+              class="in"
+              name="password"
+              required
+              id="pwd"
+              placeholder="michael joe" {%if form.is_bound %} value="{{form.email.value}}" {% endif %}
+            />
+          </div>
+
+          <div id="formbt">
+            <div class="chk">
+              <input class="box" type="checkbox" name="remember" id="rembme" />
+              <label for="remember" class="rmb">Remember Me</label><br />
+            </div>
+
+            <div class="a"><a href="#" class="fgt"> Forgot Password?</a></div>
+          </div>
+          <br /><br />
+
+          <div class="subm">
+            <input type="submit" class="log" value="Sign In" />
+          </div>
+          <br /><br />
+        </form>
+
+        <div class="down">
+          <h4><span>or</span></h4>
+          <br /><br />
+          <div>
+            <a href="{% url 'social:begin' 'google-oauth2'%}"><button class="bt1">Google</button></a>
+          </div>
+          <br /><br />
+          <div>
+            <a href="{% url 'social:begin' 'facebook'%}"><button class="bt2">Facebook</button></a>
+          </div>
+          <p>
+            Dont have an account?
+            <a href="{%url 'signup' %}" style="color: rgba(20, 209, 83, 0.955)"
+              >SignUp</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ftimg"><img class="ft" src="{% static 'accounts/img/ftimg.png' %}" alt="" /></div>
+
+  </body>
+</html>

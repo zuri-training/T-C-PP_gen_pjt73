@@ -4,21 +4,26 @@ from django import forms
 from .models import Profile
 
 
-class UserRegisterForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
     email = forms.EmailField()
+    fields = ['email', 'username', 'password1', 'password2']
 
-    #set the help text of fields to none
-    def __init__(self, *args, **kwargs):
-        super(UserRegisterForm, self).__init__(*args, **kwargs)
-        self.fields['email'].label = 'Email Address'
-        self.fields['password2'].label = 'Confirm Password'
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        user_count = User.objects.filter(email = email).count()
 
-        for fieldname in ['username', 'password1', 'password2']:
-            self.fields[fieldname].help_text = None
+        if user_count > 0:
+            raise forms.ValidationError('Email already exists.')
+        return email
 
-    class Meta:
-        model = User #form data will be saved in the User model
-        fields = ['email','username','password1','password2'] #field required for registration
+                                    
+    def save(self, commit = True):
+        user = super(SignUpForm, self).save(commit = False)
+        user.set_password(self.cleaned_data['password1'])
+        user.email = self.cleaned_data['email']
+        user.username = self.cleaned_data['username']
+
+        return user
 
 '''ModelForm allows users to update their info to the database'''
 #Update email and username
