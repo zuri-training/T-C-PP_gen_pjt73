@@ -3,6 +3,21 @@
 <!--Your HTML code here-->
 
 <!--DTL(Django Template Language)-->
+
+   {% block links%}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}"> Dashboard </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'history' %}"> History </a>
+              </li>
+              {% endblock %}
 {% block content %}
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
@@ -26,7 +41,7 @@
       <p>Privacy Policy Generator</p>
     </div>
     <div class="link">
-      <a href="#" class="start">Start</a>
+      <a href="{% url 'tc_gen:privacy' %}" class="start">Start</a>
     </div>
   </div>
   <div class="tandc">

@@ -1,0 +1,90 @@
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+    <link rel="stylesheet" href="{% static 'tc_gen/style.css">
+<style>
+              .button {
+        /* Primary */
+
+        background: #0a59f8;
+        border-radius: 8px;
+        color: white;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+                width: fit-content;
+        /*for links*/
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 10px auto;
+        display: block;
+      }
+      main{
+        position: relative;
+      }
+      main > div{
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} 
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+
+    <div class="d-flex flex-column flex-shrink-0">
+        <div> 
+            <h2 class="text-center">ENTER DETAILS TO GENERATE FILE</h2>
+        </div>
+
+        <div class="d-flex flex-column flex-shrink-0">
+        <p><small>Select Platform &#129042; Business Information &#129042; Additional Information &#129042; Choose download format</small></p>
+        </div>
+
+        <div class="form">
+            <form action="#" method="post">
+            <label for="floatingSelect">1. Select Download format</label>
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected>docx</option>
+              <option value="1">Pdf</option>
+              <option value="2">Txt</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="email">2. Enter your email address to recieve your file</label>
+            <input type="email" class="form-control" name="email" id="email">
+          </div>
+
+           <a class="btn btn-primary button" href="{% url 'tc_gen:complete' %}">
+                        <input type="submit" value="" style="border: none;width:0px;height:0px;margin:0px;">
+                        Done
+                      </a>
+        </form>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+

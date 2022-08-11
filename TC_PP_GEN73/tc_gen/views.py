@@ -1,4 +1,6 @@
-from django.shortcuts import render,redirect, get_object_or_404
+from lib2to3.pgen2.token import COMMENT
+from tokenize import Comment
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
@@ -15,7 +17,7 @@ from pdfkit.api import  configuration #PDF library
 
 #creating views for generate form, terms generate, download
 def genHome(request):
-    return render(request, 'tc_gen/index.html')
+    return render(request, 'tc_gen/tc_home.html')
 
 def genChoice(request):
     return render(request, 'tc_gen/tandc2.html')
@@ -48,7 +50,8 @@ def termsform(request):
         
 
         # Redirect to another page after saving the model
-        return redirect('/tc_gen/preview')
+        return redirect('/tc_gen/addinfo')
+
 
     # Else initialize an empty form
     website_form = WebsiteForm()
@@ -57,7 +60,12 @@ def termsform(request):
         'website_form': website_form
     }
     # Render the results to a HTML page
-    return render(request, 'tc_gen/tc_questions.html', context)
+    return render(request, 'tc_gen/tc_options.html', context)
+
+#Function for additional info view
+def addinfo(request):
+    return render(request, 'tc_gen/preview')
+
 
 # Function to generate terms and conditions
 def generate_terms(request):
@@ -200,4 +208,6 @@ def tc_download(request):
         return HttpResponse('Errors occured while generating the pdf.')
 
     return response
+
+
 

@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
 {% load static %} 
 {% block link %}
 <link rel="stylesheet" href="{%static 'tc_gen/tandc.css' %}" />
@@ -6,9 +7,9 @@
 {% block content %}
 <main class="col-md-9 ms-sm-auto col-lg-10 t_c_Container">
     <div class="tcCont">
-        <form method="post">
+        <form action="{% url 'tc_gen:' %}" method="post" class="form-control">
         {% csrf_token %}
-        {{ website_form.as_p }}
+        {{ website_form.as_p | crispy }}
         <button type="submit">Generate Terms and Conditions</button>
         </form>
     </div>
