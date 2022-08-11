@@ -164,7 +164,8 @@
   <h2 class="contact-header">Contact Us</h2>
   <!--Page form-->
   <div class="outer-form-div">
-    <form class="form-div" action="/action_page.php">
+    <form class="form-div" method="post">
+      {% csrf_token %}
       <div class="mb-3 mt-3">
         <label for="name" class="form-label">Name<span>*</span></label>
         <input
@@ -172,8 +173,11 @@
           class="form-control"
           id="name"
           placeholder="Joe"
-          name="name"
+          name="name" {% if form.is_bound %} value="{{form.name.value}}" {% endif %}
         />
+        {% for err in form.name.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
       </div>
 
       <div class="mb-3">
@@ -183,9 +187,12 @@
           class="form-control"
           id="email"
           placeholder="Joe@test.work"
-          name="email"
+          name="email" {% if form.is_bound %} value="{{form.email.value}}" {% endif %}
           required
         />
+        {% for err in form.email.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
       </div>
 
       <div class="mb-3">
@@ -195,8 +202,11 @@
           class="form-control"
           id="subject"
           placeholder="I need information about..."
-          name="subject"
+          name="subject" {% if form.is_bound %} value="{{form.subject.value}}" {% endif %}
         />
+        {% for err in form.subject.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
       </div>
 
       <div class="mb-3">
@@ -206,8 +216,11 @@
           rows="5"
           id="comment"
            placeholder="Hi TermsHub I would &#10 like to ..."
-          name="text"
-        ></textarea>
+          name="message"
+        >{% if form.is_bound %} {{form.message.value}} {% endif %}</textarea>
+        {% for err in form.message.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
       </div>
 
       <button type="submit" class="btn btn-primary">Send a message</button>
