@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'accounts/styles.css' %}">
+    <title>Sign In</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <aside class="form">
+            <h1 class="logo"><a href="{%url 'index' %}">terms<span class="black">Hub</span></a></h1>
+            <img src="{% static 'accounts/img/hero-img-tablet.svg' %}" alt="hero-img-tablet">
+            <form action="">
+                <div class="email">
+                    <label for="email">
+                        email address
+                    </label>
+                    <div class="form-group">
+                        <img src="{% static 'accounts/img/input-icon.svg' %}" alt="input-icon" class="input-icon">
+                        <input type="email" name="email" id="e-mail" placeholder="MichealJoe@mail.com">
+                    </div>
+                    <p class="error-message"></p>
+                </div>
+                <div class="username">
+                    <label for="username">
+                        username
+                    </label>
+                    <div class="form-group">
+                        <img src="{% static 'accounts/img/input-icon.svg' %}" alt="input-icon" class="input-icon">
+                        <input type="text" name="username" id="username" placeholder="Type in your username">
+                    </div>
+                    <p class="error-message"></p>
+                </div>
+                <div class="password">
+                    <label for="password">
+                        password
+                    </label>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="password-input" placeholder="Type in your password">
+                        <img src="{% static 'accounts/img/eye-closed.png' %}" alt="eye-icon" class="eye">
+                    </div>
+                    <p class="error-message"></p>
+                </div>
+                <div class="password">
+                    <label for="confirm-password">
+                        confirm password
+                    </label>
+                    <div class="form-group">
+                        <input type="password" name="confirm password" id="confirm-password" class="password-input" placeholder="Type in your password again">
+                        <img src="{% static 'accounts/img/eye-closed.png' %}" alt="eye-icon" class="eye">
+                    </div>
+                    <p class="error-message"></p>
+                </div>
+                <div class="agreement">
+                    <input type="checkbox" name="agreement" required>
+                    <p>i acknowledge that I have read and agree to the <a href="#">terms &amp; conditions</a> and <a href="#">privacy policy</a>.</p>
+                </div>
+                <button type="submit" class="signup-btn">create account</button>
+            </form>
+            <div class="divider">
+                <span>
+                    <hr>
+                </span>
+                <p>or</p>
+                <span>
+                    <hr>
+                </span>
+            </div>
+            <form class="social-media" action="">
+                <button type="submit">
+                    <img src="{% static 'accounts/img/flat-color-icons_google.svg' %}" alt="google-icon">
+                    google
+                </button>
+                <button type="submit">
+                    <img src="{% static 'accounts/img/Vector.svg' %}" alt="facebook-icon">
+                    facebook
+                </button>
+            </form>
+            <p>already have an account? <a href="./login.html">login</a></p>
+            <img src="{% static 'accounts/img/Ellipse desktop.svg' %}" alt="cut-circle-desktop">
+            <img src="{% static 'accounts/img/Ellipse tablet.svg' %}" alt="cut-circle-tablet">
+            <img src="{% static 'accounts/img/Ellipse mobile.svg' %}" alt="cut-circle-mobile">
+        </aside>
+        <aside class="images">
+            <img src="{% static 'accounts/img/Vector desktop.svg' %}" alt="vector-desktop">
+            <img src="{% static 'accounts/img/Vector tablet.svg' %}" alt="vector-tablet">
+            <img src="{% static 'accounts/img/Vector mobile.svg' %}" alt="vector-mobile">
+            <div class="hero-images">
+                <img src="{% static 'accounts/img/hero-img.svg' %}" alt="hero-img-desktop">
+                <img src="{% static 'accounts/img/Frame 383.svg' %}" alt="purple-dot">
+            </div>
+        </aside>
+    </main>
+    <footer></footer>
+    <script src="{% static 'accounts/scripts/scripts.js' %}"></script>
+    <script src="{% static 'accounts/scripts/signin.js' %}"></script>
+</body>
+</html>
