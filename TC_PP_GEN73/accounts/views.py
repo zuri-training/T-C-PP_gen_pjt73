@@ -22,6 +22,11 @@ class RegisterView(FormView):
             return redirect('signin')
         return render(request,'accounts/signup.html', {'form':form})
 
+
+    def get(self, request, *args, **kwargs):
+        return render(request,'accounts/signup.html')
+
+
 #login function
 def login_view(request):
     if request.method == 'POST':
@@ -45,6 +50,7 @@ def login_view(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
 
 @login_required #users can't have access to this view unless they log in
 def dashboard(request):

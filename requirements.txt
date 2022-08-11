@@ -10,7 +10,7 @@ colorama==0.4.5
 cryptography==37.0.4
 cssselect2==0.6.0
 distlib==0.3.4
-Django==4.0.5
+Django==4.0.7
 django-social-share==2.3.0
 env==0.1.0
 filelock==3.6.0
