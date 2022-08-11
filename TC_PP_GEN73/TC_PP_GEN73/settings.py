@@ -166,7 +166,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #redirect to the dashboard page after login
 LOGIN_REDIRECT_URL = 'dashboard'
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'signin'
 
 #Email connection settings (for password)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

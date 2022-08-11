@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name = 'home'),
     path('accounts/', include('accounts.urls')),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
     path('generate/', include('tc_gen.urls')),
     path('social_auth/', include('social_django.urls'), name='social'),
 
