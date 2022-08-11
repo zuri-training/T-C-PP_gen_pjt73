@@ -224,14 +224,6 @@ button:hover {
     height: 25%;
     width: 10%;
   }
-  .bt1 {
-    /* background-position: 40% 41%; */
-    /* background-size: 4% 45%; */
-  }
-  .bt2 {
-    /* background-position: 39% 40%; */
-    /* background-size: 4% 50%; */
-  }
 }
 @media screen and (max-width: 800px) {
   .bt1 {
@@ -239,6 +231,30 @@ button:hover {
   }
     .bt2 {
     background-position: 38% 50%;
+  }
+}
+@media screen and (min-width: 800px){
+    .bt1 {
+    background-position:35% 50%;
+  }
+    .bt2 {
+    background-position: 33% 50%;
+  }
+}
+@media screen and (min-width: 1100px){
+    .bt1 {
+    background-position:40% 50%;
+  }
+    .bt2 {
+    background-position: 38% 50%;
+  }
+}
+@media screen and (min-width: 1300px){
+    .bt1 {
+    background-position:41% 50%;
+  }
+    .bt2 {
+    background-position: 41% 50%;
   }
 }
 @media screen and (max-width: 480px) {
