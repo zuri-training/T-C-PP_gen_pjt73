@@ -13,14 +13,14 @@ from .forms import SignUpForm
 
 #registration view function
 class RegisterView(FormView):
+    def get(self, request, *args, **kwargs):
+        return render(request,'accounts/signup.html')
+
     def post(self, request, *args, **kwargs):
         form = SignUpForm(request.POST)
         if form.is_valid():
             return redirect('signin')
         return render(request,'accounts/signup.html', {'form':form})
-
-    def get(self, request, *args, **kwargs):
-        return render(request,'accounts/signup.html')
 
 #login function
 def login_view(request):
@@ -57,5 +57,6 @@ def profile(request):
 def contact(request):
     return render(request, 'accounts/lawyer.html')
 
+@login_required
 def history(request):
     return render(request, 'accounts/history.html')

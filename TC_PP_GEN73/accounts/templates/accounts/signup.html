@@ -20,7 +20,8 @@
             <h1 class="logo"><a href="{%url 'index' %}">terms<span class="black">Hub</span></a></h1>
             <img src="{% static 'accounts/img/hero-img-tablet.svg' %}" alt="hero-img-tablet">
             
-            <form action="#" method="post">
+            <form method="post">
+                {% csrf_token %}
                 <div class="email">
                 
                     <label for="email">
@@ -84,14 +85,17 @@
                 </span>
             </div>
             <form class="social-media" action="">
-                <button type="submit">
+                <a href="{% url 'social:begin' 'google-oauth2'%}">
+
                     <img src="{% static 'accounts/img/flat-color-icons_google.svg' %}" alt="google-icon">
                     google
-                </button>
-                <button type="submit">
+
+            </a>
+
+            <a href="{% url 'social:begin' 'facebook'%}">
                     <img src="{% static 'accounts/img/Vector.svg' %}" alt="facebook-icon">
                     facebook
-                </button>
+            </a>
             </form>
             <p>already have an account? <a href="{% url 'signin' %}">Sign In</a></p>
             <img src="{% static 'accounts/img/Ellipse desktop.svg' %}" alt="cut-circle-desktop">
