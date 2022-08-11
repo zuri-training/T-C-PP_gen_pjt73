@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView , View
 from blog.forms import ContactForm
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import messages
 # Create your views here.
 
 def homepage(request):
@@ -15,7 +18,10 @@ class ContactView(View):
 
     def post(self,request, *args, **kwargs):
         form = ContactForm(request.POST)
+        message = request.POST['message']
         if form.is_valid():
+            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['kadelcode@gmail.com'], fail_silently=False)
+            messages.info(request,"Message successfully sent. We'll respond to you within 24 hours.")
             return redirect('contact')
         return render(request, 'blog/contact_us.html', {'form':form})
 

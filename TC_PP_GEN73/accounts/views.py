@@ -12,7 +12,7 @@ from .forms import SignUpForm
 # Create your views here.
 
 #registration view function
-class RegisterView(FormView):
+class RegisterView(CreateView):
     def get(self, request, *args, **kwargs):
         return render(request,'accounts/signup.html')
 
@@ -21,10 +21,6 @@ class RegisterView(FormView):
         if form.is_valid():
             return redirect('signin')
         return render(request,'accounts/signup.html', {'form':form})
-
-
-    def get(self, request, *args, **kwargs):
-        return render(request,'accounts/signup.html')
 
 #login function
 def login_view(request):
