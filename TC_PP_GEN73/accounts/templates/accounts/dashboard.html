@@ -33,6 +33,18 @@
 
 <!-- Start of generate section -->
 <div class="row g-4 py-3 row-cols-1 row-cols-lg-3 generate">
+  <div class="tandc">
+    <div class="gen_content">
+      <div class="icon">
+        <img src="{% static 'blog/icons/shield-check.svg' %}" alt="" />
+      </div>
+      <p>Terms and Conditions Generator</p>
+    </div>
+    
+    <div class="link">
+      <a href="{% url 'tc_gen:genHome' %}" class="start">Start</a>
+    </div>
+  </div>
   <div class="privacy">
     <div class="gen_content">
       <div class="icon">
@@ -44,36 +56,47 @@
       <a href="{% url 'pp_gen:privacy' %}" class="start">Start</a>
     </div>
   </div>
-  <div class="tandc">
-    <div class="gen_content">
-      <div class="icon">
-        <img src="{% static 'blog/icons/shield-check.svg' %}" alt="" />
-      </div>
-      <p>Terms and Conditions Generator</p>
-    </div>
-
-    <div class="link">
-      <a href="{% url 'tc_gen:genHome' %}" class="start">Start</a>
-    </div>
-  </div>
 </div>
 <!-- End of generate section -->
 
 <h3>Recent Actions</h3>
 <p>Here is what you last worked on</p>
 
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 recentContainer">
-  <div class="recentTerms">
-    <div class="recentImg">
-      <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
-    </div>
-    <p>Terms and Conditions Laundry Company</p>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 recentContainer" style="align-items: flex-start;">
+  <div class="terms" style="flex-direction: column;">
+    {% for template in previous_templates %}
+    {% if template %}
+      <div class="recentTerms">
+        <div class="recentImg" style="display: flex;">
+          <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
+          <a href="{% url 'tc_gen:display_terms' template.slug %}" style="margin-left: 20px;">{{ template | title }}</a>
+        </div>
+        <div class="historyDate" style="margin-top: 10px;">
+          <p>{{ template.datestamp }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% empty %}
+      <h5>You have not worked on any terms and conditions previously.</h5>
+    {% endfor %}
   </div>
-  <div class="recentPolicy">
-    <div class="recentImg">
-      <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
-    </div>
-    <p>Privacy Policy Laundry Company</p>
+
+  <div class="terms" style="flex-direction: column;">
+    {% for template in previous_templates %}
+    {% if template %}
+      <div class="recentPolicy">
+        <div class="recentImg" style="display: flex;">
+          <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
+          <a href="{% url 'pp_gen:display_policies' template.slug %}" style="margin-left: 20px;">{{ template | title }}</a>
+        </div>
+        <div class="historyDate" style="margin-top: 10px;">
+          <p>{{ template.datestamp }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% empty %}
+      <h5>You have not worked on any privacy policy previously.</h5>
+    {% endfor %}
   </div>
 </div>
     </div>

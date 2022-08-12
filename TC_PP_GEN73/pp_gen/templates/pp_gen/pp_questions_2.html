@@ -97,7 +97,78 @@
   <div class="business">
     <form action="#" class="mainform" method="post">
       {% csrf_token %}
-      <!-- <div class="firstPage">
+        {{ website_form.as_p }}
+        <div class="buttons">
+            <button class="thirdPrev prev">Previous</button>
+            <button type="submit" class="btn btn-primary next">Generate Privacy Policy</button>
+        </div>
+    </form>
+  </div>
+</main>
+{%endblock%} {%block script %}
+<script>
+  let selected = "";
+  let app = document.querySelector(".appSection");
+  let form = document.querySelector(".mainform");
+  let web = document.querySelector(".webSection");
+  let firstSection = document.querySelector(".firstPage");
+  let secondSection = document.querySelector(".secondPage");
+  let thirdSection = document.querySelector(".thirdPage");
+
+  let firstButton = document.getElementById("firstSecdone");
+  let secondButton = document.getElementById("secondSecdone");
+
+  let firstPrev = document.querySelector(".firstPrev");
+  let secondPrev = document.querySelector(".secondPrev");
+  let thirdPrev = document.querySelector(".thirdPrev");
+
+  let info = localStorage.getItem("selected");
+  let change = document.getElementsByClassName("name");
+
+  if (info == "web") {
+    app.style.display = "none";
+    web.style.display = "block";
+  } else if (info == "app") {
+    web.style.display = "none";
+    app.style.display = "block";
+  }
+
+  // for the next button
+
+  firstButton.addEventListener("click", () => {
+    firstSection.style.display = "none";
+    secondSection.style.display = "block";
+  });
+
+  secondButton.addEventListener("click", () => {
+    secondSection.style.display = "none";
+    thirdSection.style.display = "block";
+  });
+
+  // for the next button
+  thirdPrev.addEventListener("click", () => {
+    thirdSection.style.display = "none";
+    secondSection.style.display = "block";
+  });
+
+  secondPrev.addEventListener("click", () => {
+    secondSection.style.display = "none";
+    firstSection.style.display = "block";
+  });
+</script>
+
+{% endblock%}
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="firstPage">
         <h2>About Your Business</h2>
         <p>Answer some questions about your website or app.</p>
         <div class="webSection">
@@ -459,7 +530,7 @@
           </div>
           <div class="buttons">
             <button class="thirdPrev prev">Previous</button>
-            <button type="submit" class="btn btn-primary next">Generate Terms and Conditions</button> -->
+            <button type="submit" class="btn btn-primary next">Generate Privacy Policy</button> -->
             <!-- The a should be change to the input, the class next has to present -->
             <!-- <a class="btn btn-primary next" href="{%url 'tc_gen:done' %}">
               <input 
@@ -473,64 +544,3 @@
           <!-- </div>
         </div>
       </div> -->
-      {{ website_form.as_p }}
-      <div class="buttons">
-        <button class="thirdPrev prev">Previous</button>
-        <button type="submit" class="btn btn-primary next">Generate Terms and Conditions</button>
-      </div>
-    </form>
-  </div>
-</main>
-{%endblock%} {%block script %}
-<script>
-  let selected = "";
-  let app = document.querySelector(".appSection");
-  let form = document.querySelector(".mainform");
-  let web = document.querySelector(".webSection");
-  let firstSection = document.querySelector(".firstPage");
-  let secondSection = document.querySelector(".secondPage");
-  let thirdSection = document.querySelector(".thirdPage");
-
-  let firstButton = document.getElementById("firstSecdone");
-  let secondButton = document.getElementById("secondSecdone");
-
-  let firstPrev = document.querySelector(".firstPrev");
-  let secondPrev = document.querySelector(".secondPrev");
-  let thirdPrev = document.querySelector(".thirdPrev");
-
-  let info = localStorage.getItem("selected");
-  let change = document.getElementsByClassName("name");
-
-  if (info == "web") {
-    app.style.display = "none";
-    web.style.display = "block";
-  } else if (info == "app") {
-    web.style.display = "none";
-    app.style.display = "block";
-  }
-
-  // for the next button
-
-  firstButton.addEventListener("click", () => {
-    firstSection.style.display = "none";
-    secondSection.style.display = "block";
-  });
-
-  secondButton.addEventListener("click", () => {
-    secondSection.style.display = "none";
-    thirdSection.style.display = "block";
-  });
-
-  // for the next button
-  thirdPrev.addEventListener("click", () => {
-    thirdSection.style.display = "none";
-    secondSection.style.display = "block";
-  });
-
-  secondPrev.addEventListener("click", () => {
-    secondSection.style.display = "none";
-    firstSection.style.display = "block";
-  });
-</script>
-
-{% endblock%}
