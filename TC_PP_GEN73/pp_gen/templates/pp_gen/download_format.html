@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+    <link rel="stylesheet" href="{% static 'tc_gen/style.css">
+<style>
+              .button {
+        /* Primary */
+
+        background: #0a59f8;
+        border-radius: 8px;
+        color: white;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+                width: fit-content;
+        /*for links*/
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 10px auto;
+        display: block;
+      }
+      main{
+        position: relative;
+      }
+      main > div{
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} 
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+
+    <div class="d-flex flex-column flex-shrink-0">
+        <div> 
+            <h2 class="text-center">ENTER DETAILS TO GENERATE FILE</h2>
+        </div>
+
+        <div class="d-flex flex-column flex-shrink-0">
+        <p><small>Select Platform &#129042; Business Information &#129042; Additional Information &#129042; Choose download format</small></p>
+        </div>
+        {% if company_name %}
+          <p>Click <a href="{% url 'pp_gen:download' company_name %}">here</a> to export your privacy policy as PDF</p>
+        {% endif %}
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+

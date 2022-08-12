@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
 from .views import RegisterView, ContactLawyerView
@@ -10,5 +10,5 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('contact_dashboard/', ContactLawyerView.as_view() , name='contact_dashboard'),
     path('history/', views.history, name='history'),
-    path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout, name='logout')
 ]
