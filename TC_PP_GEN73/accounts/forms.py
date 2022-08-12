@@ -25,6 +25,19 @@ class SignUpForm(UserCreationForm):
 
         return user
 
+class ContactLawyer(forms.Form):
+    message = forms.CharField(widget=forms.Textarea, min_length=30)
+
+    def clean_message(self):
+        #actual message you want to validate
+        message = self.cleaned_data.get('message')
+
+        if message == "" or message == " ":
+            return forms.ValidationError("Field can't be left empty.")
+
+        else:
+            return message
+
 '''ModelForm allows users to update their info to the database'''
 #Update email and username
 class UserUpdateForm(forms.ModelForm):

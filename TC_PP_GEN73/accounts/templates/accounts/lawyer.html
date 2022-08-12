@@ -121,16 +121,31 @@
   </div>
   <div class="contact">
     <h2>Contact A Lawyer</h2>
-    <form action="">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            <strong>{{message}}</strong>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
         <label for="message" class="contactText">
-      Drop your message here and a lawyer will respond in 24 hours
+          Drop your message here and a lawyer will respond in 24 hours
 
         </label>
         <br>
-    <textarea name="message" id="contactInfo"></textarea>
+    <textarea name="message" id="contactInfo" required maxlength="">
+      {%if form.is_bound %} {{form.email.value}} {% endif %}
+    </textarea>
     <button type="submit" class="contactbutton">Send Message</button>
+    {% for err in form.message.errors%}
+      <small class="text-danger ml-2">{{err}}</small>
+    {% endfor %}
     </form>
 
   </div>
 </main>
+
 {% endblock %}
