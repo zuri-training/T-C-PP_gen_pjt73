@@ -33,7 +33,11 @@ class Reviews(models.Model):
     ratings = models.IntegerField(choices=RATING_CHOICES, default=1)
     
 
+<<<<<<< HEAD
     #Creating model for company data-mariam &jude
+=======
+ #models for tc-gen questions
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 class Company(models.Model):
     company_name = models.CharField(max_length=50)
     company_website_name = models.CharField(max_length=50)
@@ -45,11 +49,18 @@ class Company(models.Model):
     def __str__(self):
         return self.company_name
 
+<<<<<<< HEAD
 
 #Creating model for template auto fill(Mariam & Jude)
+=======
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 class Template(models.Model):
     company = models.ForeignKey(Company, on_delete = models.PROTECT)
     slug = models.SlugField()
 
     def __str__(self):
+<<<<<<< HEAD
         return self.company.company_name
+=======
+        return self.company.company_name   
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0

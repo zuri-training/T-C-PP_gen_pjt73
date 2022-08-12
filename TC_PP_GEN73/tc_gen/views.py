@@ -10,9 +10,21 @@ import re #for regex
 import pdfkit
 from pdfkit.api import  configuration #PDF library
 
+<<<<<<< HEAD
 # Create your views here.
 
 #creating views for generate form, terms generate, download
+=======
+
+# Create your views here.
+
+#creating views for generate form, terms generate, download
+def genHome(request):
+    return render(request, 'tc_gen/tc_home.html')
+
+def genChoice(request):
+    return render(request, 'tc_gen/tandc2.html')
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 
 def termsform(request):
     # Check if POST request is made
@@ -38,9 +50,18 @@ def termsform(request):
         )
 
         new_company.save()
+<<<<<<< HEAD
 
         # Redirect to another page after saving the model
         return redirect('/generator')
+=======
+        #new tests
+        
+
+        # Redirect to another page after saving the model
+        return redirect('/tc_gen/done.html')
+
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 
     # Else initialize an empty form
     website_form = WebsiteForm()
@@ -49,7 +70,16 @@ def termsform(request):
         'website_form': website_form
     }
     # Render the results to a HTML page
+<<<<<<< HEAD
     return render(request, 'tc_gen/index.html', context)
+=======
+    return render(request, 'tc_gen/pp_questions.html', context)
+
+#Function for additional info vie
+def done(request):
+    return render(request, 'tc_gen/done.html')
+
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 
 # Function to generate terms and conditions
 def generate_terms(request):
@@ -93,11 +123,22 @@ def view_saved_terms(request, slug):
 # Function to downoad A generated terms and conditions as PDF
 def download_pdf(request, company_name):
     # Get a company by its name
+<<<<<<< HEAD
     selected_company = Company.objects.get(company_name=company_name)
 
     # Read the template file and push each line to a list
     lines = []
     with open('src/terms_sample.txt') as f:
+=======
+    selected_company = Company.objects.filter(company_name=company_name).values()
+    selected_company.save()
+    #selected_company = get_object_or_404(Company, company_name=company_name)
+
+    # Read the template file and push each line to a list
+
+    lines = []
+    with open('tc_gen/src/terms_sample.txt') as f:
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
         lines = f.readlines()
     # Initialize a count variable and a list
     count = 0
@@ -146,11 +187,26 @@ def download_pdf(request, company_name):
     # Generate a PDF from the final_string variable
     pdf = pdfkit.from_string(final_string,  options=options, configuration= config)
     # Save the generated PDF to the filename and download it
+<<<<<<< HEAD
     response = HttpResponse(pdf,content_type='application/pdf')
     response['Content-Disposition'] = 'filename='f'{filename}.pdf'
 
     return response
 
+=======
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename= 'f"{filename}.pdf"
+
+    return response
+
+#creating views for download format
+def format(request):
+    return render(request, 'tc_gen/download_format.html')
+
+def download_page(request):
+    return render(request, 'tc_gen/download page.html')
+
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0
 #creating the view for the terms and conditions preview
 def tc_preview(request):
 
@@ -190,3 +246,5 @@ def tc_download(request):
 
     return response
 
+def complete(request):
+    return render(request, 'tc_gen/after_download.html')

@@ -1,0 +1,691 @@
+:root {
+  --border-color: #cbc3a2;
+  --button: #787d77;
+}
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
+}
+
+.container-fluid {
+  height: 90%;
+}
+.container-fluid > div {
+  height: 100%;
+}
+main {
+  height: 100%;
+}
+.container-fluid > div nav {
+  height: 100%;
+  transition: 0.5s;
+}
+.container-fluid .row nav {
+  background: #0a59f8;
+}
+.navbar {
+  height: 10%;
+  padding: 0%;
+}
+.navbar h1 {
+  margin-top: 10px;
+  margin-left: 1%;
+  font-size: 42px;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgb(0 0 0 / 10%);
+}
+.disappear {
+  display: none;
+}
+@media screen and (max-width: 765px) {
+  .navbar {
+    background: #0a59f8;
+  }
+}
+@media screen and (min-width: 760px) {
+  .navbar h1 {
+    display: none;
+  }
+  .disappear {
+    display: block;
+    text-align: center;
+  }
+}
+.navbar-toggler-icon {
+  background-image: url(../icons/toggler.svg);
+}
+.position-absolute {
+  top: 20%;
+  right: 10%;
+}
+.home {
+  width: 80px;
+  position: relative;
+}
+.home img{
+  height: 70%;
+  width:70%;
+}
+header img {
+  width: 170px;
+  height: 100%;
+}
+
+.home + h2 {
+  width: 60%;
+  margin-left: 20px;
+}
+.recent {
+  height: 40%;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 2px 0px 10px #a3b1cd !important;
+}
+
+nav ul {
+  text-align: center;
+  height: 80%;
+}
+.nav-link {
+  color: rgb(131, 255, 143);
+}
+.nav-link:hover {
+  color: #000;
+}
+.nav {
+  justify-content: center;
+}
+.navinner {
+  height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.user img {
+  height: 100%;
+  width: 100%;
+}
+nav ul li {
+  margin: 10px 0px;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: 0.5s;
+  width: fit-content;
+  margin: auto;
+}
+
+nav ul li a::before {
+  content: "";
+  width: 0%;
+  background: #000;
+  height: 2px;
+  position: absolute;
+  transition: 0.5s;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10%;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
+
+/* This is the logout button */
+.logout {
+  box-sizing: border-box;
+  padding: 0px 30px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  display: inline-block;
+  transition: 0.4s;
+}
+.logout::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-image: url(../icons/chevron-double-right.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 25px;
+  width: 20%;
+  right: 0px;
+}
+
+.logout:hover {
+  color: #000;
+  text-shadow: 1px 1px 10px #787d77;
+}
+
+.generate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.generate > div {
+  box-sizing: border-box;
+  width: 95%;
+  font-size: 24px;
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  justify-content: space-around;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .generate {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .generate > div {
+    width: 48%;
+  }
+  .generate > div p {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .generate {
+    justify-content: center;
+  }
+}
+.generate .gen_content {
+  display: flex;
+}
+.gen_content .icon {
+  width: 20%;
+  height: 100%;
+  position: relative;
+}
+.gen_content .icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+.generate > div p {
+  box-sizing: border-box;
+  margin: 0px;
+  text-align: start;
+  font-weight: 500;
+  height: fit-content;
+  padding: 0px;
+}
+.link {
+  width: 100%;
+  height: 30%;
+  margin: 10px 0px 0px 0px;
+}
+.start {
+  position: relative;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px 20px;
+  padding-right: 30px;
+  background-image: linear-gradient(
+    45deg,
+    #0a59f8,
+    #0a59f8,
+    #0a59f8,
+    rgb(10, 115, 10),
+    rgb(10, 115, 10)
+  );
+  background-size: 200%;
+  background-position: 0% 0%;
+  border-radius: 8px;
+  text-align: end;
+  font-weight: 100;
+  color: white;
+  display: inline-block;
+  transition: 0.5s;
+  opacity: 0.8;
+  overflow: hidden;
+}
+
+.start::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  background-image: url(../icons/chevron-right.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 25px;
+  width: 20%;
+  right: 0pc;
+}
+.start:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 0px 10px rgb(63, 61, 61);
+  background-position: 100% 100%;
+  color: white;
+}
+
+/* This is for the recent section */
+.recent p {
+  font-weight: 100;
+}
+.recentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.historyCont {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+@media screen and (max-width: 780px) {
+  .historyCont {
+    width: 100%;
+  }
+}
+.historyCont .historyDate p {
+  text-align: end;
+}
+
+.recentContainer > div {
+  display: flex;
+}
+
+@media screen and (min-width: 800px) {
+  .generate > div {
+    width: 48%;
+  }
+  .recentContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .recentContainer > div {
+    width: 50%;
+    justify-content: center;
+  }
+  .recentContainer {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .recentContainer {
+    width: 60%;
+  }
+}
+
+.recentContainer > div p {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.recentImg {
+  width: 20%;
+}
+.recentImg img {
+  width: 70%;
+  height: 70%;
+}
+
+/* This is for the history page */
+
+h1 > a {
+  text-decoration: none;
+  color: black;
+}
+h1 > a:hover {
+  color: black;
+}
+.historyBody .content {
+  height: 100%;
+}
+.historyBody h3 {
+  font-size: 2.5em;
+}
+.historyBody .content {
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+.recentInfo {
+  height: 20%;
+}
+.historyBody h3 {
+  box-sizing: border-box;
+  margin: 20px 0px;
+}
+.history {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  font-weight: 300;
+}
+
+.history_card .historyContent {
+  border: 2px solid var(--border-color);
+  margin: 5px 0px;
+  text-align: start;
+  padding: 10px;
+  display: flex;
+}
+
+.history_card .historyDate p {
+  font-weight: 400;
+}
+
+.historyContent p {
+  width: 70%;
+}
+
+@media screen and (min-width: 765px) {
+  .navbar {
+    position: fixed;
+    width: 100px;
+    top: 0px;
+  }
+  .container-fluid {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar h1 {
+    font-size: 36px;
+  }
+}
+
+/* This is for the profile page */
+.profilebody {
+  position: relative;
+  height: 100%;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+.profile {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.profile > div {
+  height: fit-content;
+}
+@media screen and (min-width: 765px) {
+  .profile {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 765px) {
+  .profile {
+    width: 90%;
+  }
+}
+.info {
+  width: 95%;
+  margin: 0px auto;
+}
+.topProfile p {
+  margin: 0px 0px 5px;
+}
+
+.info .infoCont {
+  margin: 0px;
+  border-radius: 10px;
+}
+.info .infoText{
+  width: 98%;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  margin: 10px auto;
+  border:none;
+  outline: none;
+  border-bottom: 1px solid #787d77;
+}
+.info ::placeholder{
+  font-weight: 400;
+  font-size: 16px;
+}
+.topProfile {
+  width: 100%;
+  text-align: center;
+}
+
+.update {
+  text-align: center;
+  margin: 20px 0px;
+}
+.update a {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-image: linear-gradient(
+    45deg,
+    #0a59f8,
+    #0a59f8,
+    #0a59f8,
+    #a6e5b8,
+    #a6e5b8
+  );
+  border: none;
+  background-size: 200%;
+  background-position: 0% 0%;
+  border-radius: 10px;
+  font-weight: 100;
+  color: white;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.update a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 0px 10px rgb(63, 61, 61);
+  background-position: 100% 100%;
+}
+
+/* This is for the faq page */
+.faqCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 45px 10px;
+  box-sizing: border-box;
+}
+.faqtext,
+.contactText {
+  margin: 5px 0px;
+}
+
+.faqCont .see {
+  margin-top: 20px;
+}
+
+.contact form {
+  display: block;
+  margin: 10px 0px;
+}
+.contactbutton {
+  position: relative;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  padding-right: 30px;
+  font-size: 16px;
+  background-image: linear-gradient(
+    45deg,
+    #0a59f8,
+    #0a59f8,
+    #0a59f8,
+    rgb(53, 53, 53),
+    black
+  );
+  border: none;
+  background-size: 200%;
+  background-position: 0% 0%;
+  border-radius: 10px;
+  text-align: end;
+  font-weight: 100;
+  color: white;
+  display: block;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.contactbutton::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  background-image: url(../icons/chevron-right.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 25px;
+  width: 20px;
+  right: 0pc;
+}
+.contactbutton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 0px 10px rgb(63, 61, 61);
+  background-position: 100% 100%;
+}
+.faqCont .see1 {
+  text-align: end;
+}
+.faqCont p > a {
+  position: relative;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  padding-right: 30px;
+  font-size: 16px;
+  background-image: linear-gradient(
+    45deg,
+    #0a59f8,
+    #0a59f8,
+    #0a59f8,
+    rgb(53, 53, 53),
+    black
+  );
+  background-size: 200%;
+  background-position: 0% 0%;
+  border-radius: 10px;
+  text-align: end;
+  font-weight: 100;
+  color: white;
+  display: inline-block;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.faqCont p > a::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  background-image: url(../icons/chevron-right.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 25px;
+  width: 20%;
+  right: 0pc;
+}
+.faqCont p > a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 0px 10px rgb(63, 61, 61);
+  background-position: 100% 100%;
+}
+.contact textarea {
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 350px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 250px;
+}
+
+@media screen and (min-width: 905px) {
+  .accordion {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact textarea {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+.accordion-item {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #b1b1b1;
+  margin: 15px 0px;
+  overflow: hidden;
+}
+.accordion-button:not(.collapsed) {
+  background: none;
+  color: black;
+  border: none;
+}
+
+.accordion-button:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-body {
+  background: #0a59f8ad;
+}
+
+.active {
+  color: white;
+}

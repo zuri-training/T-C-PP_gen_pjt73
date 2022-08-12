@@ -1,0 +1,74 @@
+{% extends 'blog/base.html' %} {% load static %}
+<!--Your HTML code here-->
+
+{% block links%}
+<li class="nav-item">
+  <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}">
+    Contact a lawyer
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %}
+
+<!--DTL(Django Template Language)-->
+{% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 profilebody">
+  <div class="profile">
+    <div class="topProfile">
+      <img src="{% static 'blog/img/user-circle.png' %}" alt="" />
+      <p>Edit Profile</p>
+      <p class="name">BRENDAN KUMAR</p>
+      <p class="mail">brendankumar@gmail.com</p>
+    </div>
+
+    <div class="info">
+      <!-- <p class="infoCont">Business Name</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Business Name"
+        id="business"
+      />
+      <!-- <p class="infoCont">UserName</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Username"
+        id="business"
+      />
+
+      <!-- <p class="infoCont">Contact</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Contact"
+        id="business"
+      />
+
+      <!-- <p class="infoCont">Location</p> -->
+      <input
+        type="text"
+        class="infoText"
+        name="name"
+        placeholder="Location"
+        id="business"
+      />
+
+      <p class="update"><a href="#">UPDATE PROFILE</a></p>
+    </div>
+  </div>
+</main>
+{% endblock %}

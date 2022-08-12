@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
     'tc_gen.apps.TcGenConfig',
+    'pp_gen.apps.PpGenConfig',
 
 ]
 
@@ -153,8 +154,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "TC_PP_GEN73/static"),
-    #'/var/www/static/',
+    os.path.join(BASE_DIR, "blog/static"),
+    # '/var/www/static/',
 ]
 
 STATIC_URL = 'static/'
@@ -173,7 +174,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #redirect to the dashboard page after login
 LOGIN_REDIRECT_URL = 'dashboard'
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'signin'
 
 #Email connection settings (for password)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -195,6 +196,7 @@ EMAIL_USE_TLS = True
 
 #SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
 #SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')
+<<<<<<< HEAD
 
 #adding config settings for cloudinar-mariam
 cloudinary.config(
@@ -202,3 +204,5 @@ cloudinary.config(
     api_key = "599458431389538",
     api_secret = "AJY2ZkIK02M_Ax5JjtN92YMnVbA"
 )
+=======
+>>>>>>> be123dc89c7107169d09d48fe2788180e92bbed0

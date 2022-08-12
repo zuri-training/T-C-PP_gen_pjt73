@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  margin: 10px 40px 10px 20px;
+  background-color: #595856;
+  color: #ffffff;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "Roboto";
+}
+
+main {
+  width: 100%;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+}
+
+.side-panel {
+  width: 314px;
+  height: 1291px;
+  background-color: #0a59f8;
+  margin: 0;
+}
+.terms {
+  font-weight: lighter;
+  line-height: 52px;
+  /* margin-left: 30px; */
+  padding-top: 60px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 42px;
+  padding-left: 55px;
+}
+.hub {
+  color: #000000;
+}
+.potrait {
+  /* margin-left: 52px; */
+  padding-top: 60px;
+  padding-left: 55px;
+}
+.dashboard {
+  color: #15161c;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 50px 0 0 55px;
+}
+.sp-text {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 50px 0 0 55px;
+}
+.sp-logout {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 550px 0 0 55px;
+}
+.logout-icon {
+  width: 20px;
+  height: 19px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.sp-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+.heading {
+  margin-top: 155px;
+  margin-left: 100px;
+  display: flex;
+}
+.history {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 52px;
+  color: #15161c;
+}
+.add-website {
+  background-color: #0a59f8;
+  width: 188px;
+  height: 46px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.8;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.0125em;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 350px;
+  margin-top: 0px;
+}
+.add-website:hover {
+  background-color: rgba(166, 229, 184, 1);
+  color: #000000;
+  transition: 200ms all ease-in-out;
+}
+.tag-icon {
+  width: 22px;
+  height: 18px;
+  padding-top: 5px;
+  margin-right: 5px;
+}
+
+.subheading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  color: #15161c;
+  padding: 15px 0 0 0;
+  margin-left: 5px;
+}
+.sh-link {
+  text-decoration: none;
+  color: #15161c;
+}
+.create-new {
+  width: 640px;
+  height: 46px;
+  background: #0a59f8;
+  opacity: 0.8;
+  border: none;
+  border-radius: 8px;
+  margin-top: 150px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.0125em;
+  color: #ffffff;
+  margin-left: 110px;
+  cursor: pointer;
+}
+.create-new:hover {
+  background-color: rgba(166, 229, 184, 1);
+  color: #000000;
+  transition: 200ms all ease-in-out;
+}
+.create-icon {
+  width: 18px;
+  height: 18px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.document {
+  width: 309px;
+  padding: 15px;
+  margin: 80px 20px;
+  margin-left: 70px;
+  min-height: 444px;
+  background-color: #ffffff;
+  border: 5px solid #000000;
+  border-radius: 6.57875px;
+}
+
+.tnC-text {
+  margin-left: 30px;
+  padding-top: 10px;
+}
+
+.action {
+  width: 300px;
+  padding-left: 15px;
+  margin: 50px 20px;
+  min-height: 400px;
+}
+.edit-icon {
+  width: 24px;
+  height: 24px;
+  /* margin-top: 5px; */
+}
+.edit {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17.7286px;
+  line-height: 32px;
+  color: #15161c;
+  padding-left: 10px;
+  /* padding-bottom: 10px; */
+}
+.download-icon {
+  width: 21px;
+  height: 24px;
+}
+.action-link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.7286px;
+  line-height: 25px;
+  letter-spacing: 0.0025em;
+  color: #15161c;
+  padding-left: 10px;
+}
+.action-link1 {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.2613px;
+  line-height: 28px;
+  letter-spacing: 0.005em;
+  color: #15161c;
+  padding-left: 8px;
+}
+.webtag-icon {
+  width: 25px;
+  height: 21px;
+}
+.export-icon {
+  width: 21px;
+  height: 21px;
+}
+.share-icon {
+  width: 24px;
+  height: 24px;
+}
+.save-con {
+  width: 30px;
+  height: 30px;
+}
+.help {
+  width: 78px;
+  height: 84px;
+  margin-left: 700px;
+  margin-top: 10px;
+}

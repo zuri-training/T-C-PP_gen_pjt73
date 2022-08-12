@@ -1,10 +1,81 @@
-{% extends 'blog/base.html' %}
-
+{% extends 'blog/base.html' %} 
+{% load static %}
 <!--Your HTML code here-->
 
-
 <!--DTL(Django Template Language)-->
-{% block content %}
- <h2>Hi {{user.first_name|capfirst}}</h2>
 
+   {% block links%}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}"> Dashboard </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'history' %}"> History </a>
+              </li>
+              {% endblock %}
+{% block content %}
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+
+<div
+  class="d-flex justify-space-around flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <div class="home">
+    <img src="{% static 'blog/icons/home.svg' %}" alt="" />
+    <h2>Welcome {{user.username}}</h2>
+  </div>
+</div>
+
+<!-- Start of generate section -->
+<div class="row g-4 py-3 row-cols-1 row-cols-lg-3 generate">
+  <div class="privacy">
+    <div class="gen_content">
+      <div class="icon">
+        <img src="{% static 'blog/icons/lock-open.svg' %}" alt="" />
+      </div>
+      <p>Privacy Policy Generator</p>
+    </div>
+    <div class="link">
+      <a href="{% url 'pp_gen:privacy' %}" class="start">Start</a>
+    </div>
+  </div>
+  <div class="tandc">
+    <div class="gen_content">
+      <div class="icon">
+        <img src="{% static 'blog/icons/shield-check.svg' %}" alt="" />
+      </div>
+      <p>Terms and Conditions Generator</p>
+    </div>
+
+    <div class="link">
+      <a href="{% url 'tc_gen:genHome' %}" class="start">Start</a>
+    </div>
+  </div>
+</div>
+<!-- End of generate section -->
+
+<h3>Recent Actions</h3>
+<p>Here is what you last worked on</p>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 recentContainer">
+  <div class="recentTerms">
+    <div class="recentImg">
+      <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
+    </div>
+    <p>Terms and Conditions Laundry Company</p>
+  </div>
+  <div class="recentPolicy">
+    <div class="recentImg">
+      <img src="{% static 'blog/icons/Group.svg' %}" alt="" />
+    </div>
+    <p>Privacy Policy Laundry Company</p>
+  </div>
+</div>
+    </div>
+        </main>
 {% endblock %}

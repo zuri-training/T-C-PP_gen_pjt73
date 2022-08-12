@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{%static 'tc_gen/tandc.css' %}" />
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} {% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 t_c_Container">
+  <div class="tcCont">
+    <h2>Generate Free Terms and Conditions For Your Company</h2>
+    <img src="{%static 'blog/img/tandc.svg' %}" alt="" />
+  </div>
+
+  <div class="row row-cols-1 row-cols-lg-2 tandc">
+    <div>
+      <h5>How To Generate Terms and Conditions</h5>
+      <p>
+        Free Terms & Conditions Generator for websites, mobile iOS & Android
+        apps, SaaS, Facebook, and more. Create Terms & Conditions that suites
+        your business.
+      </p>
+    </div>
+    <div>
+      <h5>Instruction on how to Generate Terms and Conditions</h5>
+      <ul>
+        <li>Step 1: Select the Website option or the App option or both</li>
+        <li>Step 2: Answer some questions about your website or app</li>
+        <li>Step 3: Answer some questions about your business</li>
+        <li>
+          Step 4: Enter the email address where you'd like the T&C delivered and
+          click "Generate."
+        </li>
+      </ul>
+      <p>
+        <a href="{% url 'tc_gen:tc_generator' %}" class="start">Start</a>
+      </p>
+    </div>
+  </div>
+</main>
+{% endblock %}

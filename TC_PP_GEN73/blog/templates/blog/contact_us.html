@@ -1,1 +1,260 @@
-<!--Your HTML code here-->
+{% extends 'blog/nav.html' %} {%load static %} {% load custom_tags %} 
+{%block link %}
+<script src="https://kit.fontawesome.com/567f8be212.js" crossorigin="anonymous"></script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .outer-form-div {
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgb(225, 222, 222);
+    padding: 5px;
+    margin: 5% 15px;
+  }
+
+  .outer-form-div2 {
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px rgb(192, 188, 188);
+    padding: 10%;
+    margin: 5% 15px;
+    text-align: center;
+    background-color: #edf0f3;
+  }
+
+  .outer-form-div2 p {
+    font-weight: bold;
+  }
+
+  .outer-form-div2 a {
+    text-decoration: none;
+    background-color: #b4e7c4;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: 2px solid black;
+  }
+
+  .form-div {
+    padding: 10px;
+  }
+
+  span {
+    color: red;
+  }
+
+  .outer-last-div {
+    text-align: center;
+  }
+
+  .email-div,
+  .support-div {
+    padding: 0 7px;
+    margin: 10px 20px;
+  }
+
+  .email-div i,
+  .support-div i {
+    background-color: #b4e7c4;
+    padding: 3px;
+    border-radius: 3px;
+  }
+
+  .support-div a {
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 4px;
+    color: #6999fb;
+    border: 1px solid #858585;
+    font-weight: 500;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .outer-form-div {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .outer-form-div2 {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .outer-last-div {
+      margin-left: 10%;
+      margin-right: 10%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (min-width: 996px) {
+    .outer-form-div {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    .outer-form-div2 {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    .outer-last-div {
+      margin-left: 20%;
+      margin-right: 20%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+</style>
+{% endblock %} {% block links%}
+
+<nav class="navbar navbar-expand-md topnav top-nav fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="{%url 'index' %}"
+      ><span style="color: white">Terms</span>Hub</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navinfo" id="navbarCollapse">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'service' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% anchor 'index' 'reviews' %}">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{%url 'contact' %}">Contact us</a>
+        </li>
+      </ul>
+      <p class="login">
+        <a class="nav-link" href="{% url 'signin' %}">Login</a>
+      </p>
+    </div>
+  </div>
+</nav>
+{% endblock%}{% block content %}
+<div class="container px-2 py-5" id="icon-grid">
+  <h2 class="contact-header">Contact Us</h2>
+  <!--Page form-->
+  <div class="outer-form-div">
+    <form class="form-div" method="post">
+      {% csrf_token %}
+      <div class="mb-3 mt-3">
+        <label for="name" class="form-label">Name<span>*</span></label>
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          placeholder="Joe"
+          name="name" {% if form.is_bound %} value="{{form.name.value}}" {% endif %}
+        />
+        {% for err in form.name.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email<span>*</span></label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Joe@test.work"
+          name="email" {% if form.is_bound %} value="{{form.email.value}}" {% endif %}
+          required
+        />
+        {% for err in form.email.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Subject<span>*</span></label>
+        <input
+          type="subject"
+          class="form-control"
+          id="subject"
+          placeholder="I need information about..."
+          name="subject" {% if form.is_bound %} value="{{form.subject.value}}" {% endif %}
+        />
+        {% for err in form.subject.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        <label for="comment">How can we help you?<span>*</span></label>
+        <textarea
+          class="form-control"
+          rows="5"
+          id="comment"
+           placeholder="Hi TermsHub I would &#10 like to ..."
+          name="message"
+        >{% if form.is_bound %} {{form.message.value}} {% endif %}</textarea>
+        {% for err in form.message.errors %}
+        <small class="text-danger">{{err}}</small>
+        {% endfor %}
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send a message</button>
+    </form>
+  </div>
+  <!--page form ends-->
+
+  <div class="outer-form-div2">
+    <div>
+      <p>
+        For us to serve you better, we'll love to see your comment, reviews.
+      </p>
+      <a href="#">CLICK HERE</a>
+    </div>
+  </div>
+
+  <div class="outer-last-div">
+    <div class="email-div">
+      <a href="#"><i class="fa-solid fa-square-envelope"></i></a><br />
+      <b>Email</b>
+      <p>
+        Email us general queries, including marketing and partnership
+        oppurtunities
+      </p>
+      <b>Support@termshub.io</b>
+    </div>
+
+    <div class="support-div">
+      <a href="#"><i class="fa-solid fa-headset"></i></a><br />
+      <b>Support</b>
+      <p>You can also contact us in the the live support 24/7</p>
+      <a href="#">Support Center</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

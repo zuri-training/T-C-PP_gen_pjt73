@@ -1,1 +1,100 @@
+{% extends 'blog/base.html' %} {% load static  %}
 <!--Your HTML code here-->
+
+
+   {% block links%}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}"> Dashboard </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'history' %}"> History </a>
+              </li>
+              {% endblock %}
+
+<!--DTL(Django Template Language)-->
+{% block content %}
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-space-around flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <div class="home">
+              <img src="{% static 'blog/icons/home.svg' %}" alt="" />
+            </div>
+            <h2>Welcome</h2>
+          </div>
+
+          <!-- Start of generate section -->
+          <div class="row g-4 py-3 row-cols-1">
+            <h3>Recent Actions</h3>
+            <p>Here is what you last worked on</p>
+
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-2 historyCont"
+            >
+            <div class="history_card">
+              <div class="historyContent">
+                <div class="historyImg">
+                  <img src="{% static 'blog/icons/Group.svg' %}" alt="">
+                </div>
+                <div class="history_info">
+                  <p>Terms and Conditions Laundry Company</p>
+                </div>
+              </div>
+              <div class="historyDate">
+                <p>3.03.2022</p>
+              </div>
+            </div>            
+
+            <div class="history_card">
+              <div class="historyContent">
+                <div class="historyImg">
+                  <img src="{% static 'blog/icons/Group.svg' %}" alt="">
+                </div>
+                <div class="history_info">
+                  <p>Terms and Conditions Laundry Company</p>
+                </div>
+              </div>
+              <div class="historyDate">
+                <p>3.03.2022</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="amend">
+            <h3>Amendments</h3>
+            <p>Update previous Terms and Condition and Privacy Policies</p>
+          </div>
+          <h3>August</h3>
+
+                      <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-2 historyCont"
+            >
+          <div class="history">
+            <div class="history_card">
+              <div class="historyContent">
+                <div class="historyImg">
+                  <img src="{% static 'blog/icons/Group.svg' %}" alt="">
+                </div>
+                <div class="history_info">
+                  <p>Terms and Conditions Laundry Company</p>
+                </div>
+              </div>
+              <div class="historyDate">
+                <p>3.03.2022</p>
+              </div>
+              <p ><a href="#" class="start">Amend</a></p>
+            </div>
+            <!--  -->
+            <!--  -->
+            <!--  -->
+            </div>
+          </div>
+        </main>
+{% endblock %}
