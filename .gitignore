@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#duplicate files from merge conflict resolve
+.urls_BASE_427.py.swp
+.urls_LOCAL_427.py.swp
+.urls_REMOTE_427.py.swp
+.urls.py.swp
+urls.BACKUP_427.py.swp
+urls_BASE_427.py
+urls_LOCAL_427.py
+urls_REMOTE_427.py
