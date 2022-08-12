@@ -8,31 +8,34 @@ from django.views.generic import View, CreateView, FormView
 from django.urls import reverse_lazy
 from .forms import SignUpForm, ContactLawyer
 from django.conf import settings
+from django.contrib.auth import login
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.core.mail import send_mail
-
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
 
 #registration view function
-class RegisterView(CreateView):
-    def get(self, request, *args, **kwargs):
-        return render(request,'accounts/signup.html')
+class RegisterView(SuccessMessageMixin,CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy('signin')
+    template_name = 'accounts/signup.html'
+    success_message = "Account successfully. You can now login"
 
-    def post(self, request, *args, **kwargs):
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            return redirect('signin')
-        return render(request,'accounts/signup.html', {'form':form})
+    def form_valid(self,form):
+        objects = form.save()
+        return super(RegisterView,self).form_valid(form)
+
 
 #login function
 def login_view(request):
     if request.method == 'POST':
         #username = request.POST['username']
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(email = email, password = password)
+        user = auth.authenticate(username = username, password = password)
 
         if user is not None:
             auth.login(request, user)

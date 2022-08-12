@@ -4,9 +4,12 @@ from django import forms
 from .models import Profile
 
 
+#SIGNUP FORM
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField()
-    fields = ['email', 'username', 'password1', 'password2']
+    class Meta:
+      model = User
+      fields = ['username', 'email', 'password1', 'password2']
+
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -25,6 +28,7 @@ class SignUpForm(UserCreationForm):
 
         return user
 
+#CONTACT LAWYER FORM
 class ContactLawyer(forms.Form):
     message = forms.CharField(widget=forms.Textarea, min_length=30)
 
@@ -37,6 +41,7 @@ class ContactLawyer(forms.Form):
 
         else:
             return message
+
 
 '''ModelForm allows users to update their info to the database'''
 #Update email and username
