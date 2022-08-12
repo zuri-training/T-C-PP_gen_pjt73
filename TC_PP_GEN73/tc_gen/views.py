@@ -119,12 +119,11 @@ def download_pdf(request, company_name):
     for company in Company.objects.all():
         id = company.id
     # Get a company by its name
-    # You used filter but it is not working
+
     # selected_company = Company.objects.filter(company_name=company_name).values()
     # selected_company = Company.objects.get(company_name=company_name)
     # selected_company = get_object_or_404(Company, company_name=company_name)
-    # I was able to do it using the get_object_or_404 but there's no need. The companies are
-    # automatically saved when you generate the t & c
+
     selected_company = get_object_or_404(Company, id=id)
     # print(selected_company)
     # selected_company.save()
