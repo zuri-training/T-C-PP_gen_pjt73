@@ -1,0 +1,680 @@
+{% extends 'blog/base.html' %} {% load static %} {% block link %}
+<link rel="stylesheet" href="{% static 'tc_gen/tandc.css' %}" />
+<link rel="stylesheet" href="{% static 'tc_gen/style.css" />
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <symbol id="mark1" viewBox="0 0 300 306">
+    <path
+      d="M150 0C120.333 0 91.3319 8.97329 66.6645 25.7851C41.9971 42.597 22.7713 66.4923 11.4181 94.4494C0.064992 122.406 -2.90551 153.17 2.88227 182.849C8.67006 212.528 22.9562 239.79 43.934 261.187C64.9119 282.585 91.6393 297.157 120.736 303.06C149.834 308.964 179.994 305.934 207.403 294.353C234.811 282.773 258.238 263.163 274.72 238.002C291.203 212.841 300 183.26 300 153C300 112.422 284.196 73.5057 256.066 44.8127C227.936 16.1196 189.783 0 150 0ZM247.969 101.649L124.781 227.205L52.0313 153C49.5449 150.464 48.1481 147.024 48.1481 143.437C48.1481 139.851 49.5449 136.411 52.0313 133.875C54.5177 131.339 57.89 129.914 61.4063 129.914C64.9226 129.914 68.2949 131.339 70.7813 133.875L124.969 189.146L229.406 82.7156C230.637 81.4598 232.099 80.4637 233.708 79.7841C235.316 79.1045 237.04 78.7547 238.781 78.7547C240.522 78.7547 242.246 79.1045 243.855 79.7841C245.464 80.4637 246.925 81.4598 248.156 82.7156C249.387 83.9714 250.364 85.4622 251.03 87.1029C251.697 88.7437 252.04 90.5022 252.04 92.2781C252.04 94.054 251.697 95.8126 251.03 97.4533C250.364 99.094 249.387 100.585 248.156 101.841L247.969 101.649Z"
+      fill="#A6E5B8"
+    />
+  </symbol>
+</svg>
+    <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  margin: 10px 40px 10px 20px;
+  background-color: #595856;
+  color: #ffffff;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+}
+
+.side-panel {
+  width: 314px;
+  height: 1291px;
+  background-color: #0a59f8;
+  margin: 0;
+}
+.terms {
+  font-weight: lighter;
+  line-height: 52px;
+  /* margin-left: 30px; */
+  padding-top: 60px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 42px;
+  padding-left: 55px;
+}
+.hub {
+  color: #000000;
+}
+.potrait {
+  /* margin-left: 52px; */
+  padding-top: 60px;
+  padding-left: 55px;
+}
+.dashboard {
+  color: #15161c;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 50px 0 0 55px;
+}
+.sp-text {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 50px 0 0 55px;
+}
+.sp-logout {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  /* margin-left: 50px; */
+  padding: 450px 0 0 55px;
+}
+.logout-icon {
+  width: 20px;
+  height: 19px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.sp-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+.sp-link:hover {
+  color: #15161c;
+}
+.heading {
+  margin-top: 155px;
+  margin-left: 100px;
+  display: flex;
+}
+.history {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 52px;
+  color: #15161c;
+  padding-bottom: 25px;
+}
+.add-website {
+  background-color: #0a59f8;
+  width: 188px;
+  height: 46px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.8;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.0125em;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 550px;
+  margin-top: 0px;
+}
+.add-website:hover {
+  background-color: rgba(166, 229, 184, 1);
+  color: #000000;
+  transition: 200ms all ease-in-out;
+}
+.tag-icon {
+  width: 22px;
+  height: 18px;
+  padding-top: 5px;
+  margin-right: 5px;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.subheading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0015em;
+  color: #15161c;
+  padding: 25px 0 0 0;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.sh-link {
+  text-decoration: none;
+  color: #15161c;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+.sh-link:hover {
+  color: #0a59f8;
+}
+.create-new {
+  width: 640px;
+  height: 46px;
+  background: #0a59f8;
+  opacity: 0.8;
+  border: none;
+  border-radius: 8px;
+  margin-top: 150px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.0125em;
+  color: #ffffff;
+  margin-left: 110px;
+  cursor: pointer;
+}
+.create-new:hover {
+  background-color: rgba(166, 229, 184, 1);
+  color: #000000;
+  transition: 200ms all ease-in-out;
+}
+.create-icon {
+  width: 18px;
+  height: 18px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.document {
+  width: 309px;
+  padding: 15px;
+  margin: 80px 20px;
+  margin-left: 70px;
+  min-height: 480px;
+  background-color: #ffffff;
+  border: 10px solid #000000;
+  border-radius: 10px;
+}
+
+.tnC-text {
+  margin-left: 30px;
+  padding-top: 25px;
+}
+
+.action {
+  width: 300px;
+  padding-left: 15px;
+  margin: 50px 20px;
+  min-height: 350px;
+}
+.content {
+  padding-top: 18px;
+}
+.edit-icon {
+  width: 24px;
+  height: 24px;
+  /* margin-top: 5px; */
+}
+.edit {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 25px;
+  color: #15161c;
+  padding-left: 10px;
+  /* padding-bottom: 10px; */
+}
+.update {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.7286px;
+  line-height: 20px;
+  color: #847d7d;
+}
+
+.download-icon {
+  width: 21px;
+  height: 24px;
+}
+.action-link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.7286px;
+  line-height: 25px;
+  letter-spacing: 0.0025em;
+  color: #15161c;
+  padding-left: 10px;
+}
+.action-link:hover {
+  color: #0a59f8;
+}
+.action-link1 {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.2613px;
+  line-height: 28px;
+  letter-spacing: 0.005em;
+  color: #15161c;
+  padding-left: 8px;
+}
+.action-link1:hover {
+  color: #0a59f8;
+}
+.webtag-icon {
+  width: 25px;
+  height: 21px;
+}
+.export-icon {
+  width: 21px;
+  height: 21px;
+}
+.share-icon {
+  width: 24px;
+  height: 24px;
+}
+.save-con {
+  width: 30px;
+  height: 30px;
+}
+.help {
+  width: 78px;
+  height: 72px;
+  margin-left: 900px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 414px) {
+  #hamburger {
+    display: block;
+    border: none;
+    background-color: #151515;
+    cursor: pointer;
+  }
+  .side-panel {
+    width: 150px;
+    height: 900px;
+    background-color: #0a59f8;
+    margin: 0;
+  }
+  .terms {
+    font-weight: lighter;
+    line-height: 52px;
+    /* margin-left: 30px; */
+    padding-top: 60px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 25px;
+    padding-left: 5px;
+  }
+  .hub {
+    color: #000000;
+  }
+  .potrait {
+    /* margin-left: 52px; */
+    padding-top: 60px;
+    padding-left: 5px;
+  }
+  .dashboard {
+    color: #15161c;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 0.0015em;
+    /* margin-left: 50px; */
+    padding: 30px 0 0 10px;
+  }
+  .sp-text {
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 0.0015em;
+    /* margin-left: 50px; */
+    padding: 30px 0 0 10px;
+  }
+  .sp-logout {
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 0.0015em;
+    /* margin-left: 50px; */
+    padding: 200px 0 0 10px;
+  }
+  .logout-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    padding-top: 5px;
+  }
+  .sp-link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .sp-link:hover {
+    color: #15161c;
+  }
+  .heading {
+    margin-top: 155px;
+    margin-left: 10px;
+    display: flex;
+  }
+  .history {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: #15161c;
+    padding-bottom: 25px;
+  }
+  .add-website {
+    background-color: #0a59f8;
+    width: 150px;
+    height: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.8;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 0.0125em;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 60px;
+    margin-top: 0px;
+  }
+  .add-website:hover {
+    background-color: rgba(166, 229, 184, 1);
+    color: #000000;
+    transition: 200ms all ease-in-out;
+  }
+  .tag-icon {
+    width: 22px;
+    height: 18px;
+    padding-top: 7px;
+    margin-right: 5px;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  .subheading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 22px;
+    letter-spacing: 0.0015em;
+    color: #15161c;
+    padding: 25px 0 0 0;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .sh-link {
+    text-decoration: none;
+    color: #15161c;
+    margin-top: 10px;
+    padding-right: 10px;
+  }
+  .sh-link:hover {
+    color: #0a59f8;
+  }
+  .create-new {
+    width: 250px;
+    height: 30px;
+    background: #0a59f8;
+    opacity: 0.8;
+    border: none;
+    border-radius: 8px;
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.0125em;
+    color: #ffffff;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  .create-new:hover {
+    background-color: rgba(166, 229, 184, 1);
+    color: #000000;
+    transition: 200ms all ease-in-out;
+  }
+  .create-icon {
+    width: 18px;
+    height: 18px;
+    padding-right: 5px;
+    padding-top: 6px;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+  .document {
+    width: 187px;
+    padding: 3px;
+    margin: 40px 5px;
+    margin-left: 5px;
+    min-height: 263px;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    border-radius: 5px;
+  }
+
+  .tnC-text {
+    margin-left: 3px;
+    padding-top: 20px;
+    width: 155px;
+  }
+
+  .action {
+    width: 150px;
+    padding-left: 3px;
+    margin: 50px 2px;
+    min-height: 260px;
+  }
+  .content {
+    padding-top: 10px;
+  }
+  .edit-icon {
+    width: 15px;
+    height: 15px;
+    /* margin-top: 5px; */
+  }
+  .edit {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    color: #15161c;
+    padding-left: 2px;
+    /* padding-bottom: 10px; */
+  }
+  .update {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
+    color: #847d7d;
+    width: 90px;
+  }
+
+  .download-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .action-link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.0025em;
+    color: #15161c;
+    padding-left: 3px;
+    margin-top: 0;
+  }
+  .action-link:hover {
+    color: #0a59f8;
+  }
+  .action-link1 {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.005em;
+    color: #15161c;
+    padding-left: 3px;
+    width: 40px;
+  }
+  .action-link1:hover {
+    color: #0a59f8;
+  }
+  .webtag-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .export-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .share-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .save-con {
+    width: 15px;
+    height: 15px;
+  }
+  .help {
+    width: 50px;
+    height: 50px;
+    margin-left: 200px;
+    margin-top: 5px;
+  }
+}
+
+    </style>
+
+{% endblock %} {% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %} {% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 tandc2">
+  <div class="main-container">
+    <div class="side-panel">
+       <h2 class="terms">Terms<span class="hub">Hub</span></h2>
+        <img src="{% staic 'blog/images/frame-6502.png' %}" alt="potrait" class="potrait"/>
+        <p class="dashboard"><a href="" class="sp-link">Dashboard</a></p>
+        <p class="sp-text"><a href="" class="sp-link">Business Profile</a></p>
+        <p class="sp-text"><a href="" class="sp-link">Contact a Lawyer</a></p>
+        <p class="sp-text"><a href="" class="sp-link">Blog</a></p>
+        <p class="sp-text"><a href="" class="sp-link">History</a></p>
+        <p class="sp-logout"><a href="" class="sp-link">Logout</a><img src="{% staic 'blog/images/icon-logout.png' %}" alt="" class="logout-icon"/></p>
+   </div>
+
+   <div class="body-text">
+     <div class="heading">
+      <div class="heading-text">
+        <p class="history">History</p>
+        
+      </div>
+       <div class="heading-button">
+         <button class="add-website"><img src="{% staic 'blog/images/icon-tag.png' %}" alt="htmltag" class="tag-icon"/>ADD WEBSITE</button>
+       </div>
+     </div>
+      <ul>
+        <li class="subheading"><a href="" class="sh-link">Terms & Condition</a></li>
+        <li class="subheading"><a href="" class="sh-link">Privacy Policies</a></li>
+        <li class="subheading"><a href="" class="sh-link">Contact a Lawyer</a></li>
+        </ul> 
+     <div>
+        <button class="create-new"><img src="{% staic 'blog/images/icon-plus.png' %}" alt="" class="create-icon"/>CREATE NEW</button>
+     </div>
+
+   <div class="container">
+     <div class="document">
+        <img src="{% staic 'blog/images/T&C-text.png' %}" alt="T&C" class="tnC-text"/>
+     </div>
+
+     <div class="action">
+       <div class="content">
+         <h4><img src="{% staic 'blog/images/icon-edit.png' %}" alt="Edit" class="edit-icon"/><a href="" class="edit">Gethubstore</a></h4><br />
+         <p class="update">Updated 30 mins ago</p><br />
+         <p class="preview"><a href="" class="action-link">Preview</a></p><br />
+         <p><img src="{% staic 'blog/images/icon-download.png' %}" alt="Download" class="download-icon"/><a href="" class="action-link">Download PDF</a></p><br />
+         <p><img src="{% staic 'blog/images/icon-download.png' %}" alt="Download" class="download-icon"/><a href="" class="action-link">Download DOCX</a></p><br />
+         <p><img src="./images" alt="htmltag" class="webtag-icon"/><a href="" class="action-link">Website Embed</a></p><br />
+         <p><img src="{% staic 'blog/images/icon-export.png' %}" alt="Export" class="export-icon"/><a href="" class="action-link">Export</a></p><br />
+         <p><img src="{% staic 'blog/images/icon-share.png' %}" alt="share" class="share-icon"/><a href="" class="action-link">Share</a></p><br />
+         <p><img src="{% staic 'blog/images/vector-save&continue.png' %}" alt="save-&-continue" class="save-con"/><a href="" class="action-link1">Save & Continue</a></p><br />
+       </div>
+      </div>
+     </div>
+
+     <div>
+         <a href=""><img src="{% staic 'blog/images/vector-help.png' %}" alt="help" class="help"/></a>
+          </div>
+        </div>
+      </div>
+</main>
+
+{% endblock %}
+
+<!-- 
+
+
+
