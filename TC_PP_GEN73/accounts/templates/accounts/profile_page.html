@@ -27,8 +27,8 @@
     <div class="topProfile">
       <img src="{% static 'blog/img/user-circle.png' %}" alt="" />
       <p>Edit Profile</p>
-      <p class="name">BRENDAN KUMAR</p>
-      <p class="mail">brendankumar@gmail.com</p>
+      <b class="name">{{user.username|upper}}</b><br>
+      <b class="mail">{{user.email}}</b>
     </div>
 
     <div class="info">

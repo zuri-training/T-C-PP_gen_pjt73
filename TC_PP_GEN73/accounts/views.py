@@ -13,6 +13,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -23,9 +24,16 @@ class RegisterView(SuccessMessageMixin,CreateView):
     template_name = 'accounts/signup.html'
     success_message = "Account successfully. You can now login"
 
-    def form_valid(self,form):
-        objects = form.save()
-        return super(RegisterView,self).form_valid(form)
+    def post(self, request, **kwargs):
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password1']
+        password1 = request.POST['password2']
+        
+        user = User.objects.create_user(username = username, email = email, password = password)
+        user.save(commit=False)
+        
+        return user
 
 
 #login function
