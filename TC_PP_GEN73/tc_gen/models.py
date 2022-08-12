@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 from django.db import models
@@ -28,9 +29,9 @@ class Customer(models.Model):
     phone_number = models.CharField(max_length=12)
 
 
-class Reviews(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    ratings = models.IntegerField(choices=RATING_CHOICES, default=1)
+# class Reviews(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     ratings = models.IntegerField(choices=RATING_CHOICES, default=1)
     
 
  #models for tc-gen questions
@@ -48,6 +49,7 @@ class Company(models.Model):
 class Template(models.Model):
     company = models.ForeignKey(Company, on_delete = models.PROTECT)
     slug = models.SlugField()
+    datestamp = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.company.company_name   
+        return self.company.company_name

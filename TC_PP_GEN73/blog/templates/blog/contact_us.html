@@ -164,6 +164,13 @@
   <h2 class="contact-header">Contact Us</h2>
   <!--Page form-->
   <div class="outer-form-div">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            <strong>{{message}}</strong>
+        </div>
+      {% endfor %}
+    {% endif %}
     <form class="form-div" method="post">
       {% csrf_token %}
       <div class="mb-3 mt-3">

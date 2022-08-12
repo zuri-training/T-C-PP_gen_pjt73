@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, Http404
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 
@@ -48,7 +48,7 @@ def termsform(request):
         
 
         # Redirect to another page after saving the model
-        return redirect('/tc_gen/done.html')
+        return redirect('/tc_gen/preview')
 
 
     # Else initialize an empty form
@@ -76,7 +76,10 @@ def generate_terms(request):
     # Check if a POST request is made
     if request.method == 'POST':
         # Get the company name from the POST request and save it to a variable
-        company = Company.objects.filter(company_name = request.POST['company_name'])
+        try:
+            company = Company.objects.get(company_name = request.POST['company_name'])
+        except company.MultipleObjectsReturned:
+            raise Http404("You can only save one template per company. Delete other templates for this company before saving this one....")
         # Get the slug value from the company name and convert to lowercase and remove any spaces
         slug = request.POST['company_name'].lower()
         slug = re.sub('[^A-Za-z0-9]', '', slug)
@@ -88,6 +91,7 @@ def generate_terms(request):
         )
         
         new_template.save()
+        return HttpResponse('<h2>Your Template has been saved.</h2>')
     # Pass the data to the context variable
     context = {
         'company': Company.objects.filter(id=id),
@@ -97,19 +101,32 @@ def generate_terms(request):
     return render(request, 'tc_gen/terms.html', context)
 # Function to view saves terms and conditions
 def view_saved_terms(request, slug):
-    # Save all the previously saved terms and condions to the context variable
+    # Select the term to view
+    selected_term = Template.objects.get(slug=slug).company
+    # Save the selected terms and conditions to the context variable
     context = {
-        'saved_terms': Template.objects.all()
+        'selected_term': selected_term,
+        'saved_terms': Template.objects.get(slug=slug)
     }
-    # Return the generate terms function
-    return generate_terms(request)
+    # Render the results to a HTML page
+    return render(request, 'tc_gen/dynamic_terms.html', context)
 
 # Function to downoad A generated terms and conditions as PDF
 def download_pdf(request, company_name):
+    # Initialize an id
+    id = 0
+    # # Loop through the companies and assign the id to the id of the last one
+    for company in Company.objects.all():
+        id = company.id
     # Get a company by its name
-    selected_company = Company.objects.filter(company_name=company_name).values()
-    selected_company.save()
-    #selected_company = get_object_or_404(Company, company_name=company_name)
+
+    # selected_company = Company.objects.filter(company_name=company_name).values()
+    # selected_company = Company.objects.get(company_name=company_name)
+    # selected_company = get_object_or_404(Company, company_name=company_name)
+
+    selected_company = get_object_or_404(Company, id=id)
+    # print(selected_company)
+    # selected_company.save()
 
     # Read the template file and push each line to a list
 
@@ -169,8 +186,11 @@ def download_pdf(request, company_name):
     return response
 
 #creating views for download format
-def format(request):
-    return render(request, 'tc_gen/download_format.html')
+def format(request, company_name):
+    context = {
+        'company_name': company_name
+    }
+    return render(request, 'tc_gen/download_format.html', context)
 
 def download_page(request):
     return render(request, 'tc_gen/download page.html')

@@ -80,6 +80,9 @@
                         Done
                       </a>
         </form>
+        {% if company_name %}
+          <p>Click <a href="{% url 'tc_gen:download' company_name %}">here</a> to export your terms and conditions as PDF</p>
+        {% endif %}
     </div>
 </main>
 

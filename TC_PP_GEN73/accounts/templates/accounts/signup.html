@@ -20,7 +20,8 @@
             <h1 class="logo"><a href="{%url 'index' %}">terms<span class="black">Hub</span></a></h1>
             <img src="{% static 'accounts/img/hero-img-tablet.svg' %}" alt="hero-img-tablet">
             
-            <form action="#" method="post">
+            <form method= "post" action = "{% url 'signup' %}">
+                {% csrf_token %}
                 <div class="email">
                 
                     <label for="email">
@@ -29,11 +30,12 @@
                     <div class="form-group">
                         <img src="{% static 'accounts/img/input-icon.svg' %}" alt="input-icon" class="input-icon">
                         <input type="email" name="email" id="e-mail" placeholder="MichealJoe@mail.com"
-                        {%if form.is_bound %} value="{{form.email.value}}" {% endif %}>
+                        {%if form.is_bound %} value="{{form.email.value}}" {% endif %} required>
                     </div>
-                    {% for err in form.name.errors%}
-                    <p class="error-message">{{err}}</p>
+                    {% for err in form.email.errors %}
+                        <p class="text-danger">{{err}}</p>
                     {% endfor %}
+                    
                 </div>
                 <div class="username">
                     <label for="username">
@@ -42,9 +44,11 @@
                     <div class="form-group">
                         <img src="{% static 'accounts/img/input-icon.svg' %}" alt="input-icon" class="input-icon">
                         <input type="text" name="username" id="username" placeholder="Type in your username" 
-                        {%if form.is_bound %} value="{{form.username.value}}" {% endif %}>
-                    </div>
-                    <p class="error-message"></p>
+                        {%if form.is_bound %} value="{{form.username.value}}" {% endif %} required>
+                    </div><br>
+                    {% for err in form.username.errors %}
+                        <p class="text-danger">{{err}}</p>
+                    {% endfor %}
                 </div>
                 <div class="password">
                     <label for="password">
@@ -52,10 +56,11 @@
                     </label>
                     <div class="form-group">
                         <input type="password" name="password1" id="password" class="password-input" placeholder="Type in your password"
-                        {%if form.is_bound %} value="{{form.password1.value}}" {% endif %}>
-                        <img src="{% static 'accounts/img/eye-closed.png' %}" alt="eye-icon" class="eye">
-                    </div>
-                    <p class="error-message"></p>
+                        {%if form.is_bound %} value="{{form.password1.value}}" {% endif %} required>
+                    </div><br>
+                    {% for err in form.password1.errors %}
+                        <p class="text-danger">{{err}}</p>
+                    {% endfor %}
                 </div>
                 <div class="password">
                     <label for="confirm-password">
@@ -63,10 +68,11 @@
                     </label>
                     <div class="form-group">
                         <input type="password" name="password2" id="confirm-password" class="password-input" placeholder="Type in your password again"
-                        {%if form.is_bound %} value="{{form.email.value}}" {% endif %}>
-                        <img src="{% static 'accounts/img/eye-closed.png' %}" alt="eye-icon" class="eye">
-                    </div>
-                    <p class="error-message"></p>
+                        {%if form.is_bound %} value="{{form.password2.value}}" {% endif %} required>
+                    </div><br>
+                    {% for err in form.password2.errors %}
+                        <p class="text-danger">{{err}}</p>
+                    {% endfor %}
                 </div>
                 <div class="agreement">
                     <input type="checkbox" name="agreement" required>
@@ -83,16 +89,19 @@
                     <hr>
                 </span>
             </div>
-            <form class="social-media" action="">
-                <button type="submit">
+            <div class="social-media" action="">
+                <a href="{% url 'social:begin' 'google-oauth2'%}">
+
                     <img src="{% static 'accounts/img/flat-color-icons_google.svg' %}" alt="google-icon">
                     google
-                </button>
-                <button type="submit">
+
+            </a>
+
+            <a href="{% url 'social:begin' 'facebook'%}">
                     <img src="{% static 'accounts/img/Vector.svg' %}" alt="facebook-icon">
                     facebook
-                </button>
-            </form>
+            </a>
+        </div>
             <p>already have an account? <a href="{% url 'signin' %}">Sign In</a></p>
             <img src="{% static 'accounts/img/Ellipse desktop.svg' %}" alt="cut-circle-desktop">
             <img src="{% static 'accounts/img/Ellipse tablet.svg' %}" alt="cut-circle-tablet">

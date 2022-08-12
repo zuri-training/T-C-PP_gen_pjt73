@@ -22,13 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("DJANGO_SECRET_KEY", default = 'django-insecure-y&^@va^7bst0-=i9b!n^q96-fst1r*!qflkc$2e+)fi=71x7_=')
+# SECRET_KEY = 'django-insecure-y&^@va^7bst0-=i9b!n^q96-fst1r*!qflkc$2e+)fi=71x7_='
 print(SECRET_KEY)
 print('Your Secret Key is Protected.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DJANGO_DEBUG", default = True, cast = bool)
-print('DEBUG MODE = ', DEBUG, "\n")
-print('Turn Off DEBUG Mode During Deployment.', "\n")
+# DEBUG = config("DJANGO_DEBUG", default = True, cast = bool)
+DEBUG = True
+# print('DEBUG MODE = ', DEBUG, "\n")
+# print('Turn Off DEBUG Mode During Deployment.', "\n")
 
 ALLOWED_HOSTS = ['*'] #allow to run on all local machine
 
@@ -78,6 +80,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'tc_gen.history_context_processor.show_previous_templates',
+                'pp_gen.history_context_processor.show_previous_templates',
             ],
         },
     },
@@ -179,13 +183,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 #accessing environment variables
-#EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_USER = config('EMAIL_USER')
 
-#EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 
 #social authentication ids and passwords
-#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
-#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
 
-#SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
-#SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')
+SOCIAL_AUTH_FACEBOOK_KEY = config('FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = config('FACEBOOK_SECRET')

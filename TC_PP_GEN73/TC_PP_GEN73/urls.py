@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from blog import views
-from tc_gen import views
-from pp_gen import views
+from tc_gen import views as tc_gen_views
+from pp_gen import views as pp_gen_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),

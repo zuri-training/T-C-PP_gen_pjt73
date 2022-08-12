@@ -40,15 +40,15 @@
         {% endif %}
         <form name="login-form" action="#" method="post">
           <div class="login">
-            <div class="label"><label for="email">Email address </label></div>
+            <div class="label"><label for="email">Username </label></div>
             {% csrf_token %}
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="username"
               class="in"
               id="mail"
               required
-              placeholder="michaeljoe@gmail.com" {%if form.is_bound %} value="{{form.email.value}}" {% endif %}
+              placeholder="michaeljoe" {%if form.is_bound %} value="{{form.username.value}}" {% endif %}
             /><br /><br />
 
             <div class="label"><label for="password">Password</label></div>
@@ -68,7 +68,7 @@
               <label for="remember" class="rmb">Remember Me</label><br />
             </div>
 
-            <div class="a"><a href="#" class="fgt"> Forgot Password?</a></div>
+            <div class="a"><a href="{%url 'password_reset'%}" class="fgt"> Forgot Password?</a></div>
           </div>
           <br /><br />
 

@@ -3,11 +3,26 @@
 {% block link %}
 <link rel="stylesheet" href="{%static 'tc_gen/tandc.css' %}" />
 {% endblock %}
+{% block links%}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+    Dashboard
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'contact_dashboard' %}"> Contact a lawyer </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'profile' %}"> Business Profile </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'history' %}"> History </a>
+</li>
+{% endblock %}
 {% block content %}
 {% for company in company %}
-{% if company %}
 <main class="col-md-9 ms-sm-auto col-lg-10 t_c_Container">
-    <div class="tcCont">
+    <!-- <div class="tcCont"> -->
         <div class="col-8">
             <h1>Terms and Conditions</h1>
             <h1>Welcome to {{ company.company_website_name | title }}!</h1>
@@ -71,8 +86,7 @@
                 Parts of this website offer an opportunity for users to post and exchange opinions and information in
                 certain areas of the website.
                 {{ company.company_name | title }} does not filter, edit, publish or review Comments prior to their
-                presence on the website. Comments do not reflect the views and opinions of {{ company.company_name |
-                title }},
+                presence on the website. Comments do not reflect the views and opinions of {{ company.company_name | title }},
                 its agents and/or affiliates. Comments reflect the views and opinions of the person who posts their
                 views and opinions. To the extent permitted by applicable laws, {{ company.company_name | title }} shall
                 not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a
@@ -139,7 +153,6 @@
                     and/or services; and</li>
                 <li>fits within the context of the linking party's site.</li>
             </ol>
-            (a)(b)(c)
 
             <p>We may consider and approve other link requests from the following types of organizations:</p>
 
@@ -172,11 +185,9 @@
             <ol style="list-style-type: lower-alpha;">
                 <li>the link would not make us look unfavorably to ourselves or to our accredited businesses; </li>
                 <li>the organization does not have any negative records with us; </li>
-                <li>the benefit to us from the visibility of the hyperlink compensates the absence of {{
-                    company.company_name | title }}; and </li>
+                <li>the benefit to us from the visibility of the hyperlink compensates the absence of {{ company.company_name | title }}; and </li>
                 <li>the link is in the context of general resource information.</li>
             </ol>
-            (a)(b)(c)(d)
 
             <p>These organizations may link to our home page so long as the link: </p>
 
@@ -186,7 +197,6 @@
                     services; and </li>
                 <li>fits within the context of the linking party's site.</li>
             </ol>
-            (a)(b)(c)
 
             <p>
                 If you are one of the organizations listed in paragraph 2 above and are interested in linking to our
@@ -261,30 +271,20 @@
                 will not be liable for any loss or damage of any nature.</p>
 
         </div>
-        <div class="col-4" style="position: fixed; top: 40%; right: 10px;">
-            <div>
-                <h3>Your already saved terms and conditions</h3>
-                {% for saved_term in saved_terms %}
-                <a href="{% url 'tc_gen:display_terms' saved_term.slug %}">{{ saved_term }}</a>
-                {% endfor %}
-            </div>
+        <div class="col-3" style="position: fixed; top: 40%; right: 10px;">
             <p>Type in the name of your company and click "Save" to save this template</p>
-            <form action="tc_gen/" method="post">
+            <form method="post">
                 {% csrf_token %}
-                <input type="text" name="company_name" id="" class="col-sm-2 col-form-label"
+                <input type="text" name="company_name" class="col-sm-2 col-form-label"
                     placeholder="Type your company name here" style="width: 70%" required>
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
 
-            <div>
-                <p>Click <a href="{% url 'tc_gen:download' company.company_name %}">here</a> to export your terms and
-                    conditions as PDF</p>
+            <div style="margin-top: 10px;">
+                <a href="{% url 'tc_gen:format' company.company_name %}">Go to the download page</a>
             </div>
         </div>
-    </div>
-    {% else %}
-    <h1>No companies yet.</h1>
+    <!-- </div> -->
 </main>
-{% endif %}
 {% endfor %}
 {% endblock %}

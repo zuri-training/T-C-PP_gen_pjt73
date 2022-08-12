@@ -4,9 +4,12 @@ from django import forms
 from .models import Profile
 
 
+#SIGNUP FORM
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField()
-    fields = ['email', 'username', 'password1', 'password2']
+    class Meta:
+      model = User
+      fields = ['username', 'email', 'password1', 'password2']
+
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -24,6 +27,21 @@ class SignUpForm(UserCreationForm):
         user.username = self.cleaned_data['username']
 
         return user
+
+#CONTACT LAWYER FORM
+class ContactLawyer(forms.Form):
+    message = forms.CharField(widget=forms.Textarea, min_length=30)
+
+    def clean_message(self):
+        #actual message you want to validate
+        message = self.cleaned_data.get('message')
+
+        if message == "" or message == " ":
+            return forms.ValidationError("Field can't be left empty.")
+
+        else:
+            return message
+
 
 '''ModelForm allows users to update their info to the database'''
 #Update email and username
