@@ -1,12 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.parent{
+.parent {
+  height: 600px;
+  width: 70%;
+  background: white;
+  margin: auto auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+}
+.heada {
+  padding-top: 2rem;
+}
+.head img {
+  width: 15rem;
+  background-color: white;
+}
+.forgot1 {
+  text-align: center;
+
+  padding-top: 2rem;
+}
+.forgot2 {
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 22px;
+}
+
+.forgot3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.forgot3b {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.forgot3b label{
+  margin: 10px 0px;
+}
+.forgot3b input {
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-image: url(./original/head.png);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 5% 50%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  padding-left: 40px;
+}
+.forgot4 {
+  text-align: center;
+  padding: 1rem;
+}
+
+.forgot4 button {
+  width: 400px;
+  padding: 15px 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .parent {
     height: 600px;
-    width: 1000px;
+    width: 100%;
     background: white;
     margin: auto auto;
     position: absolute;
@@ -14,123 +92,32 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    
-}
+  }
 
-
-.head{
-    display: flex;
- justify-content: center;
-}
-.heada{
-    padding-top: 2rem;
-}
-.head img{
-width: 15rem;
-background-color: white;
-}
-.forgot1{
-    text-align: center;
-    
-    padding-top: 2rem;
-}
-.forgot2{
-    text-align: center;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 22px;
-}
-
-
-.forgot3{
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.forgot3b{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: o.5rem;
-    padding-right: 0.5rem;
-}
-
-.forgot3b input{
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-image: url(./img/head.png);
-    background-repeat: no-repeat;
-    background-size: 1rem ;
-    background-image: 16px center;
-    box-sizing: border-box;
-    padding:  10px 10px 10px 30px;
- 
-   
-}
-.forgot4{
-    text-align: center;
-    padding: 1rem;
-}
-
-.forgot4 button{
-width: 400px;
-height: 30px;
-background-color: blue;
-color: white;
-border: none;
-border-radius: 5px;
-}
-
-@media screen and (max-width:600px) {
-    .parent{
-        height: 600px;
-        width: 600px;
-        background: white;
-        margin: auto auto;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        
-    }
-    
-    .forgot3b input{
-        width: 200px;
-        height: 30px;
-    }
-    .forgot4 button{
-        width: 200px;
-        height: 30px;
-    }
-
-
-}
-@media screen and (max-width:768px) {
-    .parent{
-        height: 600px;
-        width: 600px;
-        background: white;
-        margin: auto auto;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        
-    }
-    
-.forgot3b input{
+  .forgot3b input {
     width: 200px;
-    height: 30px;
-}
-.forgot4 button{
+  }
+  .forgot4 button {
     width: 200px;
-    height: 30px;
+  }
 }
+@media screen and (max-width: 768px) {
+  .parent {
+    height: 600px;
+    width: 100%;
+    background: white;
+    margin: auto auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
 
-
-
+  .forgot3b input {
+    width: 200px;
+  }
+  .forgot4 button {
+    width: 200px;
+  }
 }

@@ -94,3 +94,7 @@ class ContactLawyerView(View):
 @login_required
 def history(request):
     return render(request, 'accounts/history.html')
+
+
+def forgot(request):
+    return render(request, 'accounts/forgot.html')
