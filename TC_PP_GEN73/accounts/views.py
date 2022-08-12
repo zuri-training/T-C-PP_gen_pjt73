@@ -1,3 +1,4 @@
+from urllib import response
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib import auth
@@ -24,17 +25,26 @@ class RegisterView(SuccessMessageMixin,CreateView):
     template_name = 'accounts/signup.html'
     success_message = "Account successfully. You can now login"
 
-    def post(self, request, **kwargs):
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password1']
-        password1 = request.POST['password2']
-        
-        user = User.objects.create_user(username = username, email = email, password = password)
-        user.save(commit=False)
-        
-        return user
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(**self.get_form_kwargs())
+        return render(request, self.template_name, {'form': form,})
 
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            Password = form.cleaned_data.get('password')
+            obj.user = request.user #Assuming that the relevant field is named user, it will save the user accessing the form using request.user
+            obj.save()
+            messages.success(self.request,f'Account successfully created')
+            return redirect('signin')
+
+        else:
+            context = {'form': form,}
+
+        return render(request, self.template_name, context)
 
 #login function
 def login_view(request):
@@ -50,7 +60,7 @@ def login_view(request):
             return redirect('dashboard')
         
         else:
-            messages.info(request, 'Invalid Credentials. Please Login with the right details.')
+            messages.error(request, 'Invalid Credentials. Please Login with the right details.')
             return redirect('signin')
     return render(request, 'accounts/signin.html')
 

@@ -40,8 +40,8 @@
         {% endif %}
         <form name="login-form" action="#" method="post">
           <div class="login">
-            <div class="label"><label for="email">Username </label></div>
             {% csrf_token %}
+            <div class="label"><label for="email">Username </label></div>
             <input
               type="text"
               name="username"

@@ -47,7 +47,8 @@ class ContactLawyer(forms.Form):
 #Update email and username
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
-
+    business_name = forms.CharField(max_length=30)
+    contact = forms.CharField()
     class Meta:
         model = User
         fields = ['email', 'username']
