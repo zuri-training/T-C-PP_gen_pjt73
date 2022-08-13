@@ -69,6 +69,17 @@ The goal of this project is to make easy T&C and privacy policy generator access
   - http://127.0.0.1:8000/accounts/dashboard/ (if the user is authenticated)
   - http://127.0.0.1:8000/accounts/signin/?next=/accounts/dashboard/ (if the user is not authenticated)
 
+- For the Sign in page, links:
+  - Forgot Password (@ http://127.0.0.1:8000/password-reset/)
+      The Forgot Password page has 3 pages rendered while following the procedure to reset the user's password:
+          - Password Reset Done @ http://127.0.0.1:8000/password-reset-done/
+          - Password Reset Confirm @ http://127.0.0.1:8000/password-reset/confirm/<uidb64>/<token>/
+          - Password Reset Complete @ http://127.0.0.1:800/password-reset-complete/
+          
+  - Google Authentication (@ http://127.0.0.1:8000/social_auth/login/google-oauth2/)
+  - Facebook Authentication (@ http://127.0.0.1:8000/social_auth/login/facebook/)
+  - Sign In (@ http://127.0.0.1:8000/accounts/signup/)
+
 # Project Status 
 Project is: in progress
 
