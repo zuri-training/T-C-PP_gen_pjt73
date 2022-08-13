@@ -90,6 +90,8 @@ class ContactLawyerView(View):
             send_mail('Contact Lawyer', message, settings.EMAIL_HOST_USER, ['kadelcode@gmail.com'], fail_silently=False)
             messages.info(request,"Message successfully sent")
             return redirect('contact_dashboard')
+        else:
+            messages.error(request,'Message not sent due to some reasons. Please ensure you pass in the right message.')
         return render(request, 'accounts/lawyer.html', {'form':form})
 
 '''def contact(request):
