@@ -56,6 +56,19 @@ The goal of this project is to make easy T&C and privacy policy generator access
 - Generate Privacy policy
 - Proceed to download 
 
+# Project Deployment(Locally)
+- Homepage at 127.0.0.1:8000(python localhost)
+- The homepage nav links
+  - Services @ http://127.0.0.1:8000/blog/service/
+  - About Us @ http://127.0.0.1:8000/blog/about/
+  - Reviews @ http://127.0.0.1:8000/#reviews
+  - Contact Us @ http://127.0.0.1:8000/#reviews
+  - Login @ http://127.0.0.1:8000/accounts/signin/
+  
+- All the "Get Started" links on the homepage are redirect to:
+  - http://127.0.0.1:8000/accounts/dashboard/ (if the user is authenticated)
+  - http://127.0.0.1:8000/accounts/signin/?next=/accounts/dashboard/ (if the user is not authenticated)
+
 # Project Status 
 Project is: in progress
 
