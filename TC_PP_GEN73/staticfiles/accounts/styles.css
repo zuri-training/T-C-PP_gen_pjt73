@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #0A59F8;
+    --secondary_color: #A6E5B8;
+    --accent-color: #15161C;
+    --default-color: rgba(25, 28, 31, 0.4);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+*::first-letter, a, button {
+    text-transform: capitalize;
+}
+
+body {
+    text-align: center;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+h1.logo a {
+    color: var(--primary-color);
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 35px;
+    letter-spacing: 0.0025em;
+    text-decoration: none;
+}
+
+p, a {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+button:hover, .agreement > input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+img {
+    display: none;
+}
+
+.black {
+    color: #000000;
+}
+
+img[alt="vector-mobile"], img[alt="vector-tablet"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+form > div {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: -6px;
+}
+
+.email, .username {
+    margin: 0 7px 0 3px;
+}
+
+label {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 500;
+}
+
+input {
+    border: 1px solid rgba(25, 28, 31, 0.3);
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+input[type="email"], input[type="text"] {
+    padding-left: 40px;
+    margin-left: -20px;
+}
+
+input[type="email"]:focus, input[type="text"]:focus {
+    padding-left: 12px;
+    margin-left: 0;
+}
+
+input::placeholder {
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.005em;
+}
+
+.form-group {
+    display: flex;
+}
+
+input[name="password"], input[name="confirm password"] {
+    margin: 10px -22px 0 0;
+    padding: 12px;
+}
+
+img[alt="input-icon"] {
+    position: relative;
+    left: 4%;
+    margin-top: 8px;
+}
+
+img[alt="eye-icon"] {
+    position: relative;
+    left: -6%;
+    height: 30px;
+    margin-top: 17px;
+}
+
+img[alt="eye-icon"]:hover {
+    cursor: pointer;
+}
+
+.input-error {
+    border: 1px solid #960404;
+}
+
+.error-message {
+    color: #BB3B3B;
+    margin-top: 5px;
+}
+
+.agreement {
+    flex-direction: row;
+}
+
+.agreement > input[type="checkbox"] {
+    border: 3px solid black;
+    border-radius: 1px;
+    margin: 0 15px 0 0;
+    width: 60px;
+    height: 60px;
+}
+
+.agreement > input[type="checkbox"]:checked {
+    border: 3px solid black;
+    color: #0A59F8;
+}
+
+.signup-btn {
+    border: 0;
+    margin: 25px 0;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.divider {
+    display: grid;
+    grid-template-columns: 45% 5% auto;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.social-media {
+    margin: 10px 0 70px;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    row-gap: 10px;
+}
+
+.social-media > a {
+    width: 100%;
+    text-decoration: none;
+    border: 2px solid rgba(25, 28, 31, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img[alt="vector-mobile"], form img, img[alt="cut-circle-mobile"] {
+    display: block;
+}
+
+img[alt="google-icon"], img[alt="facebook-icon"] {
+    margin-right: 15px;
+}
+
+img[alt="cut-circle-mobile"], img[alt="cut-circle-tablet"], img[alt="cut-circle-desktop"] {
+    margin-top: 30px;
+    position: absolute;
+    left: 0;
+}
+
+@media screen and (min-width: 480px) {
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+    }
+
+    .agreement > input[type="checkbox"] {
+        width: 38px;
+        height: 38px;
+        margin-top: 10px;
+    }
+
+    img[alt="vector-mobile"], img[alt="cut-circle-mobile"] {
+        display: none;
+    }
+
+    img[alt="vector-tablet"], img[alt="cut-circle-tablet"], img[alt="hero-img-tablet"] {
+        display: block;
+    }
+
+    img[alt="cut-circle-tablet"] {
+        margin-top: -60px;
+    }
+
+    img[alt="hero-img-tablet"] {
+        width: 250px;
+        margin: auto;
+    }
+
+    img[alt="vector-tablet"] {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin-top: 40px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 50% auto;
+        column-gap: 70px;
+        width: 90%;
+    }
+
+    h1.logo {
+        margin-top: 70px;
+    }
+
+    input[type="email"], input[type="text"] {
+        padding-left: 50px;
+    }
+
+    img[alt="vector-tablet"], img[alt="cut-circle-tablet"], img[alt="hero-img-tablet"] {
+        display: none;
+    }
+
+    img[alt="vector-desktop"], img[alt="cut-circle-desktop"],
+    img[alt="hero-img-desktop"], img[alt="purple-dot"] {
+        display: block;
+    }
+
+    img[alt="vector-desktop"] {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    img[alt="hero-img-desktop"] {
+        width: 250px;
+    }
+
+    img[alt="cut-circle-desktop"] {
+        margin-top: -80px;
+        width: 10%;
+    }
+
+    .hero-images {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    img[alt="purple-dot"] {
+        margin: 0 0 30px 20px;
+        width: 15px;
+    }
+}
+
+@media screen and (min-width: 810px) {
+    img[alt="hero-img-desktop"] {
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    main {
+        display: grid;
+        grid-template-columns: 40% auto;
+        column-gap: 160px;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        width: 100%;
+        column-gap: 200px;
+    }
+
+    h1.logo {
+        color: var(--primary-color);
+        margin-top: 30px;
+    }
+
+    form {
+        margin-top: 0;
+    }
+
+    input[type="email"], input[type="text"] {
+        padding-left: 45px;
+    }
+
+    img[alt="input-icon"] {
+        left: 3%;
+    }
+
+    img[alt="hero-img-desktop"] {
+        width: 400px;
+    }
+
+    img[alt="cut-circle-desktop"] {
+        margin-top: -100px;
+    }
+    
+    img[alt="purple-dot"] {
+        margin: 0 0 30px 50px;
+    }
+}

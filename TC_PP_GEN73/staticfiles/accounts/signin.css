@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+.headerimg {
+  height: 10%;
+  position: absolute;
+  width: 15%;
+  height: 15%;
+  top: 0;
+  /* background-color: black; */
+  right: 0;
+}
+html,
+body {
+  margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+
+}
+div.img {
+  width: 70%;
+  /* background-color: blue; */
+  margin-top: 0;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  font-family: Roboto;
+}
+.fgt {
+  color: rgba(20, 209, 83, 0.955);
+}
+.a {
+  text-align: right;
+  position: relative;
+  margin-top: 1%;
+  text-decoration: none;
+  color: red;
+}
+.form {
+  background-color: white;
+  text-align: center;
+  justify-self: center;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.in {
+  /* background-color: red; */
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin: 10px 0px;
+  border: 1px solid rgb(187, 187, 187);
+}
+.log {
+  border-radius: 4px;
+  color: #fff;
+  padding: 15px;
+  background: #0055ff;
+  width: 100%;
+  border: none;
+  align-self: center;
+    border: 0;
+    margin: 25px 0;
+    background-color:#0A59F8;
+    color: #FFFFFF;
+}
+.subm {
+  color: white;
+  border: none;
+  margin-left: 15%;
+  width: 70%;
+  justify-self: center;
+  align-content: center;
+}
+.label {
+  text-align: left;
+  justify-self: left;
+  width: 100%;
+  font-weight: 500;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+}
+.login {
+  align-content: center;
+  justify-content: center;
+  display: inline-flex;
+  justify-content: baseline;
+  flex-direction: column;
+  text-align: center;
+  width: 70%;
+}
+.rmb {
+  left: 0;
+  margin-top: 5%;
+  position: relative;
+}
+.box {
+  width: auto;
+  right: 0;
+  display: inline-block;
+  position: relative;
+  box-shadow: 1px !important;
+  margin-top: 5.2%;
+}
+.google {
+  width: 3%;
+}
+.facebook {
+  width: 3%;
+}
+.log:hover {
+    background: #0441bd;
+    cursor: pointer;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+
+.bt1 {
+  background-image: url(./img/search.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 30.5% 50%;
+  /* background-size: 6% 45%; */
+}
+.bt2 {
+  background-image: url(./img/facebook.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 41.5% 50%;
+  /* background-size: 5.5% 45%; */
+}
+
+#formbt {
+  /* background-color: rgb(38, 194, 59); */
+  display: inline-flex;
+  width: 70%;
+  justify-content: space-between;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+  position: relative;
+}
+h4 {
+  width: 70%;
+  text-align: center;
+  border-bottom: 1px solid black;
+  line-height: 0.1em;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+h4 span {
+  background: white;
+  padding: 0px 10px;
+}
+
+button {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  width: 70%;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.txt1 {
+  justify-content: center;
+  text-align: center;
+}
+.txt1 a{
+    text-decoration: none;
+    color: black;
+}
+.ft {
+  width: 100%;
+  /* background-color: black; */
+  height: 100%;
+  bottom: 0;
+}
+.ftimg {
+  height: 8%;
+  bottom: 0;
+  position: fixed;
+  width: 10%;
+  left: 0%;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+    width: 100%;
+  }
+  .form {
+    justify-content: center;
+    align-content: center;
+  }
+  .ftimg {
+    height: 15%;
+    width: 8%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .imgs {
+    height: 50%;
+    width: 70%;
+  }
+  .headerimg {
+    height: 25%;
+    width: 10%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .bt1 {
+    background-position: 40% 50%;
+  }
+    .bt2 {
+    background-position: 38% 50%;
+  }
+}
+@media screen and (min-width: 800px){
+    .bt1 {
+    background-position:35% 50%;
+  }
+    .bt2 {
+    background-position: 33% 50%;
+  }
+}
+@media screen and (min-width: 1100px){
+    .bt1 {
+    background-position:40% 50%;
+  }
+    .bt2 {
+    background-position: 38% 50%;
+  }
+}
+@media screen and (min-width: 1300px){
+    .bt1 {
+    background-position:41% 50%;
+  }
+    .bt2 {
+    background-position: 41% 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #formbt {
+    font-size: 16px;
+  }
+  .bt1 {
+    background-position: 35% 50%;
+  }
+    .bt2 {
+    background-position: 33% 50%;
+  }
+}
+@media screen and (max-width: 370px) {
+  #formbt {
+    font-size: 14px;
+  }
+  .bt1 {
+    background-position: 20% 50%;
+  }
+  .bt2 {
+    background-position: 20% 50%;
+  }
+}
+@media screen and (max-width: 300px) {
+  #formbt {
+    font-size: 11px;
+  }
+  .bt1 {
+    background-position: 29% 50%;
+  }
+  .bt2 {
+    background-position: 29% 50%;
+  }
+}
+@media screen and (max-width: 280px) {
+  #formbt {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 200px) {
+  #formbt {
+    font-size: 7px;
+  }
+}
