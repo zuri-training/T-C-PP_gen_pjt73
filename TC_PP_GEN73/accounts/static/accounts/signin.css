@@ -11,14 +11,12 @@
 }
 html,
 body {
-  margin: 0 auto;
+  margin: 0;
     font-family: 'Roboto', sans-serif;
-
 }
 div.img {
-  width: 70%;
-  /* background-color: blue; */
   margin-top: 0;
+  width: 100%;
 }
 
 .container {
@@ -31,6 +29,26 @@ div.img {
   position: relative;
   font-family: Roboto;
 }
+.form {
+  text-align: center;
+  justify-self: center;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen  and (min-width:800px ){
+  .form{
+    width: 50%;
+  }
+  div.img{
+  width: 40%;
+  }
+  .container{
+    height: 80%;
+  }
+}
 .fgt {
   color: rgba(20, 209, 83, 0.955);
 }
@@ -41,17 +59,8 @@ div.img {
   text-decoration: none;
   color: red;
 }
-.form {
-  background-color: white;
-  text-align: center;
-  justify-self: center;
-  width: 100%;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-}
+
 .in {
-  /* background-color: red; */
   padding: 15px 20px;
   border-radius: 4px;
   margin: 10px 0px;
@@ -126,7 +135,7 @@ div.img {
   background-image: url(./img/search.png);
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  background-position: 30.5% 50%;
+  background-position: 43.5% 50%;
   /* background-size: 6% 45%; */
 }
 .bt2 {
@@ -136,7 +145,6 @@ div.img {
   background-position: 41.5% 50%;
   /* background-size: 5.5% 45%; */
 }
-
 #formbt {
   /* background-color: rgb(38, 194, 59); */
   display: inline-flex;
@@ -188,18 +196,16 @@ button:hover {
   bottom: 0;
 }
 .ftimg {
-  height: 8%;
+  height: 120px;
   bottom: 0;
   position: fixed;
-  width: 10%;
+  width: 100px;
+  z-index: -3;
   left: 0%;
 }
 
 @media screen and (min-width: 800px) {
-  body {
-    width: 100%;
-    margin: 0 auto;
-  }
+
   .container {
     display: flex;
     flex-direction: row-reverse;
@@ -209,13 +215,6 @@ button:hover {
   .form {
     justify-content: center;
     align-content: center;
-  }
-  .ftimg {
-    height: 15%;
-    width: 8%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
   .imgs {
     height: 50%;
