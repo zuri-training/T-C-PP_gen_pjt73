@@ -78,7 +78,13 @@ The goal of this project is to make easy T&C and privacy policy generator access
           
   - Google Authentication (@ http://127.0.0.1:8000/social_auth/login/google-oauth2/)
   - Facebook Authentication (@ http://127.0.0.1:8000/social_auth/login/facebook/)
-  - Sign In (@ http://127.0.0.1:8000/accounts/signup/)
+  - Sign Up (@ http://127.0.0.1:8000/accounts/signup/)
+  
+- Dashboard (Base Templates):
+  - Common Links (Dashboard, Contact a Lawyer, Business Profile, History, Logout)
+  - The Dashboard link has two links:'Terms and Conditions' and 'Privacy Policy'.
+  - Terms and Conditions Folders are found in the tc_gen app of the project structure.
+  - Privacy Policy folders are found in the pp_gen app of the project structure.
 
 # Project Status 
 Project is: in progress
