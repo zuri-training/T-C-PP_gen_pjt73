@@ -73,6 +73,12 @@
  border: none;
  border-radius: 5px;
 }
+
+.emaild a:hover {
+    background-color: rgb(68, 68, 206);
+    color: beige;
+}
+
 .emaild{
     text-align: center;
     padding-top: 1rem;

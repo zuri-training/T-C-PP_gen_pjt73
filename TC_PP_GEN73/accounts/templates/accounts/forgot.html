@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>T&C</title>
     <link rel="stylesheet" href="{%static 'accounts/forgot.css' %}" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <div class="parent">
@@ -22,16 +27,19 @@
       <div class="forgot2">
         <p>Enter your registered email address to reset your password</p>
       </div>
+     <form method="post"> 
       <div class="forgot3">
         <div class="forgot3b">
-          <label for="">Email addres</label><br />
-          <input type="text" name="" id="" placeholder="Michaeljoe@mail.com" />
+          {% csrf_token %}
+          <label for="email">Email address</label><br />
+          <input type="text" name="email" id="" placeholder="Michaeljoe@mail.com" required />
           <br />
         </div>
       </div>
       <div class="forgot4">
-        <button>Submit</button>
+        <button type = "submit">Reset Password</button>
       </div>
+      </form>
     </div>
   </body>
 </html>
