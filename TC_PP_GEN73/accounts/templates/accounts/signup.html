@@ -33,7 +33,7 @@
                         {%if form.is_bound %} value="{{form.email.value}}" {% endif %} required>
                     </div>
                     {% for err in form.email.errors %}
-                        <p class="text-danger">{{err}}</p>
+                        <strong class="text-danger">{{err}}</strong>
                     {% endfor %}
                     
                 </div>
@@ -47,7 +47,7 @@
                         {%if form.is_bound %} value="{{form.username.value}}" {% endif %} required>
                     </div><br>
                     {% for err in form.username.errors %}
-                        <p class="text-danger">{{err}}</p>
+                        <strong class="text-danger">{{err}}</strong>
                     {% endfor %}
                 </div>
                 <div class="password">
@@ -59,7 +59,7 @@
                         {%if form.is_bound %} value="{{form.password1.value}}" {% endif %} required>
                     </div><br>
                     {% for err in form.password1.errors %}
-                        <p class="text-danger">{{err}}</p>
+                        <strong class="text-danger">{{err}}</strong>
                     {% endfor %}
                 </div>
                 <div class="password">
@@ -71,7 +71,7 @@
                         {%if form.is_bound %} value="{{form.password2.value}}" {% endif %} required>
                     </div><br>
                     {% for err in form.password2.errors %}
-                        <p class="text-danger">{{err}}</p>
+                        <strong class="text-danger">{{err}}</strong>
                     {% endfor %}
                 </div>
                 <div class="agreement">
