@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'TC_PP_GEN73.wsgi.application'
 #     }
 # }
 
-#setting up postgresql db
+#setting up postgresql database
 DATABASES = {
 
     'default': {
