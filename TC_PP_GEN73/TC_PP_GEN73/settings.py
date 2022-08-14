@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("DJANGO_SECRET_KEY", default = 'django-insecure-y&^@va^7bst0-=i9b!n^q96-fst1r*!qflkc$2e+)fi=71x7_=')
 # SECRET_KEY = 'django-insecure-y&^@va^7bst0-=i9b!n^q96-fst1r*!qflkc$2e+)fi=71x7_='
-print(SECRET_KEY)
+# print(SECRET_KEY)
 print('Your Secret Key is Protected.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -93,12 +93,34 @@ WSGI_APPLICATION = 'TC_PP_GEN73.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+#setting up postgresql db
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'termshub',
+
+        'USER': 'postgres',
+
+        'PASSWORD': '~!@#$%)(*&^hE639',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
+
 
 #django-social-auth for db(PostgreSQL)
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
