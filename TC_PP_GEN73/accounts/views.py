@@ -39,7 +39,7 @@ class RegisterView(SuccessMessageMixin,CreateView):
             Password = form.cleaned_data.get('password')
             obj.user = request.user #Assuming that the relevant field is named user, it will save the user accessing the form using request.user
             obj.save()
-            messages.success(self.request,f'Account successfully created')
+            messages.success(self.request,f'Account successfully created, you can login now.')
             return redirect('signin')
 
         else:
@@ -92,7 +92,7 @@ def profile(request):
 
     else:
         u_form = UserUpdateForm(instance=request.user)
-        b_form = BusinessUpdateForm(instance=request.user)
+        b_form = BusinessUpdateForm(instance=request.user.profile)
         p_form = ProfileUpdateForm(request.FILES, instance=request.user.profile)
 
         context = {'u_form':u_form, 'b_form':b_form, 'p_form':p_form}
