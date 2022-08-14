@@ -19,6 +19,8 @@ from django.contrib.auth import views as auth_views
 from blog import views
 from tc_gen import views as tc_gen_views
 from pp_gen import views as pp_gen_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,3 +48,7 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
     template_name = 'accounts/password_reset_complete.html'), name = 'password_reset_complete'),
 ]
+
+#Serving media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -15,6 +15,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.models import User
+from .forms import UserUpdateForm, ProfileUpdateForm, BusinessUpdateForm
 
 # Create your views here.
 
@@ -76,7 +77,27 @@ def dashboard(request):
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile_page.html')
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance = request.user)
+        b_form = BusinessUpdateForm(request.POST, instance = request.user.profile)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid() and b_form.is_valid():
+            u_form.save()
+            b_form.save()
+            p_form.save()
+
+            messages.success(request, f'Business profile successfully updated!')
+            return redirect('profile')
+
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        b_form = BusinessUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(request.FILES, instance=request.user.profile)
+
+        context = {'u_form':u_form, 'b_form':b_form, 'p_form':p_form}
+    
+    return render(request, 'accounts/profile_page.html', context)
 
 
 class ContactLawyerView(View):
