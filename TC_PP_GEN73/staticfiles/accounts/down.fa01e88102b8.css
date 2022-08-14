@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.long{
+    height: 100%;
+    width: 100%;
+    background: rgb(239, 234, 234);
+    position: absolute;
+    background-color: white;
+    background-image: url("./img/union.9f37b03e6bd4.png"), url("./img/Vec.f87e7c59932a.png");
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.parent{
+    display: flex;
+    justify-content: center;
+    padding-top: 8rem;
+}
+.head{
+    text-align: center;
+    
+   padding: 1rem;
+}
+.reset{
+    padding: 1rem;
+    text-align: center;
+    font-size: 22px;
+}
+.but{
+    text-align: center;
+    
+}
+.but1 a{
+    padding: 10px 30px;
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: blue;
+    color: white;
+}
+
+ a{
+ width: 400px;
+ height: 30px;
+ padding: 10px 30px;
+ text-decoration: none;
+ background-color: blue;
+ color: white;
+ border: none;
+ border-radius: 5px;
+}
+@media screen and (max-width:600px) {
+
+    .long{
+        background: rgb(239, 234, 234);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
+        background-image: url("./img/union.9f37b03e6bd4.png"), url("./img/Vec.f87e7c59932a.png");
+        background-position: left bottom, right top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 20%;
+    }
+
+    .but1 a{
+        padding: 10px 30px;
+        width: 200px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+        background-color: blue;
+        color: white;
+    }
+    
+
+}
+
+
+@media screen and (max-width:768px) {
+
+    .long{
+        background: rgb(239, 234, 234);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
+        background-image: url("./img/union.9f37b03e6bd4.png"), url("./img/Vec.f87e7c59932a.png");
+        background-position: left bottom, right top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 20%;
+    }
+    .but1 a{
+        width: 200px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+        background-color: blue;
+        color: white;
+    }
+    
+
+}

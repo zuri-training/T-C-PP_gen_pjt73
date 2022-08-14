@@ -7,13 +7,17 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE)
-    image = models.ImageField(default = 'default.jpg', upload_to = 'profile/pics')
+    business_name = models.CharField(max_length=30)
+    username = models.CharField(max_length=20)
+    contact = models.CharField(max_length=12)
+    location = models.CharField(max_length=100)
+    image = models.ImageField(default = 'user-circle.png', upload_to = 'profile/pics')
 
     def __str__(self):
         return f'{self.user.username} Profile'
 
     #overridding the save method
-    def save(self):
+    def save(self, *args, **kwargs):
         super().save()
 
         img = Image.open(self.image.path)

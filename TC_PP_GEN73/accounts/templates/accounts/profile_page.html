@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %} {% load static %}
+{% load crispy_forms_tags %}
 <!--Your HTML code here-->
 
 {% block links%}
@@ -22,53 +23,66 @@
 
 <!--DTL(Django Template Language)-->
 {% block content %}
+<style>
+  input[type="text"] {
+    border: none;
+    border-radius: 0;
+    border-bottom-width: 1px;
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-color: #939793;
+  }
+
+  input[type = "text"]:focus {
+    outline: none;
+    border: none;
+  }
+
+  input[type = "file"], input[type = "submit"] {
+    background-color: #2773ec;
+    color:white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 4px;
+  }
+  label {
+    font-weight: bold;
+  }
+</style>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 profilebody">
+  {% if messages %}
+          {% for message in messages %}
+            {% if message.tags == "error"%}
+            <div class="alert alert-danger">
+              <strong>{{ message }}</strong>
+            </div>
+            {% else %}
+              <div class="alert alert-{{ message.tags }}">
+                  <strong>{{message}}</strong>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
   <div class="profile">
     <div class="topProfile">
-      <img src="{% static 'blog/img/user-circle.png' %}" alt="" />
-      <p>Edit Profile</p>
-      <b class="name">{{user.username|upper}}</b><br>
+      <a href="{{user.profile.image.url}}"><img style="width:140px; height:140px; border-radius:50%;" src="{{user.profile.image.url}}" alt="" /></a><!--src="{% static 'blog/img/user-circle.png' %}"-->
+      <!--<p>Edit Profile</p>-->
+      <h4 class="name">{{user.username|upper}}</h4>
       <b class="mail">{{user.email}}</b>
-    </div>
+    </div><br><br>
 
+    <!--Custom form begins here***********************-->
     <div class="info">
-      <!-- <p class="infoCont">Business Name</p> -->
-      <input
-        type="text"
-        class="infoText"
-        name="name"
-        placeholder="Business Name"
-        id="business"
-      />
-      <!-- <p class="infoCont">UserName</p> -->
-      <input
-        type="text"
-        class="infoText"
-        name="name"
-        placeholder="Username"
-        id="business"
-      />
-
-      <!-- <p class="infoCont">Contact</p> -->
-      <input
-        type="text"
-        class="infoText"
-        name="name"
-        placeholder="Contact"
-        id="business"
-      />
-
-      <!-- <p class="infoCont">Location</p> -->
-      <input
-        type="text"
-        class="infoText"
-        name="name"
-        placeholder="Location"
-        id="business"
-      />
-
-      <p class="update"><a href="#">UPDATE PROFILE</a></p>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          {{u_form|crispy}}
+          {{b_form|crispy}}
+          {{p_form|crispy}}
+        <div style="text-align: center; margin-bottom: 20px; margin-top: 30px;">
+          <input class="update" type="submit" value="Update Profile">
+        </div>
+        
+      </form>
     </div>
-  </div>
 </main>
 {% endblock %}

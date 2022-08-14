@@ -1,3 +1,4 @@
+from email.policy import default
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
@@ -46,13 +47,17 @@ class ContactLawyer(forms.Form):
 '''ModelForm allows users to update their info to the database'''
 #Update email and username
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
-    business_name = forms.CharField(max_length=30)
-    contact = forms.CharField()
     class Meta:
         model = User
-        fields = ['email', 'username']
+        fields = ['username']
 
+class BusinessUpdateForm(forms.ModelForm):
+    business_name = forms.CharField(max_length=30)
+    contact = forms.CharField(max_length=12)
+    location = forms.CharField(max_length=100)
+    class Meta:
+        model =  User
+        fields = ['business_name', 'contact', 'location']
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
