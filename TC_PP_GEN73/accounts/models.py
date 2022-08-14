@@ -11,7 +11,7 @@ class Profile(models.Model):
     username = models.CharField(max_length=20)
     contact = models.CharField(max_length=12)
     location = models.CharField(max_length=100)
-    image = models.ImageField(default = 'default.jpg', upload_to = 'profile/pics')
+    image = models.ImageField(default = 'user-circle.png', upload_to = 'profile/pics')
 
     def __str__(self):
         return f'{self.user.username} Profile'
