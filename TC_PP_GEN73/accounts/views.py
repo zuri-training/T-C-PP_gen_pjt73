@@ -79,7 +79,7 @@ def dashboard(request):
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance = request.user)
-        b_form = BusinessUpdateForm(request.POST, instance = request.user)
+        b_form = BusinessUpdateForm(request.POST, instance = request.user.profile)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
 
         if u_form.is_valid() and p_form.is_valid() and b_form.is_valid():
@@ -92,7 +92,7 @@ def profile(request):
 
     else:
         u_form = UserUpdateForm(instance=request.user)
-        b_form = BusinessUpdateForm(instance=request.user)
+        b_form = BusinessUpdateForm(instance=request.user.profile)
         p_form = ProfileUpdateForm(request.FILES, instance=request.user.profile)
 
         context = {'u_form':u_form, 'b_form':b_form, 'p_form':p_form}
