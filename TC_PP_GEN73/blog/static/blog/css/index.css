@@ -574,8 +574,11 @@ p {
 .customer .row > div .benefiticon {
   height: 62px;
   width: 100px;
-  background: url(../img/customer.png);
-  background-size: cover;
+  background: transparent;
+}
+.customer .row > div .benefiticon img{
+  height: 100%;
+  width: 100%;
 }
 .customer .row > div .benefitsText {
   width: 70%;
