@@ -2,7 +2,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  margin: 0px;
 }
 .navbar-brand {
   color: black;
@@ -137,6 +138,7 @@ nav ul li a:hover::before {
 .top-nav {
   width: 100%;
   padding: 10px 30px;
+  box-sizing: border-box;
   justify-content: space-between;
 }
 .topnav {
@@ -403,6 +405,13 @@ p {
   }
 }
 
+@media screen and (min-width: 766px) {
+  .benefiticon{
+    width: 150px;
+    height: 100px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .benefiticon {
     width: 100%;
@@ -432,8 +441,8 @@ p {
 
 @media screen and (min-width: 975px) {
   .benefiticon {
-    width: 200px;
-    height: 90px;
+    width: 250px;
+    height: 105px;
   }
   .benefit {
     position: relative;
@@ -444,17 +453,14 @@ p {
 }
 @media screen and (min-width: 1300px) {
   .benefiticon {
-    width: 180px;
-    height: 120px;
+    width: 230px;
+    height: 100px;
   }
 }
-
-@media screen and (min-width: 1000px) {
-  .benefit {
-    position: relative;
-    padding: 20px 80px 0px 0px;
-    box-sizing: border-box;
-    align-items: center;
+@media screen and (min-width: 1374px) {
+  .benefiticon {
+    width: 190px;
+    height: 130px;
   }
 }
 
@@ -566,8 +572,8 @@ p {
 }
 
 .customer .row > div .benefiticon {
-  height: 40%;
-  width: 30%;
+  height: 62px;
+  width: 100px;
   background: url(../img/customer.png);
   background-size: cover;
 }
@@ -579,31 +585,31 @@ p {
 }
 
 /* This is for the testimonial icon of user */
-@media screen and (max-width: 325px) {
-  .customer .row > div .benefiticon {
-    width: 40%;
-    height: 100px;
-  }
-}
 
-@media screen and (min-width: 975px) {
+
+@media screen and (min-width: 980px) {
   .customer .row > div .benefiticon {
     width: 170px;
-    height: 100px;
+    height: 128px;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .customer .row > div .benefiticon {
     width: 170px;
-    height: 150px;
+    height: 130px;
   }
 }
-
+@media screen and (min-width: 1300px) {
+  .customer .row > div .benefiticon {
+    width: 139px;
+    height: 130px;
+  }
+}
 @media screen and (max-width: 765px) {
   .customer .row > div .benefiticon {
-    width: 170px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
   }
 }
 @media screen and (min-width: 765px) {
@@ -611,7 +617,12 @@ p {
     width: 32.5%;
   }
 }
-
+@media screen and (max-width: 325px) {
+  .customer .row > div .benefiticon {
+    width: 40%;
+    height: 100px;
+  }
+}
 .footer {
   background: url("../img/footer.png") no-repeat;
   background-size: cover;
