@@ -21,6 +21,8 @@ from tc_gen import views as tc_gen_views
 from pp_gen import views as pp_gen_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -47,6 +49,10 @@ urlpatterns = [
     #password reset complete url
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
     template_name = 'accounts/password_reset_complete.html'), name = 'password_reset_complete'),
+
+    #for heroku deployment
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
 #Serving media files during development

@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView , View
 from blog.forms import ContactForm
@@ -18,9 +19,11 @@ class ContactView(View):
 
     def post(self,request, *args, **kwargs):
         form = ContactForm(request.POST)
+        subject = request.POST['subject']
         message = request.POST['message']
+        email = request.POST.get('email')
         if form.is_valid():
-            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['kadelcode@gmail.com'], fail_silently=False)
+            send_mail(subject, message, email , ['kadelcode@gmail.com'], fail_silently=False)#settings.EMAIL_HOST_USER
             messages.info(request,"Message successfully sent. We'll respond to you within 24 hours.")
             return redirect('contact')
         return render(request, 'blog/contact_us.html', {'form':form})

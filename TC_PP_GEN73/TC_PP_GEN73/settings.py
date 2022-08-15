@@ -28,11 +28,11 @@ print('Your Secret Key is Protected.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config("DJANGO_DEBUG", default = True, cast = bool)
-DEBUG = True
+DEBUG = False
 # print('DEBUG MODE = ', DEBUG, "\n")
 # print('Turn Off DEBUG Mode During Deployment.', "\n")
 
-ALLOWED_HOSTS = ['*'] #allow to run on all local machine
+ALLOWED_HOSTS = ['*', 'termshub.herokuapp.com'] #allow to run on all local machine
 
 
 # Application definition
@@ -113,7 +113,7 @@ DATABASES = {
 
         'USER': 'postgres',
 
-        'PASSWORD': '~!@#$%)(*&^hE639',
+        'PASSWORD':'kadelcode', #'~!@#$%)(*&^hE639',
 
         'HOST': 'localhost',
 
@@ -185,6 +185,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 
 #for whitenoise
+WHITENOISE_USE_FINDERS = True
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
