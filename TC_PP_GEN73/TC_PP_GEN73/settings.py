@@ -30,12 +30,11 @@ print('Your Secret Key is Protected.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config("DJANGO_DEBUG", default = True, cast = bool)
-DEBUG = True
+DEBUG = False
 # print('DEBUG MODE = ', DEBUG, "\n")
 # print('Turn Off DEBUG Mode During Deployment.', "\n")
 
-ALLOWED_HOSTS = ['*'] #allow to run on all local machine
-
+ALLOWED_HOSTS = ['127.0.0.1', 'termshub73.herokuapp.com']
 
 # Application definition
 
