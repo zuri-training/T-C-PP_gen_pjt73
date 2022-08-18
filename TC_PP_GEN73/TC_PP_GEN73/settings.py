@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +34,7 @@ DEBUG = False
 # print('DEBUG MODE = ', DEBUG, "\n")
 # print('Turn Off DEBUG Mode During Deployment.', "\n")
 
-ALLOWED_HOSTS = ['*', 'termshub.herokuapp.com'] #allow to run on all local machine
+ALLOWED_HOSTS = ['*'] #allow to run on all local machine
 
 
 # Application definition
@@ -174,15 +176,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "blog/static"),
-    # '/var/www/static/',
-]
-
 STATIC_URL = 'static/'
 
 #Root directory that serves all static files during production
 STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "blog/static"),
+    # '/var/www/static/',
+]
+django_heroku.settings(locals())
 
 #for whitenoise
 #WHITENOISE_USE_FINDERS = True
