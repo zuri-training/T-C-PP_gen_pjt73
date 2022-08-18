@@ -1,1 +1,1 @@
-web: gunicorn --chdir TC_PP_GEN73 wsgi:appllication
+web: gunicorn --chdir TC_PP_GEN73:appllication
