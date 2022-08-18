@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn TC_PP_GEN73.wsgi
