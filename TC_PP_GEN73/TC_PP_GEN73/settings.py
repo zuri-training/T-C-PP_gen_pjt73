@@ -186,6 +186,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "blog/static"),
     # '/var/www/static/',
 ]
+
 django_heroku.settings(locals())
 
 #for whitenoise
