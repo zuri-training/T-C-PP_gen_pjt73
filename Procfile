@@ -1,1 +1,1 @@
-web: gunicorn termshub73:app
+web: gunicorn TC_PP_GEN73:app
