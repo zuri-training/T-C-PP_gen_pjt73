@@ -1,1 +1,1 @@
-web: gunicorn --chdir TC_PP_GEN73:application
+web: gunicorn TC_PP_GEN73:application
