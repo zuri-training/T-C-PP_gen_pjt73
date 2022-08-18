@@ -1,1 +1,1 @@
-web: gunicorn TC_PP_GEN73.wsgi
+web: gunicorn TC_PP_GEN73.wsgi --log-file -
