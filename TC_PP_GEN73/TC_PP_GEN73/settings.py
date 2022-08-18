@@ -30,7 +30,7 @@ print('Your Secret Key is Protected.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config("DJANGO_DEBUG", default = True, cast = bool)
-DEBUG = False
+DEBUG = True
 # print('DEBUG MODE = ', DEBUG, "\n")
 # print('Turn Off DEBUG Mode During Deployment.', "\n")
 
